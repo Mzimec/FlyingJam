@@ -12,6 +12,8 @@ public class BattleManager : MonoBehaviour {
     private int[] aDefensiveValues = new int[ConstantValues.cardTypesCount];
     private int[] dDefensiveValues = new int[ConstantValues.cardTypesCount];
 
+    private int aPoints, dPoints;
+
     private void Awake() {
         region = GetComponentInParent<RegionManager>();
         if (region != null) {
@@ -25,7 +27,7 @@ public class BattleManager : MonoBehaviour {
     }
 
     private void GenerateOpponentCards() {
-        if (region.IsPlayer) {
+        if (region.isPlayer) {
            var cardsToEnter = region.GenerateLoadOut();
         }
     }
@@ -48,13 +50,57 @@ public class BattleManager : MonoBehaviour {
 
     private void CountPools() {
         ChangeAttackPool(aOffensiveValues, attackers);
-        ChangeAttackPool(dDefensiveValues, defenders);
+        ChangeAttackPool(dOffensiveValues, defenders);
         ChangeVulnerabilityPool(aDefensiveValues, attackers);
         ChangeVulnerabilityPool(dDefensiveValues, defenders);
     }
 
+    private void BattleOutcomes() {
+        if (aPoints > dPoints) {
+            if (region.isPlayer) {
+                Debug.Log("Defeat");
+                region.recruitPoints -= (int)(((float)dPoints / aPoints) * region.recruitPoints);
+            }
+            else Debug.Log("Victory");
+            region.isPlayer = !region.isPlayer;
+        }
+        else {
+            if (region.isPlayer) Debug.Log("Victory");
+            else {
+                Debug.Log("Defeat");
+                region.recruitPoints -= (int)(((float)aPoints / dPoints) * region.recruitPoints);
+            }
+        }
+    }
 
-    private void DetermineVictor() { }
+    private void RunBattle() {
+        foreach(var card in attackers) {
+            if (card.hasEffects) card.ApplyEffects(attackers, defenders);
+        }
+        foreach (var card in defenders) {
+            if (card.hasEffects) card.ApplyEffects(defenders, attackers);
+        }
+
+        CountPools();
+        CountVictoryPoints();
+        BattleOutcomes();
+              
+    }
+
+    private void CountVictoryPoints() {
+        for (int i = 0; i < ConstantValues.cardTypesCount; i++) {
+            dDefensiveValues[i] -= aOffensiveValues[i];
+            if (dDefensiveValues[i] < 0) dDefensiveValues[i] = 0;
+            aDefensiveValues[i] -= dOffensiveValues[i];
+            if (aDefensiveValues[i] < 0) aDefensiveValues[i] = 0;
+        }
+
+        for (int i = 0; i <= ConstantValues.cardTypesCount; i++) {
+            dPoints += dOffensiveValues[i] + dDefensiveValues[i];
+            aPoints += aOffensiveValues[i] + aDefensiveValues[i];
+        }
+    }
+    
     public void OnFight() {
 
     }

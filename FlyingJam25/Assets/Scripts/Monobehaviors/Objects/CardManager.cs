@@ -9,7 +9,7 @@ public class CardManager : MonoBehaviour {
     public bool hasAttack = false;
     public int[] attackValues;
     public int[] vulnerabilityValues;
-    private List<IEffect> effects;
+    private List<Effect> effects;
 
     private void Awake() {
         if (baseData == null) return;
@@ -18,11 +18,11 @@ public class CardManager : MonoBehaviour {
         ResetCard();
     }
 
-    public void AddEffect(IEffect effect) { 
+    public void AddEffect(Effect effect) { 
         effects.Add(effect);
     }
 
-    public void RemoveEffect(IEffect effect) {
+    public void RemoveEffect(Effect effect) {
         if (effects.Contains(effect)) effects.Remove(effect);
     }
 
@@ -37,13 +37,18 @@ public class CardManager : MonoBehaviour {
         }
         else attackValues = null;
 
-        if(hasEffects) effects = new List<IEffect>(baseData.effects);
+        if(hasEffects) effects = new List<Effect>(baseData.effects);
         else effects = null;
     }
 
-    public void ApplyEffects(List<CardManager> cards) {
+    public void ApplyEffects(CardManager[] allies, CardManager[] enemies) {
         foreach (var effect in effects) {
-            foreach (var card in cards) effect.Execute(card);
+            if (effect.side == ESide.ALLY || effect.side == ESide.BOTH) {
+                foreach (var card in allies) effect.Execute(card);
+            }
+            if (effect.side == ESide.ENEMY || effect.side == ESide.BOTH) {
+                foreach(var card in enemies) effect.Execute(card);
+            }
         }
     }
 }

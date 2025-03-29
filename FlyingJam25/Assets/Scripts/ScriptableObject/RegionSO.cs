@@ -11,9 +11,9 @@ public class RegionSO : ScriptableObject
     public int resources;
     public int resourceRefreshRate;
 
-    public float riotChance;
+    public float riotChance = 0.2f;
     public float riotBoundary;
-
+    
     public int battlefieldSize;
     public List<CardSO> cardsToGenerate;
 }

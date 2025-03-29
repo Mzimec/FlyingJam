@@ -12,5 +12,5 @@ public class CardSO : ScriptableObject {
     public EPrefferedPosition prefferedPosition;
     public int[] attackValues;
     public int[] vulnerabilityValues;
-    public List<IEffect> effects;
+    public List<Effect> effects;
 }

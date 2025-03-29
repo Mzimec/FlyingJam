@@ -9,13 +9,13 @@ public class RegionManager : MonoBehaviour {
 
     [SerializeField] public RegionSO baseData;
 
-    [SerializeField] private int recruitPoints;
+    [SerializeField] public int recruitPoints;
     [SerializeField] private int resources;
     [SerializeField] private int regionDistance;
 
     [SerializeField] private bool isAttacked = false;
 
-    [SerializeField] public SideSO side;
+    [SerializeField] public bool isPlayer;
     [SerializeField] private SideSO player;
 
     [SerializeField] private List<RegionManager> neighbors;
@@ -27,15 +27,13 @@ public class RegionManager : MonoBehaviour {
 
     public bool IsRiotable => !IsBorder && GetResourcesToBase < baseData.riotBoundary;
 
-    public bool IsPlayer => player == side;
-
     private float chanceMultiplier = 0.05f;
     private int GetChanceValue => (int)(1.0f / chanceMultiplier) + 1;
 
 
     private bool IsBorder { get {
             bool res = false;
-            foreach(RegionManager neigbor in neighbors) if(neigbor.side != side) {
+            foreach(RegionManager neigbor in neighbors) if(neigbor.isPlayer != isPlayer) {
                     res = true;
                     break;
                 }
@@ -52,7 +50,7 @@ public class RegionManager : MonoBehaviour {
     public List<CardSO> GenerateLoadOut() {
         var loadout = new List<CardSO>();
         int rp;
-        if (player != side) rp = recruitPoints;
+        if (!isPlayer) rp = recruitPoints;
         else rp = baseData.recruitPoints;
         var availableUnits = new List<CardSO>(baseData.cardsToGenerate);
         for (int i = 0; i < baseData.battlefieldSize; i++) {
@@ -67,15 +65,36 @@ public class RegionManager : MonoBehaviour {
 
     private void GenerateBattleEvent(float chance) {
         float random = chanceMultiplier * Random.Range(0, GetChanceValue);
-        if (chance > random) battleGenerator.GenerateBattle(this);
+        if (chance >= random) battleGenerator.GenerateBattle(this);
+    }
+
+    private void GenerateBattleEvent() {
+        if (isPlayer) { 
+            if (IsBorder || baseData.riotBoundary > GetResourcesToBase) GenerateBattleEvent(baseData.riotChance);
+        } 
+        else {
+            if(IsBorder) GenerateBattleEvent(1.0f);
+        }
+    }
+
+    private void ClearBattleEvent() {
+        if (battle != null) {
+            Destroy(battle);
+            battle = null;
+        }
+    }
+
+    private void ActualizeRecruitPoints() {
+        if (!isAttacked) {
+            recruitPoints += baseData.recruitRefreshRate;
+            if (recruitPoints > baseData.recruitPoints) recruitPoints = baseData.recruitPoints;
+        }
     }
 
     public void OnEndTurn() {
-        /*if (!isAttacked) {
-            recruitPoints += baseData.recruitRefreshRate;
-            if (recruitPoints > baseData.recruitPoints) recruitPoints = baseData.recruitPoints;
-        }*/
-        Debug.Log("Region End Turn.");
+        ActualizeRecruitPoints();
+        ClearBattleEvent();
+        GenerateBattleEvent();
     }
 
     public void SetBattle(GameObject battleInstance) {
