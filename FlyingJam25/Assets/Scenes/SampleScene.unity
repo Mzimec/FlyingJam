@@ -251,9 +251,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 889239811}
+  - {fileID: 1946416179}
+  - {fileID: 345260261}
+  - {fileID: 2136829140}
   battleGenerator: {fileID: 0}
 --- !u!4 &55655081
 Transform:
@@ -402,9 +406,14 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1946416179}
+  - {fileID: 596284914}
+  - {fileID: 1451557822}
+  - {fileID: 858176885}
+  - {fileID: 345260261}
   battleGenerator: {fileID: 0}
 --- !u!4 &174435855
 Transform:
@@ -553,9 +562,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1771152688}
+  - {fileID: 920201983}
+  - {fileID: 332964168}
+  - {fileID: 1850352147}
   battleGenerator: {fileID: 0}
 --- !u!4 &197380415
 Transform:
@@ -704,9 +717,16 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1850352147}
+  - {fileID: 197380414}
+  - {fileID: 920201983}
+  - {fileID: 1996807898}
+  - {fileID: 1265525547}
+  - {fileID: 449701622}
+  - {fileID: 586587481}
   battleGenerator: {fileID: 0}
 --- !u!4 &332964169
 Transform:
@@ -717,7 +737,7 @@ Transform:
   m_GameObject: {fileID: 332964164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.27, y: 0.802, z: 0}
+  m_LocalPosition: {x: 14.283, y: 0.802, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -855,9 +875,16 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 2136829140}
+  - {fileID: 55655080}
+  - {fileID: 1946416179}
+  - {fileID: 174435854}
+  - {fileID: 858176885}
+  - {fileID: 1161678502}
+  - {fileID: 1930959728}
   battleGenerator: {fileID: 0}
 --- !u!4 &345260262
 Transform:
@@ -1006,9 +1033,14 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 586587481}
+  - {fileID: 332964168}
+  - {fileID: 1265525547}
+  - {fileID: 596284914}
+  - {fileID: 889239811}
   battleGenerator: {fileID: 0}
 --- !u!4 &449701623
 Transform:
@@ -1157,9 +1189,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1265525547}
+  - {fileID: 1996807898}
+  - {fileID: 1654342425}
+  - {fileID: 1451557822}
   battleGenerator: {fileID: 0}
 --- !u!4 &493499220
 Transform:
@@ -1308,9 +1344,11 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1363105370}
+  - {fileID: 1395577185}
   battleGenerator: {fileID: 0}
 --- !u!4 &503310826
 Transform:
@@ -1725,9 +1763,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1850352147}
+  - {fileID: 332964168}
+  - {fileID: 449701622}
+  - {fileID: 889239811}
   battleGenerator: {fileID: 0}
 --- !u!4 &586587482
 Transform:
@@ -1876,9 +1918,15 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 889239811}
+  - {fileID: 449701622}
+  - {fileID: 1265525547}
+  - {fileID: 1451557822}
+  - {fileID: 174435854}
+  - {fileID: 1946416179}
   battleGenerator: {fileID: 0}
 --- !u!4 &596284915
 Transform:
@@ -2293,9 +2341,12 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 2022221312}
+  - {fileID: 1780093955}
+  - {fileID: 1363105370}
   battleGenerator: {fileID: 0}
 --- !u!4 &767100288
 Transform:
@@ -2444,9 +2495,12 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 345260261}
+  - {fileID: 174435854}
+  - {fileID: 1161678502}
   battleGenerator: {fileID: 0}
 --- !u!4 &858176886
 Transform:
@@ -2595,9 +2649,15 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1850352147}
+  - {fileID: 586587481}
+  - {fileID: 449701622}
+  - {fileID: 596284914}
+  - {fileID: 1946416179}
+  - {fileID: 55655080}
   battleGenerator: {fileID: 0}
 --- !u!4 &889239812
 Transform:
@@ -2746,9 +2806,14 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 197380414}
+  - {fileID: 1771152688}
+  - {fileID: 1395577185}
+  - {fileID: 1996807898}
+  - {fileID: 332964168}
   battleGenerator: {fileID: 0}
 --- !u!4 &920201984
 Transform:
@@ -3194,9 +3259,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1930959728}
+  - {fileID: 345260261}
+  - {fileID: 858176885}
+  - {fileID: 1968438665}
   battleGenerator: {fileID: 0}
 --- !u!4 &1161678503
 Transform:
@@ -3345,9 +3414,15 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 449701622}
+  - {fileID: 332964168}
+  - {fileID: 1996807898}
+  - {fileID: 493499219}
+  - {fileID: 1451557822}
+  - {fileID: 596284914}
   battleGenerator: {fileID: 0}
 --- !u!4 &1265525548
 Transform:
@@ -3527,9 +3602,14 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1780093955}
+  - {fileID: 767100287}
+  - {fileID: 503310825}
+  - {fileID: 1395577185}
+  - {fileID: 1771152688}
   battleGenerator: {fileID: 0}
 --- !u!4 &1363105371
 Transform:
@@ -3678,9 +3758,15 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1771152688}
+  - {fileID: 1363105370}
+  - {fileID: 503310825}
+  - {fileID: 1654342425}
+  - {fileID: 1996807898}
+  - {fileID: 920201983}
   battleGenerator: {fileID: 0}
 --- !u!4 &1395577186
 Transform:
@@ -3829,9 +3915,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 596284914}
+  - {fileID: 1265525547}
+  - {fileID: 493499219}
+  - {fileID: 174435854}
   battleGenerator: {fileID: 0}
 --- !u!4 &1451557823
 Transform:
@@ -4142,9 +4232,12 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1996807898}
+  - {fileID: 1395577185}
+  - {fileID: 493499219}
   battleGenerator: {fileID: 0}
 --- !u!4 &1654342426
 Transform:
@@ -4227,9 +4320,11 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1930959728}
+  - {fileID: 1968438665}
   battleGenerator: {fileID: 0}
 --- !u!4 &1692778573
 Transform:
@@ -4625,9 +4720,15 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 2022221312}
+  - {fileID: 1780093955}
+  - {fileID: 1363105370}
+  - {fileID: 1395577185}
+  - {fileID: 920201983}
+  - {fileID: 197380414}
   battleGenerator: {fileID: 0}
 --- !u!4 &1771152689
 Transform:
@@ -4776,9 +4877,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 2022221312}
+  - {fileID: 767100287}
+  - {fileID: 1363105370}
+  - {fileID: 1771152688}
   battleGenerator: {fileID: 0}
 --- !u!4 &1780093956
 Transform:
@@ -4927,9 +5032,13 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 197380414}
+  - {fileID: 332964168}
+  - {fileID: 586587481}
+  - {fileID: 889239811}
   battleGenerator: {fileID: 0}
 --- !u!4 &1850352148
 Transform:
@@ -5501,9 +5610,14 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 2136829140}
+  - {fileID: 345260261}
+  - {fileID: 1161678502}
+  - {fileID: 1968438665}
+  - {fileID: 1692778572}
   battleGenerator: {fileID: 0}
 --- !u!4 &1930959729
 Transform:
@@ -5652,9 +5766,14 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 55655080}
+  - {fileID: 889239811}
+  - {fileID: 596284914}
+  - {fileID: 174435854}
+  - {fileID: 345260261}
   battleGenerator: {fileID: 0}
 --- !u!4 &1946416180
 Transform:
@@ -5803,9 +5922,12 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 1692778572}
+  - {fileID: 1930959728}
+  - {fileID: 1161678502}
   battleGenerator: {fileID: 0}
 --- !u!4 &1968438666
 Transform:
@@ -5954,9 +6076,15 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 920201983}
+  - {fileID: 1395577185}
+  - {fileID: 1654342425}
+  - {fileID: 493499219}
+  - {fileID: 1265525547}
+  - {fileID: 332964168}
   battleGenerator: {fileID: 0}
 --- !u!4 &1996807899
 Transform:
@@ -6105,9 +6233,12 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 767100287}
+  - {fileID: 1780093955}
+  - {fileID: 1771152688}
   battleGenerator: {fileID: 0}
 --- !u!4 &2022221313
 Transform:
@@ -6256,9 +6387,12 @@ MonoBehaviour:
   resources: 0
   regionDistance: 0
   isAttacked: 0
-  side: {fileID: 0}
+  isPlayer: 0
   player: {fileID: 0}
-  neighbors: []
+  neighbors:
+  - {fileID: 55655080}
+  - {fileID: 345260261}
+  - {fileID: 1930959728}
   battleGenerator: {fileID: 0}
 --- !u!4 &2136829141
 Transform:
