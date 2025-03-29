@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleManager : MonoBehaviour {
-    private RegionManager region;
+    public RegionManager region;
 
     private CardManager[] attackers;
     private CardManager[] defenders;
@@ -16,7 +16,7 @@ public class BattleManager : MonoBehaviour {
 
     private void Awake() {
         region = GetComponentInParent<RegionManager>();
-        if (region != null) {
+        if (region == null) {
             Debug.LogError("BattleManager is not inside a RegionManager!");
             return;
         }
