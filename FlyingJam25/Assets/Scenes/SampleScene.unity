@@ -1671,7 +1671,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000008d6a1c93
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2972,7 +2972,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.13317904, g: 0.5110729, b: 0.8113208, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2991,7 +2991,7 @@ Transform:
   m_GameObject: {fileID: 1495525966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.95, y: 7.02, z: 0}
+  m_LocalPosition: {x: 1.83, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4857,6 +4857,18 @@ PrefabInstance:
     - target: {fileID: 6821840045580093690, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: resources
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: recruitPoints
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: 'neighbors.Array.data[0]'

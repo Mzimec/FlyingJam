@@ -94,7 +94,7 @@ public class RegionManager : MonoBehaviour {
     }
 
     public void OnEndTurn() {
-        ActualizeRecruitPoints();
+        //ActualizeRecruitPoints();
         ClearBattleEvent();
         GenerateBattleEvent();
     }
