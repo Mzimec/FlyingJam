@@ -23,4 +23,4 @@ public abstract class GameEventListener<T> : MonoBehaviour {
     }
 }
 
-public class EmptyGameEventListener : GameEvent<Empty> { }
+public class EmptyGameEventListener : GameEventListener<Empty> { }

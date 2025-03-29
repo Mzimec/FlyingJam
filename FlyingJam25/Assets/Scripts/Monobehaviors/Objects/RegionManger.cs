@@ -71,10 +71,11 @@ public class RegionManager : MonoBehaviour {
     }
 
     public void OnEndTurn() {
-        if (!isAttacked) {
+        /*if (!isAttacked) {
             recruitPoints += baseData.recruitRefreshRate;
             if (recruitPoints > baseData.recruitPoints) recruitPoints = baseData.recruitPoints;
-        }
+        }*/
+        Debug.Log("Region End Turn.");
     }
 
     public void SetBattle(GameObject battleInstance) {
