@@ -1,0 +1,23 @@
+.brikule-bila {
+}
+
+.tlacitka {
+    width: 50%;
+    -unity-text-align: upper-center;
+    align-self: flex-end;
+    margin-top: 20px;
+    -unity-font-definition: url("project://database/Assets/Art/Font/Brikula-11.otf?fileID=12800000&guid=8a154afaba37d2d498f520c3ff175564&type=3#Brikula-11");
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.main-menu {
+    -unity-font-definition: url("project://database/Assets/Art/Font/Brikula-11.otf?fileID=12800000&guid=8a154afaba37d2d498f520c3ff175564&type=3#Brikula-11");
+    color: rgb(46, 0, 0);
+    font-size: 120px;
+    padding-right: 50px;
+    -unity-text-align: upper-right;
+}
