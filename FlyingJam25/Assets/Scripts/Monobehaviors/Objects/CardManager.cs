@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardManager : MonoBehaviour {
+public class CardManager {
     [SerializeField] private CardSO baseData;
     public bool hasEffects = false;
     public bool hasAttack = false;
@@ -11,8 +11,9 @@ public class CardManager : MonoBehaviour {
     public int[] vulnerabilityValues;
     private List<Effect> effects;
 
-    private void Awake() {
-        if (baseData == null) return;
+
+    public CardManager(CardSO baseCard) {
+        baseData = baseCard;
         if (baseData.attackValues != null) hasAttack = true;
         if (baseData.effects != null) hasEffects = true;
         ResetCard();
