@@ -2,25 +2,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public interface IEffect {
-    public void Execute(CardManager cards);
+public enum ESide { ALLY, ENEMY, BOTH };
+public abstract class Effect : ScriptableObject{
+    public ESide side;
+    public virtual void Execute(CardManager card) { }
 }
 
-[CreateAssetMenu(fileName = "NoneTypeEffect", menuName = "Effects/NonTypeEffect")]
-public class Effect : ScriptableObject, IEffect {
+public abstract class Effect<T> : Effect {
+    [SerializeField] protected T value;
+    public ESide side;
     [SerializeField] protected int index;
-    [SerializeField] protected List<UnityAction<CardManager>> responses;
+    [SerializeField] protected List<UnityAction<CardManager, T>> responses;
 
-    public void Execute(CardManager cards) {
-        foreach(var response in responses) {
-            response.Invoke(cards);
+    public override void Execute(CardManager cards) {
+        foreach (var response in responses) {
+            response.Invoke(cards, value);
         }
     }
 }
 
-public abstract class Effect<T> : Effect {
-    [SerializeField] protected T value; 
-}
+[CreateAssetMenu(fileName = "NoneTypeEffect", menuName = "Effects/NonTypeEffect")]
+public class EmptyEffect : Effect<Empty> { }
 
 [CreateAssetMenu(fileName = "IntEffect", menuName = "Effects/IntEffect")]
 public class IntEffect : Effect<int> { }
