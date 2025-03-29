@@ -16,10 +16,9 @@ public class RegionManager : MonoBehaviour {
     [SerializeField] private bool isAttacked = false;
 
     [SerializeField] public bool isPlayer;
-    [SerializeField] private SideSO player;
 
     [SerializeField] private List<RegionManager> neighbors;
-    [SerializeField] private BattleGenerator battleGenerator;
+    private BattleGenerator battleGenerator;
     private GameObject battle;
 
 
@@ -101,4 +100,8 @@ public class RegionManager : MonoBehaviour {
         battle = battleInstance;
     }
 
+
+    private void Awake() {
+        battleGenerator = GetComponent<BattleGenerator>();
+    }
 }

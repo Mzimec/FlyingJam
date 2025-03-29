@@ -8,4 +8,12 @@ public class GameManager : ScriptableObject {
         turn++;
         Debug.Log($"Start of turn {turn}");
     }
+
+    private void ResetManager() {
+        turn = 1;
+    }
+
+    public void OnGameLoad() { }
+
+    public void OnNewGame() { }
 }
