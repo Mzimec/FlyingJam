@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BattleGenerator : MonoBehaviour
 {
-    GameObject battlePrefab;
+    [SerializeField] private GameObject battlePrefab;
     [SerializeField] private float difX;
     [SerializeField] private float difY;
     public void GenerateBattle(RegionManager region) {

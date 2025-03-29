@@ -64,7 +64,10 @@ public class RegionManager : MonoBehaviour {
 
     private void GenerateBattleEvent(float chance) {
         float random = chanceMultiplier * Random.Range(0, GetChanceValue);
-        if (chance >= random) battleGenerator.GenerateBattle(this);
+        if (chance >= random) {
+            if (battleGenerator != null) battleGenerator.GenerateBattle(this);
+            else Debug.Log("Null battleGenrator in RegionManager");
+        }
     }
 
     private void GenerateBattleEvent() {
@@ -102,6 +105,6 @@ public class RegionManager : MonoBehaviour {
 
 
     private void Awake() {
-        battleGenerator = GetComponent<BattleGenerator>();
+        battleGenerator = GetComponentInParent<BattleGenerator>();
     }
 }

@@ -10,7 +10,6 @@ public abstract class Effect : ScriptableObject{
 
 public abstract class Effect<T> : Effect {
     [SerializeField] protected T value;
-    public ESide side;
     [SerializeField] protected int index;
     [SerializeField] protected List<UnityAction<CardManager, T>> responses;
 

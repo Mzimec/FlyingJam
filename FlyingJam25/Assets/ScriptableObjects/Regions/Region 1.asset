@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2531f2c907fc0a4283a5423d1fd9813, type: 3}
   m_Name: Region 1
   m_EditorClassIdentifier: 
-  recruitPoints: 0
-  recruitRefreshRate: 0
-  resources: 0
-  resourceRefreshRate: 0
+  recruitPoints: 6
+  recruitRefreshRate: 1
+  resources: 5
+  resourceRefreshRate: 1
   riotChance: 0.2
-  riotBoundary: 0
-  battlefieldSize: 0
-  cardsToGenerate: []
+  riotBoundary: 4
+  battlefieldSize: 3
+  cardsToGenerate:
+  - {fileID: 0}
