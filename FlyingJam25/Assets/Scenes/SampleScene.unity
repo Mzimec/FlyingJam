@@ -830,8 +830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a5a9d492d1b5f42b7aa359cafefa60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTurnEnd: {fileID: 0}
-  gameManager: {fileID: 0}
+  onTurnEnd: {fileID: 11400000, guid: 77e04ea628e2aa94c9dc273535db33c9, type: 2}
+  gameManager: {fileID: 11400000, guid: a61737e69b8ef14478894622e9398bb9, type: 2}
 --- !u!114 &1495525971
 MonoBehaviour:
   m_ObjectHideFlags: 0
