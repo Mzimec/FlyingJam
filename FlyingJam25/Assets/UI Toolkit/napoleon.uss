@@ -22,3 +22,9 @@
     padding-right: 50px;
     -unity-text-align: upper-right;
 }
+
+.background {
+    background-image: url("project://database/Assets/Art/Sprite/mainmenu.png?fileID=-9114789695211296444&guid=0a76eb840ca0d0e48afdc2988a2c8a39&type=3#mainmenu_0");
+    width: 1920px;
+    height: 1080px;
+}
