@@ -2480,7 +2480,7 @@ MonoBehaviour:
   deckMenu: {fileID: 0}
   mainMenu: {fileID: 672422882}
   mouse: {fileID: 2084772071}
-  player: {fileID: 2084772070}
+  player: {fileID: 0}
 --- !u!1001 &991917188
 PrefabInstance:
   m_ObjectHideFlags: 0
