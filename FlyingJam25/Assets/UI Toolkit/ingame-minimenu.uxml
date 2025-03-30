@@ -1,0 +1,17 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/napoleon.uss?fileID=7433441132597879392&amp;guid=ad02aad470c562b499bc5ee36c117499&amp;type=3#napoleon" />
+    <engine:VisualElement class="brikule-bila" style="flex-grow: 1; position: absolute; height: 632px; width: 373px; top: 345px;">
+        <engine:Label text="SCORE: (X)" name="Label" style="margin-top: 25px;" />
+        <engine:Label text="Provisions: (X)" name="Label" />
+        <engine:Label text=" (plunder X, consume X)" name="Label" style="font-size: 30px; margin-bottom: 132px;" />
+        <engine:Button text="End turn" name="Button" class="tlacitka" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(152, 0, 0, 0.24); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-bottom-left-radius: 16px; margin-top: 20px;" />
+        <engine:Button text="View deck" name="Button" class="tlacitka" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(152, 0, 0, 0.24); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-bottom-left-radius: 16px;" />
+        <engine:Button text="Quit to menu" class="tlacitka" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(152, 0, 0, 0.24); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-bottom-left-radius: 16px;" />
+    </engine:VisualElement>
+    <engine:VisualElement style="flex-grow: 1; position: absolute; height: 346px; width: 373px; background-image: url(&quot;project://database/Assets/Art/Sprite/frostbite.png?fileID=2800000&amp;guid=c240a57832d525d44b795e261a92a5fc&amp;type=3#frostbite&quot;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(19, 23, 65);">
+        <engine:Label text="(Region name)" class="brikule-bila" style="background-image: none;" />
+        <engine:Label text="Provisions available: (X)" class="brikule-bila" style="background-image: none; white-space: normal; font-size: 45px; margin-top: 10px;" />
+        <engine:Label text="(plunder X)" class="brikule-bila" style="background-image: none; white-space: normal; font-size: 40px; margin-top: 10px;" />
+        <engine:Label text="Recruit score: (X)" class="brikule-bila" style="background-image: none; font-size: 45px; margin-top: 10px;" />
+    </engine:VisualElement>
+</engine:UXML>
