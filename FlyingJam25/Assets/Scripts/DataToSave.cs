@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 [System.Serializable]
 public class RegionData {
@@ -26,6 +27,7 @@ public class PlayerData {
     public List<CardData> discard;
     public int resources;
     public int turn;
+    public int score;
 
     public PlayerData(PlayerManager player) {
         deck = player.deck.Select(card => new CardData(card)).ToList();
@@ -33,6 +35,7 @@ public class PlayerData {
         discard = player.discard.Select(card => new CardData(card)).ToList();
         resources = player.resources;
         turn = player.turn;
+        score = player.score;
     }
 
 }

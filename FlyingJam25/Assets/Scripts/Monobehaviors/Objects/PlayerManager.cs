@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour {
     private List<RegionManager> controlledRegions;
 
     public int turn = 1;
+    public int score = 0;
     public int resources;
     [SerializeField] private int constantResourceDecrement;
     [SerializeField] private float factorResourceDecrement;
@@ -94,6 +95,7 @@ public class PlayerManager : MonoBehaviour {
 
         resources = data.resources;
         turn = data.turn;
+        score = data.score;
 
         foreach (var region in allRegions) {
             if (region != null && region.isPlayer) controlledRegions.Add(region);

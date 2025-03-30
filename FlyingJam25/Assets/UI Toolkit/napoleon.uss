@@ -42,6 +42,7 @@
     font-size: 50px;
     background-image: url("project://database/Assets/Art/Sprite/backgr.png?fileID=2800000&guid=942381614163245409d1bee8ef0c098b&type=3#backgr");
     -unity-background-scale-mode: scale-and-crop;
+    align-self: center;
 }
 
 .brikule-bila {
@@ -50,4 +51,13 @@
     font-size: 50px;
     background-image: url("project://database/Assets/Art/Sprite/backgr.png?fileID=2800000&guid=942381614163245409d1bee8ef0c098b&type=3#backgr");
     -unity-background-scale-mode: scale-and-crop;
+}
+
+.button {
+    width: 360px;
+}
+
+.value {
+    align-self: center;
+    margin-bottom: 10px;
 }

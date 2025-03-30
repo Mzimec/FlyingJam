@@ -37,8 +37,4 @@ public class SaveManager : MonoBehaviour
 
         player.Load(data.player, regions);
     }
-
-    public void ResetGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }

@@ -5,6 +5,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private UIDocument mainMenu;
     [SerializeField] private SaveManager saveManager;
+    [SerializeField] private NewGameManager newGameManager;
 
     void Start()
     {
@@ -19,11 +20,14 @@ public class MainMenuManager : MonoBehaviour
         if (continueB != null) continueB.clicked += OnContinueGame;
         if (quitB != null) quitB.clicked += OnQuitGame;
 
+        if (!newGameManager.iReadyForNewGame) {
+            mainMenu.gameObject.SetActive(false);
+            newGameManager.iReadyForNewGame = true;
+        }
     }
 
     private void OnNewGame() {
-        saveManager.ResetGame();
-        mainMenu.gameObject.SetActive(false);
+        newGameManager.ResetGame();
     }
 
     public void OnContinueGame() {

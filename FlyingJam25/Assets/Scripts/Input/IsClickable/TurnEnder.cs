@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class TurnEnder : MonoBehaviour {
     private IsClickable clickable;
     [SerializeField] EmptyEvent onTurnEnd;
-    [SerializeField] GameManager gameManager;
 
     private void Awake() {
         clickable = GetComponent<IsClickable>();
@@ -30,7 +29,6 @@ public class TurnEnder : MonoBehaviour {
     }
 
     private void OnTurnEnd() {
-        gameManager.OnEndTurn();
         onTurnEnd.Raise(new Empty());
     }
 }
