@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RegionSO", menuName = "Scriptable Objects/RegionSO")]
+[CreateAssetMenu(fileName = "RegionSO", menuName = "Scriptable Objects/Data/RegionSO")]
 public class RegionSO : ScriptableObject
 {
     public int recruitPoints;
