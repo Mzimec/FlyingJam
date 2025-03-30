@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.UIElements;
@@ -64,10 +66,42 @@ public class BattleMenuManager : MonoBehaviour
         Label effectLabel = ve.Q<Label>("EFFECT");
         string effectDescription = GetEffectDescription(card);
 
-        VisualElement attackElement = ve.Q<VisualElement>("AA");
-        Label attackLabel = attackElement.Q<Label>("aaT");
-        attackLabel.text = card.attackValues[0].ToString();
+        Dictionary<int, string> attackMapping = new Dictionary<int, string> {
+        { 0, "aaT" }, { 1, "acT" }, { 2, "arT" }, { 3, "asT" }
+    };
 
+        // Define vulnerability order mapping to UI elements
+        Dictionary<int, string> vulnerabilityMapping = new Dictionary<int, string> {
+        { 0, "daT" }, { 1, "dcT" }, { 2, "drT" }, { 3, "dsT" }
+    };
+
+        // Assign Attack Values
+        for (int i = 0; i < card.attackValues.Length; i++) {
+            if (i < attackMapping.Count) {
+                string labelName = attackMapping[i];
+
+                Label attackLabel = ve.Q<Label>(labelName);
+                if (attackLabel != null) {
+                    attackLabel.text = card.attackValues[i].ToString();
+                }
+            }
+        }
+
+        for (int i = 0; i < card.vulnerabilityValues.Length; i++) {
+            if (i < vulnerabilityMapping.Count) {
+                string labelName = vulnerabilityMapping[i];
+
+                Label vulnerabilityLabel = ve.Q<Label>(labelName);
+                if (vulnerabilityLabel != null) {
+                    vulnerabilityLabel.text = card.vulnerabilityValues[i].ToString();
+                }
+            }
+        }
+
+        VisualElement pictureElement = ve.Q<VisualElement>("Picture");
+        if (pictureElement != null && card.baseData.sprite != null) {
+            pictureElement.style.backgroundImage = new StyleBackground(card.baseData.sprite.texture);
+        }
         return ve;
 
     }
