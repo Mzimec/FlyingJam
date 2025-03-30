@@ -59,22 +59,30 @@ public class BattleManager : MonoBehaviour {
         ChangeVulnerabilityPool(dDefensiveValues, defenders);
     }
 
-    private void BattleOutcomes() {
+    private string BattleOutcomes() {
+        string res;
         if (aPoints > dPoints) {
             if (region.isPlayer) {
                 Debug.Log("Defeat");
                 region.recruitPoints -= (int)(((float)dPoints / aPoints) * region.recruitPoints);
+                res = "Defeat";
             }
             else Debug.Log("Victory");
             region.isPlayer = !region.isPlayer;
+            res = "Victory";
         }
         else {
-            if (region.isPlayer) Debug.Log("Victory");
+            if (region.isPlayer) {
+                Debug.Log("Victory");
+                res = "Victory";
+            }
             else {
                 Debug.Log("Defeat");
                 region.recruitPoints -= (int)(((float)aPoints / dPoints) * region.recruitPoints);
+                res = "Defeat";
             }
         }
+        return res;
     }
 
     private void RunBattle() {
@@ -106,6 +114,6 @@ public class BattleManager : MonoBehaviour {
     }
     
     public void OnFight() {
-
+        RunBattle();
     }
 }
