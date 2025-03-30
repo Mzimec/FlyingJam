@@ -17,7 +17,7 @@ MonoBehaviour:
   resources: 30
   resourceRefreshRate: 1
   riotChance: 0.2
-  riotBoundary: 4
+  riotBoundary: 5
   battlefieldSize: 3
   cardsToGenerate:
   - {fileID: 11400000, guid: adc644ffb51b0494680e0e5945c989db, type: 2}
