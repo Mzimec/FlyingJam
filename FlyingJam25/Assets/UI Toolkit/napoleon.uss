@@ -2,7 +2,7 @@
 }
 
 .tlacitka {
-    width: 50%;
+    width: auto;
     -unity-text-align: upper-center;
     align-self: flex-end;
     margin-top: 20px;
@@ -12,6 +12,7 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
+    background-size: 100% 100%;
 }
 
 .main-menu {
