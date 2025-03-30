@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
     [SerializeField] private List<CardSO> startingDeck;
     
-    private List<CardManager> deck = new List<CardManager>();
-    private List<CardManager> hand = new List<CardManager>();
+    public List<CardManager> deck = new List<CardManager>();
+    public List<CardManager> hand = new List<CardManager>();
     private List<CardManager> unitsInBattle = new List<CardManager>();
-    private List<CardManager> discard = new List<CardManager>();
+    public List<CardManager> discard = new List<CardManager>();
 
     private List<RegionManager> controlledRegions;
 
-    [SerializeField] private int resources;
+    public int turn = 1;
+    public int resources;
     [SerializeField] private int constantResourceDecrement;
     [SerializeField] private float factorResourceDecrement;
 
@@ -78,5 +79,24 @@ public class PlayerManager : MonoBehaviour {
 
     public void OnEndTurn() {
         UseResources();
+    }
+
+    public void Load(PlayerData data, List<RegionManager> allRegions) {
+        deck.Clear();
+        hand.Clear();
+        discard.Clear();
+        unitsInBattle.Clear();
+        controlledRegions.Clear();
+
+        deck = data.deck.Select(cardData => new CardManager(cardData)).ToList();
+        hand = data.hand.Select(cardData => new CardManager(cardData)).ToList();
+        discard = data.discard.Select(cardData => new CardManager(cardData)).ToList();
+
+        resources = data.resources;
+        turn = data.turn;
+
+        foreach (var region in allRegions) {
+            if (region != null && region.isPlayer) controlledRegions.Add(region);
+        }
     }
 }

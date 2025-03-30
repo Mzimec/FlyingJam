@@ -7,15 +7,16 @@ using UnityEngine;
 
 public class RegionManager : MonoBehaviour {
 
-    [SerializeField] public RegionSO baseData;
+    public RegionSO baseData;
 
-    [SerializeField] public int recruitPoints;
-    [SerializeField] private int resources;
-    [SerializeField] private int regionDistance;
+    public string regionName;
 
-    [SerializeField] private bool isAttacked = false;
+    public int recruitPoints;
+    public int resources;
+    public int regionDistance;
 
-    [SerializeField] public bool isPlayer;
+    public bool isAttacked = false;
+    public bool isPlayer;
 
     [SerializeField] private List<RegionManager> neighbors;
     private BattleGenerator battleGenerator;
@@ -102,6 +103,14 @@ public class RegionManager : MonoBehaviour {
 
     public void SetBattle(GameObject battleInstance) {
         battle = battleInstance;
+    }
+
+    public void Load(RegionData data) {
+        recruitPoints = data.recruitPoints;
+        resources = data.resources;
+        regionDistance = data.regionDistance;
+        isAttacked = data.isAttacked;
+        isPlayer = data.isPlayer;
     }
 
 

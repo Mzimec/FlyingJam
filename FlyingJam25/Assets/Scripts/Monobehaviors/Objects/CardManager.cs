@@ -4,14 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CardManager {
-    [SerializeField] private CardSO baseData;
+    public CardSO baseData;
     public bool hasEffects = false;
     public bool hasAttack = false;
     public int[] attackValues;
     public int[] vulnerabilityValues;
-    private List<Effect> effects;
+    public List<Effect> effects;
 
 
+    public CardManager(CardData card) {
+        baseData = card.baseData;
+        hasEffects = card.hasEffects;
+        hasAttack = card.hasAttack;
+        attackValues = new int[card.attackValues.Length];
+        vulnerabilityValues = new int[card.vulnerabilityValues.Length];
+        card.attackValues.CopyTo(attackValues, 0);
+        card.vulnerabilityValues.CopyTo(vulnerabilityValues, 0);
+        effects = new List<Effect>(card.effects);
+    }
     public CardManager(CardSO baseCard) {
         baseData = baseCard;
         if (baseData.attackValues != null) hasAttack = true;

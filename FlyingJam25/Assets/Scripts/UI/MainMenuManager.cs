@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UIManager : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private UIDocument mainMenu;
+    [SerializeField] private SaveManager saveManager;
 
     void Start()
     {
@@ -21,12 +22,23 @@ public class UIManager : MonoBehaviour
     }
 
     private void OnNewGame() {
-
+        saveManager.ResetGame();
+        mainMenu.gameObject.SetActive(false);
     }
 
     public void OnContinueGame() {
         mainMenu.gameObject.SetActive(false);    
     }
 
-    public void OnQuitGame() { }
+    public void OnQuitGame() {
+        // Quit the application
+#if UNITY_EDITOR
+        // Stop play mode in the editor
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // Quit the application in a build
+        Application.Quit();
+#endif
+
+    }
 }
