@@ -5,12 +5,13 @@ using UnityEngine.Events;
 public enum ESide { ALLY, ENEMY, BOTH };
 public abstract class Effect : ScriptableObject{
     public ESide side;
+    public string description;
+    [SerializeField] protected int index;
     public virtual void Execute(CardManager card) { }
 }
 
 public abstract class Effect<T> : Effect {
     [SerializeField] protected T value;
-    [SerializeField] protected int index;
     [SerializeField] protected List<UnityAction<CardManager, T>> responses;
 
     public override void Execute(CardManager cards) {
