@@ -53,13 +53,3 @@
     -unity-background-scale-mode: scale-and-crop;
 }
 
-
-.button {
-    width: 360px;
-}
-
-.value {
-    align-self: center;
-    margin-bottom: 10px;
-
-}
