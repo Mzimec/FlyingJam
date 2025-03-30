@@ -2480,7 +2480,7 @@ MonoBehaviour:
   deckMenu: {fileID: 0}
   mainMenu: {fileID: 672422882}
   mouse: {fileID: 2084772071}
-  player: {fileID: 0}
+  player: {fileID: 2084772070}
 --- !u!1001 &991917188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3601,7 +3601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleMenu: {fileID: 1600757178}
-  player: {fileID: 0}
+  player: {fileID: 2084772070}
+  visualTree: {fileID: 9197481963319205126, guid: d059ccceae70d8a4085263b18b1304cb, type: 3}
 --- !u!114 &1654342425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
