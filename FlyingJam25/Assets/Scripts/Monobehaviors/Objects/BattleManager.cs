@@ -12,7 +12,7 @@ public class BattleManager : MonoBehaviour {
     private int[] aDefensiveValues = new int[ConstantValues.cardTypesCount];
     private int[] dDefensiveValues = new int[ConstantValues.cardTypesCount];
 
-    private int aPoints, dPoints;
+    public int aPoints, dPoints;
 
     private void Awake() {
         region = GetComponentInParent<RegionManager>();
@@ -85,7 +85,7 @@ public class BattleManager : MonoBehaviour {
         return res;
     }
 
-    private void RunBattle() {
+    private string RunBattle() {
         foreach(var card in attackers) {
             if (card.hasEffects) card.ApplyEffects(attackers, defenders);
         }
@@ -95,7 +95,7 @@ public class BattleManager : MonoBehaviour {
 
         CountPools();
         CountVictoryPoints();
-        BattleOutcomes();
+        return BattleOutcomes();
               
     }
 
@@ -113,7 +113,7 @@ public class BattleManager : MonoBehaviour {
         }
     }
     
-    public void OnFight() {
-        RunBattle();
+    public string OnFight() {
+        return RunBattle();
     }
 }

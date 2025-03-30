@@ -6,8 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.UIElements;
 
-public class BattleMenuManager : MonoBehaviour
-{
+public class BattleMenuManager : MonoBehaviour {
     [SerializeField] private UIDocument battleMenu;
     [SerializeField] UIDocument victoryMenu;
     [SerializeField] PlayerManager player;
@@ -24,6 +23,11 @@ public class BattleMenuManager : MonoBehaviour
 
     List<CardVE> playerCards;
     List<bool> areInHand = new List<bool>();
+
+    Label victory;
+    Label points;
+    Label recruit;
+
 
 
     private void Awake() {
@@ -44,6 +48,14 @@ public class BattleMenuManager : MonoBehaviour
 
         cancelB.clicked += OnCancel;
         battleB.clicked += OnFight;
+
+        victory = rootV.Q<Label>("V-D-text");
+        points = rootV.Q<Label>("Points");
+        recruit = rootV.Q<Label>("Recruit");
+
+        Button cancelBV = rootV.Q<Button>("CancleB");
+        cancelBV.clicked += OnCancelV;
+
 
         response.AddListener(OnCardClick);
 
@@ -87,17 +99,24 @@ public class BattleMenuManager : MonoBehaviour
         areInHand[index] = !areInHand[index];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnFight() {
-        battleManager.OnFight();    
+        string status = battleManager.OnFight();
+        victoryMenu.gameObject.SetActive(true);
+        WriteOutcomes(status);
+        battleMenu.gameObject.SetActive(false);
     }
 
     private void OnCancel() { 
         battleMenu.gameObject.SetActive(false);
+    }
+
+    private void OnCancelV() {
+        victoryMenu.gameObject?.SetActive(false);
+    }
+
+    private void WriteOutcomes(string s) {
+        victory.text = s;
+        points.text = $"Attackers: {battleManager.aPoints} points.\n Defenders {battleManager.dPoints} points.";
+        recruit.text = $"New Recruit Value is: {battleManager.region.recruitPoints}.";
     }
 }
