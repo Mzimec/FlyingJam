@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06926cc95f2a19a4c817f39789161968, type: 3}
   m_Name: CardSO 7
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  cardName: Cavalry
-  value: 7
+  sprite: {fileID: 4051853549349518899, guid: 47b4076c59e7f894e965839cfe93fe1f, type: 3}
+  cardName: Warhorse
+  value: 11
   prefPos: {fileID: 0}
-  attackValues: 00000000000000000000000000000000
-  vulnerabilityValues: 00000000000000000000000000000000
+  attackValues: 01000000020000000000000000000000
+  vulnerabilityValues: 00000000000000000100000000000000
   effects: []
