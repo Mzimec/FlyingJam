@@ -36,11 +36,22 @@ public class BattleMenuManager : MonoBehaviour
     }
 
     private string GetEffectDescription(CardManager card) {
-        string res = "";
-        if (card == null) Debug.LogError("Null Card");
+        if (card == null) {
+            Debug.LogError("Card is null.");
+            return string.Empty; 
+        }
 
-        foreach (var effect in card.effects) res += effect.description + "\n";
-        return res
+        if (!card.hasEffects) {
+            return string.Empty;
+        }
+
+        var sb = new System.Text.StringBuilder();
+
+        foreach (var effect in card.effects) {
+            sb.AppendLine(effect.description);  
+        }
+
+        return sb.ToString();
 
     }
 
@@ -51,7 +62,12 @@ public class BattleMenuManager : MonoBehaviour
         cardNameLabel.text = card.baseData.cardName;
 
         Label effectLabel = ve.Q<Label>("EFFECT");
-        string effectDescription = 
+        string effectDescription = GetEffectDescription(card);
+
+        VisualElement attackElement = ve.Q<VisualElement>("AA");
+        Label attackLabel = attackElement.Q<Label>("aaT");
+        attackLabel.text = card.attackValues[0].ToString();
+
         return ve;
 
     }
