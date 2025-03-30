@@ -27,8 +27,12 @@ public class BattleManager : MonoBehaviour {
     }
 
     private void GenerateOpponentCards() {
+        var cardsToEnter = region.GenerateLoadOut();
         if (region.isPlayer) {
-           var cardsToEnter = region.GenerateLoadOut();
+            for (int i = 0; i < attackers.Length; i++) attackers[i] = new CardManager(cardsToEnter[i]);
+        }
+        else {
+            for (int i = 0; i < defenders.Length; i++) defenders[i] = new CardManager(cardsToEnter[i]);
         }
     }
 
