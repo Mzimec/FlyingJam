@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06926cc95f2a19a4c817f39789161968, type: 3}
-  m_Name: CardSO
+  m_Name: CardSO 17
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   cardName: Cavalry
