@@ -53,25 +53,7 @@
     -unity-background-scale-mode: scale-and-crop;
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-.card {
-    align-items: auto;
-    align-content: auto;
-    width: 335px;
-    min-width: 335px;
-    max-width: 335px;
-    height: 485px;
-    min-height: 485px;
-    max-height: 485px;
-    margin-top: -45px;
-    margin-right: -45px;
-    margin-bottom: -45px;
-    margin-left: -45px;
-    -unity-background-scale-mode: scale-to-fit;
-=======
->>>>>>> Stashed changes
+
 .button {
     width: 360px;
 }
@@ -79,8 +61,5 @@
 .value {
     align-self: center;
     margin-bottom: 10px;
-<<<<<<< Updated upstream
-=======
->>>>>>> dd0583b443725b2a34aa510cef1abc6bf87a058d
->>>>>>> Stashed changes
+
 }
