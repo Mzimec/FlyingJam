@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,8 +15,16 @@ public class BattleMenuManager : MonoBehaviour
 
     BattleManager battleManager;
 
+    UnityEvent<CardVE> response = new UnityEvent<CardVE>();
+
 
     VisualElement hand;
+    VisualElement attackVE;
+    VisualElement defenseVE;
+
+    List<CardVE> playerCards;
+    List<bool> areInHand = new List<bool>();
+
 
     private void Awake() {
     }
@@ -27,14 +36,55 @@ public class BattleMenuManager : MonoBehaviour
         var rootV = victoryMenu.rootVisualElement;
         hand = root.Q<VisualElement>("Pool");
 
+        attackVE = root.Q<VisualElement>("AttackVE");
+        defenseVE = root.Q<VisualElement>("DefenseVE");
+
         Button cancelB = root.Q<Button>("CancelB");
         Button battleB = root.Q<Button>("BattleB");
 
         cancelB.clicked += OnCancel;
         battleB.clicked += OnFight;
 
+        response.AddListener(OnCardClick);
+
         battleMenu.gameObject.SetActive(false);
         victoryMenu.gameObject.SetActive(false);
+    }
+
+    private void OnEnable() {
+       for(int i = 0; i < player.hand.Count; i++ ) {
+            CardVE cve = new CardVE(player.hand[i], visualTree, response, i);
+            playerCards.Add(cve);
+            areInHand.Add(true);
+       } 
+    }
+
+    private void OnDisable() {
+        for (int i = playerCards.Count - 1; i >= 0; i--) {
+            if (areInHand[i]) {
+                areInHand.RemoveAt(i);
+                playerCards.RemoveAt(i);
+            }
+        }
+
+        for(int i = 0; i < playerCards.Count; i++) {
+            playerCards[i].index = i;
+        }
+    }
+
+    private void OnCardClick(CardVE cve) {
+        int index = cve.index;
+        if (areInHand[index]) {
+            hand.Remove(playerCards[index]);
+            if (battleManager.region.isPlayer) defenseVE.Add(playerCards[index]);
+            else attackVE.Add(playerCards[index]);
+        }
+        else {
+            if (battleManager.region.isPlayer) defenseVE.Remove(playerCards[index]);
+            else attackVE.Remove(playerCards[index]);
+            hand.Add(playerCards[index]);
+        }
+        areInHand[index] = !areInHand[index];
     }
 
     // Update is called once per frame
@@ -49,26 +99,5 @@ public class BattleMenuManager : MonoBehaviour
 
     private void OnCancel() { 
         battleMenu.gameObject.SetActive(false);
-    }
-    private void PopulateHand() {
-        if (hand == null) {
-            Debug.LogError("Hand ScrollView is not assigned!");
-            return;
-        }
-
-        // Clear previous children
-        hand.Clear();
-
-        // Loop through each card in player's hand and add it to the ScrollView
-        foreach (var card in player.hand) {
-            UnityEvent response = new UnityEvent();
-            response.AddListener(() => OnHandToField(card));
-            //CardVe cardVE = new CardVE(card, visualTree, response);  // Create the VisualElement for the card
-            //hand.Add(cardVE);  // Add the VisualElement to the ScrollView
-        }
-    }
-
-    private void OnHandToField(CardManager c) {
-        player.hand.Remove(c);
     }
 }

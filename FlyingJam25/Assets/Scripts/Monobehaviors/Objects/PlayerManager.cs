@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour {
     
     public List<CardManager> deck = new List<CardManager>();
     public List<CardManager> hand = new List<CardManager>();
-    private List<CardManager> unitsInBattle = new List<CardManager>();
+    public List<CardManager> unitsInBattle = new List<CardManager>();
     public List<CardManager> discard = new List<CardManager>();
 
     private List<RegionManager> controlledRegions;
