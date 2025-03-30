@@ -10,14 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2531f2c907fc0a4283a5423d1fd9813, type: 3}
-  m_Name: Region 1
+  m_Name: ZOMBIez
   m_EditorClassIdentifier: 
-  recruitPoints: 15
+  recruitPoints: 46
   recruitRefreshRate: 3
-  resources: 50
+  resources: 20
   resourceRefreshRate: 1
   riotChance: 0.2
   riotBoundary: 4
   battlefieldSize: 3
   cardsToGenerate:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cf1f53c68666a8c45be4613e262f9f77, type: 2}
+  - {fileID: 11400000, guid: d062cb83cb8c09b478f16e457c6427da, type: 2}
+  - {fileID: 11400000, guid: cf1f53c68666a8c45be4613e262f9f77, type: 2}
+  - {fileID: 11400000, guid: 6f4a08367d16c544880eb7477d59bd7a, type: 2}
+  - {fileID: 11400000, guid: adc644ffb51b0494680e0e5945c989db, type: 2}
+  - {fileID: 11400000, guid: da352563d74a5d44eaa66bd31f754dd8, type: 2}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2531f2c907fc0a4283a5423d1fd9813, type: 3}
+  m_Name: ZOMBIhard
+  m_EditorClassIdentifier: 
+  recruitPoints: 80
+  recruitRefreshRate: 3
+  resources: 200
+  resourceRefreshRate: 1
+  riotChance: 0.2
+  riotBoundary: 4
+  battlefieldSize: 4
+  cardsToGenerate:
+  - {fileID: 11400000, guid: cf1f53c68666a8c45be4613e262f9f77, type: 2}
+  - {fileID: 11400000, guid: d062cb83cb8c09b478f16e457c6427da, type: 2}
+  - {fileID: 11400000, guid: a3d032f24538e2f4d8d47230e2c4dc02, type: 2}
+  - {fileID: 11400000, guid: 6f4a08367d16c544880eb7477d59bd7a, type: 2}
+  - {fileID: 11400000, guid: adc644ffb51b0494680e0e5945c989db, type: 2}
+  - {fileID: 11400000, guid: da352563d74a5d44eaa66bd31f754dd8, type: 2}

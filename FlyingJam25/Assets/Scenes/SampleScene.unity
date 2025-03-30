@@ -347,12 +347,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7760953313449961325, guid: 9c4bd9444468a624eb37d8ee7d0da20f, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1646d732fcb53c54bad0308780b6f851, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Mongolia
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -460,12 +468,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -445189602233881614, guid: b26086fd032ca874e8ff730a1922b95e, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5c34c53340bbea4c8ea731c3f4c5985, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: The great southern taiga
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -617,12 +633,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 194267116164964566, guid: 0658d193f012bb04a8fc3c6a24746d92, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: f30b2c8ef41735f479498ca4f2833d98, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Smolensk
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -809,8 +833,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 438895471204581479, guid: 867365a7e99e12843b1938831953d2af, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f772af815c9ec042860e910779e6e62, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Valley of Neris
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -958,12 +990,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8321102221490951993, guid: 8b9040587b9fff74cb69b653e06c2c60, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: dc96dbf881506a447bfc66282bb83553, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
-      value: 20
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Kovno
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
@@ -1329,12 +1369,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7471820393867792662, guid: 869c3cc710a322041a743798674e5a3a, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5137f00d7daf2664cad4f092a5334d2d, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Vitebsk tundra
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -1696,12 +1744,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8201201764749319361, guid: acf46cf8559e2d44082010eb4476dc0e, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 406ad398fcb91df408c615d54e8be1d3, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Moscow
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -1968,8 +2024,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1737269123907566980, guid: 295aa93d7f0bf934abf3bcb1423b9f63, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: dc96dbf881506a447bfc66282bb83553, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Neris bog
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -2105,12 +2169,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6709487162433953148, guid: a3e3679059e4f764494c46a62cde67a8, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: c65aa3649e08a684c8f570e150aecc59, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Kaluga factory
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -2262,12 +2334,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 637040348724207496, guid: 6dba7faf1b3444c44a2f43bb4be23f95, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1646d732fcb53c54bad0308780b6f851, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Maloyaroslavets
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -2383,12 +2463,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -9203030668562866256, guid: 947948b5a6c995e4c9614108cae49cb9, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5c34c53340bbea4c8ea731c3f4c5985, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Cracked earth
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -2570,8 +2658,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3432582381386852895, guid: a7d41656131876342b9e2f23d9e4f523, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f772af815c9ec042860e910779e6e62, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Vilnius
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -2687,12 +2783,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5832024049669076185, guid: a564a60503f786c4c835536b7631a74a, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: f30b2c8ef41735f479498ca4f2833d98, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Vitebsk
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -2820,12 +2924,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4405548165813298403, guid: d25187205a90dd743beb23e5c0923267, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5c34c53340bbea4c8ea731c3f4c5985, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Kopys
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3025,12 +3137,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2786342544636902630, guid: 26ca3cc718c6e4a44bb468e93566c29c, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 406ad398fcb91df408c615d54e8be1d3, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Lake Baikal
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3146,8 +3266,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8569003786385872269, guid: 1d450602d6107cb459c375d027cb5b6d, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f772af815c9ec042860e910779e6e62, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Valley of Berezina
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3291,8 +3419,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 545875093725613961, guid: 388e8d8ac557ad44dbe1fa9894371a1d, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f772af815c9ec042860e910779e6e62, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Borderlands
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3464,12 +3600,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1882757722001119989, guid: 89a80adb8d78c48449867dd7d922285b, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5c34c53340bbea4c8ea731c3f4c5985, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Southern steppe
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3601,6 +3745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleMenu: {fileID: 1600757178}
+  victoryMenu: {fileID: 0}
   player: {fileID: 2084772070}
   visualTree: {fileID: 9197481963319205126, guid: d059ccceae70d8a4085263b18b1304cb, type: 3}
 --- !u!114 &1654342425 stripped
@@ -3714,6 +3859,10 @@ PrefabInstance:
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: The wastes
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3853,12 +4002,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8769137699580484205, guid: 1a5de50271f9f744c95bd37debe8ed3d, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 406ad398fcb91df408c615d54e8be1d3, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Ural mountains
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -3986,12 +4143,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8835117709124376895, guid: 9975214ed7c601f4989753e06b67821b, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5c34c53340bbea4c8ea731c3f4c5985, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Deadlands
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -4111,12 +4276,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3245900788443506428, guid: d111004557b530147886c04d1cfc5015, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 406ad398fcb91df408c615d54e8be1d3, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Tsar's palace
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -4260,12 +4433,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7401308253434774762, guid: 36422110fa8e9c243bb6276062690c65, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1646d732fcb53c54bad0308780b6f851, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Kortkeros chasm
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -4519,12 +4700,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8628015757821773985, guid: bcd966954b55827419764fe37e343f03, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5137f00d7daf2664cad4f092a5334d2d, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Sami village
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -4664,12 +4853,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1487183290106766203, guid: fa9dda1990e9711489bfc225ac151574, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5c34c53340bbea4c8ea731c3f4c5985, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Golynki
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -4797,12 +4994,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4320513348263900905, guid: 35659e16ed4bcf74a88d4b045cc5d969, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: c65aa3649e08a684c8f570e150aecc59, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Rusthills
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -4926,12 +5131,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5952507938862415068, guid: 535436cee67ec7842a9dfd2f7ec30f8b, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1646d732fcb53c54bad0308780b6f851, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Ural foothils
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -5130,12 +5343,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1162813617717342589, guid: 3f4758509b82d944db535b8c5b38dffb, type: 3}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: c65aa3649e08a684c8f570e150aecc59, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Borodino
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
@@ -5263,6 +5484,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: Minsk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
@@ -5360,12 +5585,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f772af815c9ec042860e910779e6e62, type: 2}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: regionName
+      value: "Duch\xE9 de Varsovie"
       objectReference: {fileID: 0}
     - target: {fileID: 8231782658262866641, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: recruitPoints
