@@ -4,14 +4,18 @@ using UnityEngine.Events;
 using UnityEngine.UIElements;
 using UnityEngine.VFX;
 
-public partial class CardVe : VisualElement {
+public partial class CardVE : VisualElement {
 
     public CardManager card;
     private VisualTreeAsset visualTree;
-    private UnityEvent response;
-    public CardVe(CardManager c, VisualTreeAsset t, UnityEvent r) {
+    private UnityEvent<CardVE> response;
+    public int index;
+
+    public CardVE(CardManager c, VisualTreeAsset t, UnityEvent<CardVE> r, int id) {
         card = c;
         visualTree = t;
+        response = r;
+        index = id;
         VisualElement ve = visualTree.CloneTree();
 
         Label cardNameLabel = ve.Q<Label>("CARD-name");
@@ -58,7 +62,7 @@ public partial class CardVe : VisualElement {
         }
 
         Button cudl = ve.Q<Button>("Cudl");
-        cudl.clicked += response.Invoke;
+        cudl.clicked += () => response.Invoke(this);
     }
 
     private string GetEffectDescription(CardManager card) {
