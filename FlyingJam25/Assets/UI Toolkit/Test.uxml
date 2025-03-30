@@ -1,7 +1,0 @@
-<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:Template name="CARD" src="project://database/Assets/UI%20Toolkit/CARD.uxml?fileID=9197481963319205126&amp;guid=6b9ede36bfeffe84789abe92856990cd&amp;type=3#CARD" />
-    <Style src="project://database/Assets/UI%20Toolkit/napoleon.uss?fileID=7433441132597879392&amp;guid=ad02aad470c562b499bc5ee36c117499&amp;type=3#napoleon" />
-    <engine:VisualElement style="flex-grow: 1; width: 1020px; height: 700px;">
-        <engine:Instance template="CARD" style="height: 495px; width: 336px;" />
-    </engine:VisualElement>
-</engine:UXML>
