@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.UIElements;
 using UnityEngine.VFX;
 
-public class CardVe : VisualElement {
+public partial class CardVe : VisualElement {
 
     public CardManager card;
     private VisualTreeAsset visualTree;

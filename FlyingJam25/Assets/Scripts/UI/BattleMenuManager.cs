@@ -63,13 +63,12 @@ public class BattleMenuManager : MonoBehaviour
         foreach (var card in player.hand) {
             UnityEvent response = new UnityEvent();
             response.AddListener(() => OnHandToField(card));
-            CardVe cardVE = new CardVE(card, visualTree, response);  // Create the VisualElement for the card
-            hand.Add(cardVE);  // Add the VisualElement to the ScrollView
+            //CardVe cardVE = new CardVE(card, visualTree, response);  // Create the VisualElement for the card
+            //hand.Add(cardVE);  // Add the VisualElement to the ScrollView
         }
     }
 
     private void OnHandToField(CardManager c) {
-        player.hand.Remove(c)
-           ;
+        player.hand.Remove(c);
     }
 }
