@@ -13,7 +13,7 @@ public class BattleMenuManager : MonoBehaviour
     BattleManager battleManager;
 
 
-    ScrollView hand;
+    VisualElement hand;
 
     private void Awake() {
     }
@@ -22,7 +22,7 @@ public class BattleMenuManager : MonoBehaviour
     void Start()
     {
         var root = battleMenu.rootVisualElement;
-        hand = root.Q<ScrollView>("Hand");
+        hand = root.Q<VisualElement>("Hand");
     }
 
     // Update is called once per frame
@@ -57,7 +57,7 @@ public class BattleMenuManager : MonoBehaviour
 
     }
 
-    private VisualElement DrawCard(CardManager card) {
+    private VisualElement GetCardVE(CardManager card) {
         VisualElement ve = visualTree.CloneTree();
 
         Label cardNameLabel = ve.Q<Label>("CARD-name");
