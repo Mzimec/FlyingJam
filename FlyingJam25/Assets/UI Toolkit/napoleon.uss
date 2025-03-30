@@ -1,6 +1,3 @@
-.brikule-bila {
-}
-
 .tlacitka {
     width: auto;
     -unity-text-align: upper-center;
@@ -36,4 +33,10 @@
     left: 3px;
     top: 8px;
     -unity-text-align: upper-center;
+}
+
+.brikule-bila {
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/Art/Font/Brikula-11.otf?fileID=12800000&guid=8a154afaba37d2d498f520c3ff175564&type=3#Brikula-11");
+    font-size: 50px;
 }
