@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1989861682019535851}
   - component: {fileID: 4852407873399473265}
   - component: {fileID: 2260869791799069132}
+  - component: {fileID: -864288687804732825}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Battle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9622642, g: 0.05628333, b: 0.05628333, a: 1}
+  m_Sprite: {fileID: 1938329166405313482, guid: 1d8570de0b3b0204fa2b56dc5d8bae52, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,5 +99,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fb5dd578fc14274385446f92b0d4f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  region: {fileID: 0}
+  aPoints: 0
+  dPoints: 0
+--- !u!114 &-864288687804732825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675862159705460883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5969851fff8d4794289d40d285234513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

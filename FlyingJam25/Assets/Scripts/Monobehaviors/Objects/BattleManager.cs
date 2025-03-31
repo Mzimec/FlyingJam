@@ -17,7 +17,7 @@ public class BattleManager : MonoBehaviour {
     private void Awake() {
         region = GetComponentInParent<RegionManager>();
         if (region == null) {
-            Debug.LogError("BattleManager is not inside a RegionManager!");
+            Debug.LogError("BattleManager is not inside a RegionManager!"); 
             return;
         }
 
@@ -153,5 +153,9 @@ public class BattleManager : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void OpenBattle() {
+
     }
 }
