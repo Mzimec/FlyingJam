@@ -4,29 +4,22 @@ using UnityEngine.UIElements;
 
 public class InfoPanelManager : MonoBehaviour
 {
-    [SerializeField] UIDocument menu;
-    [SerializeField] UIDocument deckMenu;
-    [SerializeField] UIDocument mainMenu;
+    UIDocument menu;
+    [SerializeField] GameObject deckMenu;
+    [SerializeField] GameObject mainMenu;
     [SerializeField] MouseInputManager mouse;
     [SerializeField] PlayerManager player;
+    [SerializeField] EmptyEvent onTurnEnd;
 
-    RegionManager region;
-    EmptyEvent onTurnEnd;
+    Label regionName, regionPT, regionProvisions, recruitPT, recruitScore, score, resources, changes;
 
-    Label regionName;
-    Label regionPT;
-    Label regionProvisions;
-    Label recruitPT;
-    Label recruitScore;
-    Label score;
-    Label resources;
-    Label changes;
+    Button endTurnB, deckB, menuB;
 
-    Button endTurnB;
-    Button deckB;
-    Button menuB;
+    private void Awake() {
+        menu = GetComponent<UIDocument>();
+    }
 
-    private void Start() {
+    private void OnEnable() {
         var root = menu.rootVisualElement;
 
         var regionVE = root.Q<VisualElement>("RegionContainer");
@@ -45,12 +38,19 @@ public class InfoPanelManager : MonoBehaviour
         deckB = infoVE.Q<Button>("Deck");
         menuB = infoVE.Q<Button>("Menu");
 
-        endTurnB.clicked += OnEndTurnClicked;
-        deckB.clicked += OnDeckClicked;
-        menuB.clicked += OnMenuClicked;
+        if(endTurnB != null) endTurnB.clicked += OnEndTurnClicked;
+        if (deckB != null) deckB.clicked += OnDeckClicked;
+        if (menuB != null) menuB.clicked += OnMenuClicked;
+    }
+
+    private void OnDisable() {
+        if (endTurnB != null) endTurnB.clicked -= OnEndTurnClicked;
+        if (deckB != null) deckB.clicked -= OnDeckClicked;
+        if (menuB != null) menuB.clicked -= OnMenuClicked;
     }
 
     private void Update() {
+        RegionManager region = null;
         if (mouse.hit.collider != null) {
             region = mouse.hit.collider.GetComponent<RegionManager>();
         }
@@ -81,10 +81,10 @@ public class InfoPanelManager : MonoBehaviour
     }
 
     private void OnDeckClicked() {
-        deckMenu.gameObject.SetActive(true);
+        if(deckMenu != null) deckMenu.SetActive(true);
     }
 
     private void OnMenuClicked() {
-        mainMenu.gameObject.SetActive(true);
+        if (mainMenu != null) mainMenu.SetActive(true);
     }
 }

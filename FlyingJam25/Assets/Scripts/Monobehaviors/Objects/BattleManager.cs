@@ -4,8 +4,8 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour {
     public RegionManager region;
 
-    private CardManager[] attackers;
-    private CardManager[] defenders;
+    public CardManager[] attackers;
+    public CardManager[] defenders;
 
     private int[] aOffensiveValues = new int[ConstantValues.cardTypesCount];
     private int[] dOffensiveValues = new int[ConstantValues.cardTypesCount];
@@ -115,5 +115,43 @@ public class BattleManager : MonoBehaviour {
     
     public string OnFight() {
         return RunBattle();
+    }
+
+    public void AddCard(CardManager card) {
+        if (region.isPlayer) {
+            for (int i = 0; i < defenders.Length; i++) {
+                if (defenders[i] == null) {
+                    defenders[i] = card;
+                    break;
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < attackers.Length; i++) {
+                if (attackers[i] == null) {
+                    attackers[i] = card;
+                    break;
+                }
+            }
+        }
+    }
+
+    public void RemoveCard(CardManager card) {
+        if (region.isPlayer) {
+            for (int i = 0; i < defenders.Length; i++) {
+                if (defenders[i] == card) {
+                    defenders[i] = null;
+                    break;
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < attackers.Length; i++) {
+                if (attackers[i] == card) {
+                    attackers[i] = null;
+                    break;
+                }
+            }
+        }
     }
 }
