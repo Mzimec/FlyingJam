@@ -3,23 +3,19 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : ScriptableObject
 {
-    private string path;
-    private List<RegionManager> regions;
-    private PlayerManager player;
 
-    private void Awake() {
-        path = Path.Combine(Application.persistentDataPath, "savegame.json");
-        regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.None));
-        player = GetComponent<PlayerManager>();
-    }
+    private string path = Path.Combine(Application.persistentDataPath, "savegame.json");
+    private DataToSave loadedData;
 
-    public void SaveGame() { 
-        DataToSave data = new DataToSave(regions, player);
-        string json = JsonUtility.ToJson(data, true);
+    public void SaveGame() {
+        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.None));
+        PlayerManager player = FindFirstObjectByType<PlayerManager>();
+        if (player == null || regions.Count != ConstantValues.regionCount) return;
+        DataToSave dataToSave = new DataToSave(regions, player);
+        string json = JsonUtility.ToJson(dataToSave, true);
         File.WriteAllText(path, json);
-
     }
 
     public void LoadGame() {
@@ -29,12 +25,21 @@ public class SaveManager : MonoBehaviour
         }
 
         string json = File.ReadAllText(path);
-        DataToSave data = JsonUtility.FromJson<DataToSave>(json);
+        loadedData = JsonUtility.FromJson<DataToSave>(json);
+    }
+
+    public void ApplyLoadedData() {
+        if (loadedData == null) return;
+
+        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.None));
+        PlayerManager player = FindFirstObjectByType<PlayerManager>();
 
         for (int i = 0; i < regions.Count; i++) {
-            regions[i].Load(data.regions[i]);
+            regions[i].Load(loadedData.regions[i]);
         }
 
-        player.Load(data.player, regions);
+        player.Load(loadedData.player, regions);
+        loadedData = null;
+
     }
 }

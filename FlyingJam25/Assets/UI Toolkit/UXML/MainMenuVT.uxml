@@ -2,8 +2,9 @@
     <Style src="project://database/Assets/UI%20Toolkit/napoleon.uss?fileID=7433441132597879392&amp;guid=ad02aad470c562b499bc5ee36c117499&amp;type=3#napoleon" />
     <engine:VisualElement class="background">
         <engine:Label text="Napoleon in RUSSIA" class="main-menu" />
-        <engine:Button text="Continue" name="ContinueB" class="tlacitka main-menu" />
+        <engine:Button text="Load" name="ContinueB" class="tlacitka main-menu" />
         <engine:Button text="New game" name="NewGameB" class="main-menu tlacitka" />
+        <engine:Button text="Controls" name="Controls" class="main-menu tlacitka" />
         <engine:Button text="Quit" name="QuitB" class="main-menu tlacitka" />
     </engine:VisualElement>
 </engine:UXML>

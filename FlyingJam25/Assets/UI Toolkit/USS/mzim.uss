@@ -1,0 +1,26 @@
+.header {
+    font-size: 120px;
+    -unity-font-definition: url("project://database/Assets/Art/Font/Brikula-11.otf?fileID=12800000&guid=8a154afaba37d2d498f520c3ff175564&type=3#Brikula-11");
+    max-width: none;
+    max-height: none;
+    justify-content: flex-start;
+    align-self: flex-end;
+    align-items: center;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.button {
+}
+
+.label {
+}
+
+.description {
+}
+
+.font {
+    -unity-font-definition: url("project://database/Assets/Art/Font/Brikula-11.otf?fileID=12800000&guid=8a154afaba37d2d498f520c3ff175564&type=3#Brikula-11");
+}

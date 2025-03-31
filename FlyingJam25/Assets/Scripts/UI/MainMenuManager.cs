@@ -1,37 +1,57 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private UIDocument mainMenu;
-    [SerializeField] private SaveManager saveManager;
-    [SerializeField] private NewGameManager newGameManager;
+    [SerializeField] private UIDocument controlsMenu;
+    [SerializeField] private SaveManager saveManager; 
 
-    void Start()
-    {
+    Button newGameB, loadB, controlsB, quitB;
+
+    private void Awake() {
+        mainMenu = GetComponent<UIDocument>();
         var mainMenuRoot = mainMenu.rootVisualElement;
 
 
-        var newGameB = mainMenuRoot.Q<Button>("NewGameB");
-        var continueB = mainMenuRoot.Q<Button>("ContinueB");
-        var quitB = mainMenuRoot.Q<Button>("QuitB");
+        newGameB = mainMenuRoot.Q<Button>("NewGameB");
+        loadB = mainMenuRoot.Q<Button>("ContinueB");
+        controlsB = mainMenuRoot.Q<Button>("ControlsB");
+        quitB = mainMenuRoot.Q<Button>("QuitB");
+    }
 
+    void OnEnable()
+    {
         if (newGameB != null) newGameB.clicked += OnNewGame;
-        if (continueB != null) continueB.clicked += OnContinueGame;
+        if (loadB != null) loadB.clicked += OnContinueGame;
         if (quitB != null) quitB.clicked += OnQuitGame;
+        if (controlsB != null) controlsB.clicked += OnControls;
+    }
 
-        if (!newGameManager.iReadyForNewGame) {
-            mainMenu.gameObject.SetActive(false);
-            newGameManager.iReadyForNewGame = true;
-        }
+    private void OnDisable() {
+        if (newGameB != null) newGameB.clicked -= OnNewGame;
+        if (loadB != null) loadB.clicked -= OnContinueGame;
+        if (quitB != null) quitB.clicked -= OnQuitGame;
+        if (controlsB != null) controlsB.clicked -= OnControls;
+    }
+
+    private void Update() {
+        
     }
 
     private void OnNewGame() {
-        newGameManager.ResetGame();
+        SceneManager.LoadScene("Game");
     }
 
     public void OnContinueGame() {
-        mainMenu.gameObject.SetActive(false);    
+        saveManager.LoadGame();
+        SceneManager.LoadScene("Game"); ;    
+    }
+
+    public void OnControls() { 
+        controlsMenu.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void OnQuitGame() {
