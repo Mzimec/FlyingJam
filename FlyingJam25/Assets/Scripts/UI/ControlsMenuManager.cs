@@ -1,16 +1,28 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ControlsMenuManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    [SerializeField] GameObject mainMenu;
+    UIDocument ui;
+    Button backB;
+
+    private void Awake() {
+        ui = GetComponent<UIDocument>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnEnable() {
+        var root = ui.rootVisualElement;
+        backB = root.Q<Button>("BackB");
+        backB.clicked += OnBack;
+    }
+
+    private void OnDisable() {
+        backB.clicked -= OnBack;
+    }
+
+    private void OnBack() {
+        mainMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

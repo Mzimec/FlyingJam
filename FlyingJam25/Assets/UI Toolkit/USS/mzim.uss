@@ -1,3 +1,9 @@
+.label {
+}
+
+.description {
+}
+
 .header {
     font-size: 120px;
     -unity-font-definition: url("project://database/Assets/Art/Font/Brikula-11.otf?fileID=12800000&guid=8a154afaba37d2d498f520c3ff175564&type=3#Brikula-11");
@@ -6,19 +12,42 @@
     justify-content: flex-start;
     align-self: flex-end;
     align-items: center;
-    margin-top: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    -unity-font-style: bold;
+}
+
+.contaier {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    min-width: 1920px;
+    min-height: 1080px;
 }
 
 .button {
-}
-
-.label {
-}
-
-.description {
+    max-width: 400px;
+    max-height: 120px;
+    min-width: 400px;
+    min-height: 120px;
+    align-self: flex-end;
+    font-size: 80px;
+    background-color: rgba(255, 255, 255, 0.23);
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-left-color: rgb(27, 27, 27);
+    border-right-color: rgb(27, 27, 27);
+    border-top-color: rgb(27, 27, 27);
+    border-bottom-color: rgb(27, 27, 27);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .font {

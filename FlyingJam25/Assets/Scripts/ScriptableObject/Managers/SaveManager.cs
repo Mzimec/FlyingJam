@@ -3,10 +3,12 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[CreateAssetMenu(fileName = "SaveManager", menuName = "Scriptable Objects/Managers/SaveManager")]
 public class SaveManager : ScriptableObject
 {
 
-    private string path = Path.Combine(Application.persistentDataPath, "savegame.json");
+    private string path => Path.Combine(Application.persistentDataPath, "savegame.json");
     private DataToSave loadedData;
 
     public void SaveGame() {

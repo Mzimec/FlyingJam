@@ -316,15 +316,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802948625}
-  - component: {fileID: 1802948627}
   - component: {fileID: 1802948626}
+  - component: {fileID: 1802948627}
   m_Layer: 0
   m_Name: Controls Menu UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1802948625
 Transform:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 2f6b8e3c83edc6d4faccc81cbe1ce916, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 190e87d9e1a9a874e8ab297338d43ac7, type: 3}
   m_SortingOrder: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33fb7923bdb5dc4f9605a36a2919806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 2087373129}
 --- !u!1 &2087373129
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,9 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa918e48eb0bd1a488eba02aeafb70a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 0}
-  controlsMenu: {fileID: 0}
-  saveManager: {fileID: 0}
+  controlsMenu: {fileID: 1802948624}
+  saveManager: {fileID: 11400000, guid: 028da5ab55c047c4380938ce856a57d9, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

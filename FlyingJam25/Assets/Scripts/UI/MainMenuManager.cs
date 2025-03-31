@@ -4,25 +4,25 @@ using UnityEngine.UIElements;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private UIDocument mainMenu;
-    [SerializeField] private UIDocument controlsMenu;
+    private UIDocument mainMenu;
+    [SerializeField] private GameObject controlsMenu;
     [SerializeField] private SaveManager saveManager; 
 
     Button newGameB, loadB, controlsB, quitB;
 
     private void Awake() {
         mainMenu = GetComponent<UIDocument>();
-        var mainMenuRoot = mainMenu.rootVisualElement;
+    }
 
+    void OnEnable()
+    {
+        var mainMenuRoot = mainMenu.rootVisualElement;
 
         newGameB = mainMenuRoot.Q<Button>("NewGameB");
         loadB = mainMenuRoot.Q<Button>("ContinueB");
         controlsB = mainMenuRoot.Q<Button>("ControlsB");
         quitB = mainMenuRoot.Q<Button>("QuitB");
-    }
 
-    void OnEnable()
-    {
         if (newGameB != null) newGameB.clicked += OnNewGame;
         if (loadB != null) loadB.clicked += OnContinueGame;
         if (quitB != null) quitB.clicked += OnQuitGame;
