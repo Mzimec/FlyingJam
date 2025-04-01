@@ -110,12 +110,12 @@ public class BattleMenuManager : MonoBehaviour {
             else attackVE.Add(playerCards[index].ve);
         }
         else {
-            hand.Add(playerCards[index].ve);
             battleManager.RemoveCard(cve.card);
-            player.hand.Add(cve.card);
             player.unitsInBattle.Remove(cve.card);
+            player.hand.Add(cve.card);
             if (battleManager.region.isPlayer) defenseVE.Remove(playerCards[index].ve);
             else attackVE.Remove(playerCards[index].ve);
+            hand.Add(playerCards[index].ve);
         }
         areInHand[index] = !areInHand[index];
     }
