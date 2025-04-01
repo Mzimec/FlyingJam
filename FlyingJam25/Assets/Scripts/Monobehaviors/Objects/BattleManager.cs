@@ -174,6 +174,7 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void OpenBattle() {
+        Debug.Log("OpenBattle");
         if (battleMenu != null) {
             battleMenu.OnActivate();
             var bm = battleMenu.GetComponentInChildren<BattleMenuManager>();

@@ -24,20 +24,30 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private float factorPillageRate;
 
     [SerializeField] private float handToDeck;
-    private int HandSize => (int) handToDeck * deck.Count;
+    private int HandSize => (int) (handToDeck * deck.Count);
 
     private void Awake() {
         foreach (var card in startingDeck) deck.Add(new CardManager(card));
+        Debug.Log(deck.Count);
 
     }
 
+    private void Start() {
+        StartTurn();
+        Debug.Log(deck.Count);
+    }
+
     private void DrawHand() {
-        for(int i = 0; i < HandSize - hand.Count; i++) {
+        int curHandCount = hand.Count;
+        int curHandSize = HandSize;
+        for(int i = 0; i < curHandSize - curHandCount; i++) {
             if (deck.Count == 0) ShuffleUpDiscard();
             var card = deck.Last();
+            if (card == null) Debug.Log("WTF");
             deck.RemoveAt(deck.Count - 1);
             hand.Add(card);
         }
+        Debug.Log(hand.Count);
     }
 
     private void ShuffleUpDiscard() {
@@ -80,6 +90,9 @@ public class PlayerManager : MonoBehaviour {
 
     public void OnEndTurn() {
         UseResources();
+        CountScore();
+        turn++;
+        StartTurn();
     }
 
     public void Load(PlayerData data, List<RegionManager> allRegions) {
@@ -100,5 +113,13 @@ public class PlayerManager : MonoBehaviour {
         foreach (var region in allRegions) {
             if (region != null && region.isPlayer) controlledRegions.Add(region);
         }
+    }
+
+    private void StartTurn() {
+        DrawHand();
+    }
+
+    private void CountScore() {
+
     }
 }

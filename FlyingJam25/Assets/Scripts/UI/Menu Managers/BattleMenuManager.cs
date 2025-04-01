@@ -16,6 +16,7 @@ public class BattleMenuManager : MonoBehaviour {
     BattleManager battleManager;
 
     UnityEvent<CardVE> response = new UnityEvent<CardVE>();
+    UnityEvent<CardVE> emptyR = new UnityEvent<CardVE>();
 
 
     VisualElement hand, attackVE, defenseVE;
@@ -28,6 +29,7 @@ public class BattleMenuManager : MonoBehaviour {
     private void Awake() {
         battleMenu = GetComponent<UIDocument>();
         response.AddListener(OnCardClick);
+        emptyR.AddListener(EmptyCardClick);
     }
 
     void OnEnable() {
@@ -53,24 +55,26 @@ public class BattleMenuManager : MonoBehaviour {
         int i = playerCards.Count;
         for(int j = 0; j < battleManager.attackers.Length; j++) {
             if (battleManager.attackers[j] == null) continue;
-            CardVE cve = new CardVE(battleManager.attackers[j], visualTree, response, i);
+            CardVE cve; 
             if (!battleManager.region.isPlayer) {
+                cve = new CardVE(battleManager.attackers[j], visualTree, response, i);
                 playerCards.Add(cve);
                 areInHand.Add(false);
                 i++;
             }
-            Debug.Log($"{cve.card.baseData.cardName} added to attackVE.");
+            else cve = new CardVE(battleManager.attackers[j], visualTree, emptyR, 0);
             attackVE.Add(cve.ve);
         }
         for (int j = 0; j < battleManager.defenders.Length; j++) {
             if (battleManager.defenders[j] == null) continue;
-            CardVE cve = new CardVE(battleManager.defenders[j], visualTree, response, i);
+            CardVE cve;
             if (battleManager.region.isPlayer) {
+                cve = new CardVE(battleManager.defenders[j], visualTree, response, i);
                 playerCards.Add(cve);
                 areInHand.Add(false);
                 i++;
             }
-            Debug.Log($"{cve.card.baseData.cardName} added to defenseVE.");
+            else cve = new CardVE(battleManager.defenders[j], visualTree, emptyR, 0);
             defenseVE.Add(cve.ve);
         }
     }
@@ -83,7 +87,6 @@ public class BattleMenuManager : MonoBehaviour {
             areInHand.Add(true);
             hand.Add(cve.ve);
             i++;
-            Debug.Log($"{cve.card.baseData.cardName} added to handVE.");
         } 
     }
 
@@ -96,6 +99,7 @@ public class BattleMenuManager : MonoBehaviour {
     }
 
     private void OnCardClick(CardVE cve) {
+        Debug.Log("OnCardClick");
         int index = cve.index;
         if (areInHand[index]) {
             battleManager.AddCard(cve.card);
@@ -114,6 +118,10 @@ public class BattleMenuManager : MonoBehaviour {
             else attackVE.Remove(playerCards[index].ve);
         }
         areInHand[index] = !areInHand[index];
+    }
+
+    private void EmptyCardClick(CardVE _) {
+        Debug.Log("OnEmptyCardClick");
     }
 
     private void OnFight() {

@@ -25,12 +25,12 @@ public partial class CardVE : VisualElement {
 
         Dictionary<int, string> attackMapping = new Dictionary<int, string> {
         { 0, "aaT" }, { 1, "acT" }, { 2, "arT" }, { 3, "asT" }
-    };
+        };
 
         // Define vulnerability order mapping to UI elements
         Dictionary<int, string> vulnerabilityMapping = new Dictionary<int, string> {
         { 0, "daT" }, { 1, "dcT" }, { 2, "drT" }, { 3, "dsT" }
-    };
+        };
 
         // Assign Attack Values
         for (int i = 0; i < card.attackValues.Length; i++) {
@@ -62,6 +62,8 @@ public partial class CardVE : VisualElement {
 
         Button cudl = ve.Q<Button>("Cudl");
         cudl.clicked += () => response.Invoke(this);
+
+        ve.transform.scale = new Vector3(0.6f, 0.6f, 0);
     }
 
     private string GetEffectDescription(CardManager card) {

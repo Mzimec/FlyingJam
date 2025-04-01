@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckMenu: {fileID: 0}
   mainMenu: {fileID: 0}
-  mouse: {fileID: 2084772071}
+  mouse: {fileID: 11400000, guid: b6ec997ade620384bb606d31c8cdfe69, type: 2}
   player: {fileID: 2084772070}
   onTurnEnd: {fileID: 11400000, guid: 77e04ea628e2aa94c9dc273535db33c9, type: 2}
 --- !u!1001 &490282056
@@ -1883,7 +1883,7 @@ MonoBehaviour:
     m_ActionName: 'Mouse/CursorPosition[/Mouse/position]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2084772071}
+      - m_Target: {fileID: 11400000, guid: b6ec997ade620384bb606d31c8cdfe69, type: 2}
         m_TargetAssemblyTypeName: MouseInputManager, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 0
@@ -11619,6 +11619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1909038444}
+  - component: {fileID: 1909038445}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -11645,6 +11646,23 @@ Transform:
   - {fileID: 1674162615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909038445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909038443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e258e1169f825d40bb4d752d4badd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiDocuments:
+  - {fileID: 672422882}
+  - {fileID: 479909469}
+  - {fileID: 738590801}
+  - {fileID: 1600757178}
 --- !u!1 &1924892564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1944423351904114182, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
@@ -14417,7 +14435,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19acbc8703123346aa73ff9afce4b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingDeck: []
+  startingDeck:
+  - {fileID: 11400000, guid: 876091dd3f5c7c543ab68ca0ce7ccc48, type: 2}
+  - {fileID: 11400000, guid: 4c0b83b7003c9f442872325ca439e5f9, type: 2}
+  - {fileID: 11400000, guid: cf1f53c68666a8c45be4613e262f9f77, type: 2}
+  - {fileID: 11400000, guid: ad12e66dcf910ff4698f29bee5269af4, type: 2}
+  - {fileID: 11400000, guid: c8ec53fa9bdc7a34c9179caa82bc710c, type: 2}
+  - {fileID: 11400000, guid: 8700843ac302da7498cf1561472d204e, type: 2}
+  - {fileID: 11400000, guid: f842517a7db3f4c458b5c104d5cfb9d9, type: 2}
+  - {fileID: 11400000, guid: 080c7079ab797f44c9e6d219dc578edd, type: 2}
+  - {fileID: 11400000, guid: d062cb83cb8c09b478f16e457c6427da, type: 2}
+  - {fileID: 11400000, guid: d3b379adff9c2ff43a2e9e5a38070ba4, type: 2}
+  - {fileID: 11400000, guid: 84c6a7ac70cb6ae4b9377cd4bd8b747e, type: 2}
+  - {fileID: 11400000, guid: d0788ffdb76846741afffd473ee3f8a8, type: 2}
+  - {fileID: 11400000, guid: ef76569a5aea4cf44935f42f21f5d7ae, type: 2}
+  - {fileID: 11400000, guid: 966bdcce3840e3647a1bb4262d098a51, type: 2}
+  - {fileID: 11400000, guid: 588ae5b43a30eff43923f4f728ce1e66, type: 2}
+  - {fileID: 11400000, guid: 835077b2d26a67545a2ddc2967dbd042, type: 2}
+  - {fileID: 11400000, guid: a3d032f24538e2f4d8d47230e2c4dc02, type: 2}
+  - {fileID: 11400000, guid: 6f4a08367d16c544880eb7477d59bd7a, type: 2}
+  - {fileID: 11400000, guid: da352563d74a5d44eaa66bd31f754dd8, type: 2}
+  - {fileID: 11400000, guid: 5ce9daff6494e394ca7d0751117721db, type: 2}
+  - {fileID: 11400000, guid: ac76dabc3edf31b43a35bad467d0ae13, type: 2}
   turn: 1
   score: 0
   resources: 0
@@ -14425,7 +14464,7 @@ MonoBehaviour:
   factorResourceDecrement: 0
   constantPillageRate: 0
   factorPillageRate: 0
-  handToDeck: 0
+  handToDeck: 0.5
 --- !u!114 &2084772071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14435,9 +14474,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2084772067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee804c0fc035e9743933d2404b568a22, type: 3}
+  m_Script: {fileID: 11500000, guid: e9cedc54a9012dc4480d79ffa16ece72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mim: {fileID: 11400000, guid: b6ec997ade620384bb606d31c8cdfe69, type: 2}
 --- !u!1001 &2104910115
 PrefabInstance:
   m_ObjectHideFlags: 0
