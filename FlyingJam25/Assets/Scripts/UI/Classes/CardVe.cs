@@ -7,16 +7,15 @@ using UnityEngine.VFX;
 public partial class CardVE : VisualElement {
 
     public CardManager card;
-    private VisualTreeAsset visualTree;
     private UnityEvent<CardVE> response;
     public int index;
+    public VisualElement ve;
 
     public CardVE(CardManager c, VisualTreeAsset t, UnityEvent<CardVE> r, int id) {
         card = c;
-        visualTree = t;
         response = r;
         index = id;
-        VisualElement ve = visualTree.CloneTree();
+        ve = t.CloneTree();
 
         Label cardNameLabel = ve.Q<Label>("CARD-name");
         cardNameLabel.text = card.baseData.cardName;

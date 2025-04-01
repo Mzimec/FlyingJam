@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BattleManager : MonoBehaviour {
     public RegionManager region;
+    private IsClickable clickable;
+    private ChildActivator battleMenu;
 
     public CardManager[] attackers;
     public CardManager[] defenders;
@@ -21,9 +24,24 @@ public class BattleManager : MonoBehaviour {
             return;
         }
 
+        clickable = GetComponent<IsClickable>();
+        if (clickable != null) {
+            clickable.OnClicked += HandleClick; // Subscribe to the event
+        }
+
+        battleMenu = GameObject.FindWithTag("BattleMenu").GetComponent<ChildActivator>();
+
         int size = region.baseData.battlefieldSize;
         attackers = new CardManager[size];
         defenders = new CardManager[size];
+
+        GenerateOpponentCards();
+    }
+
+    private void OnDestroy() {
+        if (clickable != null) {
+            clickable.OnClicked -= HandleClick; // Unsubscribe when destroyed
+        }
     }
 
     private void GenerateOpponentCards() {
@@ -156,6 +174,18 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void OpenBattle() {
+        if (battleMenu != null) {
+            battleMenu.OnActivate();
+            var bm = battleMenu.GetComponentInChildren<BattleMenuManager>();
+            if (bm != null) bm.SetBattle(this);
+            else Debug.Log("No BattleMenuManager Child");
+        }
+        else Debug.Log("No Battle Menu!");
+    }
 
+    public void HandleClick(InputControl control) {
+        if (control == Mouse.current.leftButton) {
+            OpenBattle();
+        }
     }
 }

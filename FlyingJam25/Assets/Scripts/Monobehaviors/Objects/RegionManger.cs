@@ -60,7 +60,7 @@ public class RegionManager : MonoBehaviour {
             loadout.Add(cardToAdd);
             rp -= cardToAdd.value;
         }
-        loadout = loadout.OrderBy(card => card.prefPos.value).ToList();
+        //loadout = loadout.OrderBy(card => card.prefPos.value).ToList();
         return loadout;
     }
 
