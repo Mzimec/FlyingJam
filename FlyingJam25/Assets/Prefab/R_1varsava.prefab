@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 266681069311735889}
   - component: {fileID: 7939876236942004729}
   - component: {fileID: 7572253944732350869}
+  - component: {fileID: -5054063619879257810}
   m_Layer: 0
   m_Name: R_1varsava
   m_TagString: Untagged
@@ -168,3 +169,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-5054063619879257810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944423351904114182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c78b05e17156d4a897744f412b999f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  gray: {fileID: -876546973899608171, guid: ae32cd79078ff544ca017f58cfaeee27, type: 3}

@@ -21,9 +21,6 @@ public class VictoryMenuManager : MonoBehaviour
         pointsL = root.Q<Label>("Points");
         recruitL = root.Q<Label>("Recruit");
 
-        string status = battleManager.OnFight();
-        WriteOutcomes(status);
-
         cancelB = root.Q<Button>("CancleB");
         if (cancelB != null) cancelB.clicked += OnCancel;
     }
@@ -33,15 +30,17 @@ public class VictoryMenuManager : MonoBehaviour
     }
 
     private void OnCancel() {
+        battleManager.region.ClearBattleEvent();
         gameObject.SetActive(false);
     }
 
     public void SetBattleManager(BattleManager b) {
         battleManager = b;
+        WriteOutcomes();
     }
 
-    private void WriteOutcomes(string s) {
-        victoryL.text = s;
+    private void WriteOutcomes() {
+        victoryL.text = message;
         pointsL.text = $"Attackers: {battleManager.aPoints} points.\n Defenders {battleManager.dPoints} points.";
         recruitL.text = $"New Recruit Value is: {battleManager.region.recruitPoints}.";
     }

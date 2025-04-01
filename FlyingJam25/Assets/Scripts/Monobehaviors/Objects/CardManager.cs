@@ -52,7 +52,7 @@ public class CardManager {
         else effects = null;
     }
 
-    public void ApplyEffects(CardManager[] allies, CardManager[] enemies) {
+    public void ApplyEffects(List<CardManager> allies, List<CardManager> enemies) {
         foreach (var effect in effects) {
             if (effect.side == ESide.ALLY || effect.side == ESide.BOTH) {
                 foreach (var card in allies) effect.Execute(card);

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -16,7 +17,10 @@ public class MouseInputManager : ScriptableObject {
 
     public void Update() {
         if (mainCamera == null) return;
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (uiBlocker != null && uiBlocker.CheckPointerOverUI()) {
+            hit = new RaycastHit2D();
+            return;
+        }
 
         Vector2 worldPoint = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         hit = Physics2D.Raycast(worldPoint, Vector2.zero);

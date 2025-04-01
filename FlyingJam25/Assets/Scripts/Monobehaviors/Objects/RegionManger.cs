@@ -8,6 +8,7 @@ using UnityEngine;
 public class RegionManager : MonoBehaviour {
 
     public RegionSO baseData;
+    RegionColoring rc;
 
     public string regionName;
 
@@ -60,14 +61,19 @@ public class RegionManager : MonoBehaviour {
             loadout.Add(cardToAdd);
             rp -= cardToAdd.value;
         }
-        //loadout = loadout.OrderBy(card => card.prefPos.value).ToList();
+        /*loadout = loadout.Where(card => card != null && card.prefPos != null)
+                 .OrderBy(card => card.prefPos.value)
+                 .ToList();*/
         return loadout;
     }
 
     private void GenerateBattleEvent(float chance) {
         float random = chanceMultiplier * Random.Range(0, GetChanceValue);
         if (chance >= random) {
-            if (battleGenerator != null) battleGenerator.GenerateBattle(this);
+            if (battleGenerator != null) {
+                isAttacked = true;
+                battleGenerator.GenerateBattle(this);
+            }
             else Debug.Log("Null battleGenrator in RegionManager");
         }
     }
@@ -81,10 +87,14 @@ public class RegionManager : MonoBehaviour {
         }
     }
 
-    private void ClearBattleEvent() {
+    public void ClearBattleEvent() {
         if (battle != null) {
-            Destroy(battle);
+            Destroy(battle.gameObject);
             battle = null;
+        }
+        if (rc != null) {
+            if (isPlayer) rc.SetNormalColoring();
+            else rc.SetEnemyColoring();
         }
     }
 
@@ -96,7 +106,7 @@ public class RegionManager : MonoBehaviour {
     }
 
     public void OnEndTurn() {
-        //ActualizeRecruitPoints();
+        ActualizeRecruitPoints();
         ClearBattleEvent();
         GenerateBattleEvent();
     }
@@ -116,5 +126,10 @@ public class RegionManager : MonoBehaviour {
 
     private void Awake() {
         battleGenerator = GetComponentInParent<BattleGenerator>();
+        rc = GetComponent<RegionColoring>();
+    }
+
+    private void Start() {
+        if (!isPlayer && rc != null) rc.SetEnemyColoring();
     }
 }

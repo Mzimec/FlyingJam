@@ -9,6 +9,8 @@ public class MoveBackgroundInput : MonoBehaviour {
     private void Update() {
         // Move the camera based on input
         transform.position += (Vector3)(moveDirection * moveSpeed * Time.deltaTime);
+        if (transform.position.x < -19.04f) transform.position = new Vector3(-19.04f, 0.0f, 0.0f);
+        if (transform.position.x >3.45f) transform.position = new Vector3(3.45f, 0.0f, 0.0f);
     }
 
     public void OnMoveLeft(InputAction.CallbackContext context) {

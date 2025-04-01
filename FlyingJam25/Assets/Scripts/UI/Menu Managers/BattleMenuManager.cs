@@ -53,7 +53,7 @@ public class BattleMenuManager : MonoBehaviour {
         }
 
         int i = playerCards.Count;
-        for(int j = 0; j < battleManager.attackers.Length; j++) {
+        for(int j = 0; j < battleManager.attackers.Count; j++) {
             if (battleManager.attackers[j] == null) continue;
             CardVE cve; 
             if (!battleManager.region.isPlayer) {
@@ -65,7 +65,7 @@ public class BattleMenuManager : MonoBehaviour {
             else cve = new CardVE(battleManager.attackers[j], visualTree, emptyR, 0);
             attackVE.Add(cve.ve);
         }
-        for (int j = 0; j < battleManager.defenders.Length; j++) {
+        for (int j = 0; j < battleManager.defenders.Count; j++) {
             if (battleManager.defenders[j] == null) continue;
             CardVE cve;
             if (battleManager.region.isPlayer) {
@@ -102,12 +102,18 @@ public class BattleMenuManager : MonoBehaviour {
         Debug.Log("OnCardClick");
         int index = cve.index;
         if (areInHand[index]) {
+            if ((battleManager.region.isPlayer && battleManager.defenders.Count >= battleManager.region.baseData.battlefieldSize) ||
+                (!battleManager.region.isPlayer && battleManager.attackers.Count >= battleManager.region.baseData.battlefieldSize)) {
+                Debug.Log("Not Add");
+                return;
+            }
+            Debug.Log($"{battleManager.defenders.Count}, {battleManager.attackers.Count}, {battleManager.region.baseData.battlefieldSize}");
             battleManager.AddCard(cve.card);
             hand.Remove(playerCards[index].ve);
             player.hand.Remove(cve.card);
             player.unitsInBattle.Add(cve.card);
             if (battleManager.region.isPlayer) defenseVE.Add(playerCards[index].ve);
-            else attackVE.Add(playerCards[index].ve);
+            else attackVE.Add(playerCards[index].ve); 
         }
         else {
             battleManager.RemoveCard(cve.card);
@@ -128,8 +134,9 @@ public class BattleMenuManager : MonoBehaviour {
         if (victoryMenu != null) {
             victoryMenu.gameObject.SetActive(true);
             var vm = victoryMenu.GetComponent<VictoryMenuManager>();
-            vm.SetBattleManager(battleManager);
             vm.message = battleManager.OnFight();
+            vm.SetBattleManager(battleManager);
+            ChangePlayerCards();
         } 
         battleMenu.gameObject.SetActive(false);
     }
@@ -142,5 +149,24 @@ public class BattleMenuManager : MonoBehaviour {
         battleManager = b;
         InitializeHand();
         InitializePools();
+    }
+
+    private void ChangePlayerCards() {
+        if (battleManager.region.isPlayer) {
+            foreach (var card in battleManager.defenders) {
+                if (player.unitsInBattle.Contains(card)) {
+                    player.unitsInBattle.Remove(card);
+                    player.cardsToDiscard.Add(card);
+                }
+            }
+        }
+        else {
+            foreach (var card in battleManager.attackers) {
+                if (player.unitsInBattle.Contains(card)) {
+                    player.unitsInBattle.Remove(card);
+                    player.cardsToDiscard.Add(card);
+                }
+            }
+        }
     }
 }

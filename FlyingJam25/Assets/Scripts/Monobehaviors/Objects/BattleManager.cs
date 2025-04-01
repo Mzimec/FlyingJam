@@ -7,8 +7,8 @@ public class BattleManager : MonoBehaviour {
     private IsClickable clickable;
     private ChildActivator battleMenu;
 
-    public CardManager[] attackers;
-    public CardManager[] defenders;
+    public List<CardManager> attackers;
+    public List<CardManager> defenders;
 
     private int[] aOffensiveValues = new int[ConstantValues.cardTypesCount];
     private int[] dOffensiveValues = new int[ConstantValues.cardTypesCount];
@@ -32,8 +32,8 @@ public class BattleManager : MonoBehaviour {
         battleMenu = GameObject.FindWithTag("BattleMenu").GetComponent<ChildActivator>();
 
         int size = region.baseData.battlefieldSize;
-        attackers = new CardManager[size];
-        defenders = new CardManager[size];
+        attackers = new List<CardManager>();
+        defenders = new List<CardManager>();
 
         GenerateOpponentCards();
     }
@@ -46,15 +46,13 @@ public class BattleManager : MonoBehaviour {
 
     private void GenerateOpponentCards() {
         var cardsToEnter = region.GenerateLoadOut();
-        if (region.isPlayer) {
-            for (int i = 0; i < attackers.Length; i++) attackers[i] = new CardManager(cardsToEnter[i]);
-        }
-        else {
-            for (int i = 0; i < defenders.Length; i++) defenders[i] = new CardManager(cardsToEnter[i]);
+        foreach (var card in cardsToEnter) {
+            if(region.isPlayer) attackers.Add(new CardManager(card));
+            else defenders.Add(new CardManager(card));
         }
     }
 
-    private void ChangeAttackPool(int[] pool, CardManager[] cards) {
+    private void ChangeAttackPool(int[] pool, List<CardManager> cards) {
         foreach(var card in cards) {
             if (card.hasAttack) {
                 for (int i = 0; i < pool.Length; i++) {
@@ -64,7 +62,7 @@ public class BattleManager : MonoBehaviour {
         }
     }
 
-    private void ChangeVulnerabilityPool(int[] pool, CardManager[] cards) {
+    private void ChangeVulnerabilityPool(int[] pool, List<CardManager> cards) {
         foreach (var card in cards) {
             for (int i = 0; i < pool.Length; i++) pool[i] += card.vulnerabilityValues[i];
         }
@@ -125,7 +123,7 @@ public class BattleManager : MonoBehaviour {
             if (aDefensiveValues[i] < 0) aDefensiveValues[i] = 0;
         }
 
-        for (int i = 0; i <= ConstantValues.cardTypesCount; i++) {
+        for (int i = 0; i < ConstantValues.cardTypesCount; i++) {
             dPoints += dOffensiveValues[i] + dDefensiveValues[i];
             aPoints += aOffensiveValues[i] + aDefensiveValues[i];
         }
@@ -137,39 +135,19 @@ public class BattleManager : MonoBehaviour {
 
     public void AddCard(CardManager card) {
         if (region.isPlayer) {
-            for (int i = 0; i < defenders.Length; i++) {
-                if (defenders[i] == null) {
-                    defenders[i] = card;
-                    break;
-                }
-            }
+            if(defenders.Count < region.baseData.battlefieldSize) defenders.Add(card);
         }
         else {
-            for (int i = 0; i < attackers.Length; i++) {
-                if (attackers[i] == null) {
-                    attackers[i] = card;
-                    break;
-                }
-            }
+            if(attackers.Count < region.baseData.battlefieldSize) attackers.Add(card);
         }
     }
 
     public void RemoveCard(CardManager card) {
         if (region.isPlayer) {
-            for (int i = 0; i < defenders.Length; i++) {
-                if (defenders[i] == card) {
-                    defenders[i] = null;
-                    break;
-                }
-            }
+            if(defenders.Contains(card)) defenders.Remove(card);
         }
         else {
-            for (int i = 0; i < attackers.Length; i++) {
-                if (attackers[i] == card) {
-                    attackers[i] = null;
-                    break;
-                }
-            }
+            if (attackers.Contains(card)) attackers.Remove(card);
         }
     }
 
