@@ -16,7 +16,6 @@ public class BattleMenuManager : MonoBehaviour {
     BattleManager battleManager;
 
     UnityEvent<CardVE> response = new UnityEvent<CardVE>();
-    UnityEvent<CardVE> emptyR = new UnityEvent<CardVE>();
 
 
     VisualElement hand, attackVE, defenseVE;
@@ -29,7 +28,6 @@ public class BattleMenuManager : MonoBehaviour {
     private void Awake() {
         battleMenu = GetComponent<UIDocument>();
         response.AddListener(OnCardClick);
-        emptyR.AddListener(EmptyCardClick);
     }
 
     void OnEnable() {
@@ -57,24 +55,24 @@ public class BattleMenuManager : MonoBehaviour {
             if (battleManager.attackers[j] == null) continue;
             CardVE cve; 
             if (!battleManager.region.isPlayer) {
-                cve = new CardVE(battleManager.attackers[j], visualTree, response, i);
+                cve = new CardVE(battleManager.attackers[j], visualTree, response, i, 0.6f);
                 playerCards.Add(cve);
                 areInHand.Add(false);
                 i++;
             }
-            else cve = new CardVE(battleManager.attackers[j], visualTree, emptyR, 0);
+            else cve = new CardVE(battleManager.attackers[j], visualTree, 0.6f);
             attackVE.Add(cve.ve);
         }
         for (int j = 0; j < battleManager.defenders.Count; j++) {
             if (battleManager.defenders[j] == null) continue;
             CardVE cve;
             if (battleManager.region.isPlayer) {
-                cve = new CardVE(battleManager.defenders[j], visualTree, response, i);
+                cve = new CardVE(battleManager.defenders[j], visualTree, response, i, 0.6f);
                 playerCards.Add(cve);
                 areInHand.Add(false);
                 i++;
             }
-            else cve = new CardVE(battleManager.defenders[j], visualTree, emptyR, 0);
+            else cve = new CardVE(battleManager.defenders[j], visualTree, 0.6f);
             defenseVE.Add(cve.ve);
         }
     }
@@ -82,7 +80,7 @@ public class BattleMenuManager : MonoBehaviour {
     private void InitializeHand() {
         int i = playerCards.Count;
         foreach (var card in player.hand) {
-            CardVE cve = new CardVE(card, visualTree, response, i);
+            CardVE cve = new CardVE(card, visualTree, response, i, 0.6f);
             playerCards.Add(cve);
             areInHand.Add(true);
             hand.Add(cve.ve);
@@ -122,10 +120,6 @@ public class BattleMenuManager : MonoBehaviour {
             hand.Add(playerCards[index].ve);
         }
         areInHand[index] = !areInHand[index];
-    }
-
-    private void EmptyCardClick(CardVE _) {
-        //Debug.Log("OnEmptyCardClick");
     }
 
     private void OnFight() {

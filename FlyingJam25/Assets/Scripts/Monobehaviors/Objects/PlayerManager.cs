@@ -139,4 +139,9 @@ public class PlayerManager : MonoBehaviour {
     private void CountScore() {
         foreach (var region in controlledRegions) score += ScoreMultiplier;
     }
+
+    public void OnRegionOwnerChanged(RegionManager region) {
+        if(controlledRegions.Contains(region)) controlledRegions.Remove(region);
+        else controlledRegions.Add(region);
+    }
 }

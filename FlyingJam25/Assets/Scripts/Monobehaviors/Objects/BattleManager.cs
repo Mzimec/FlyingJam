@@ -85,9 +85,10 @@ public class BattleManager : MonoBehaviour {
             }
             else {
                 Debug.Log("Region is players, should be victory.");
-                region.isPlayer = !region.isPlayer;
                 res = "Victory";
             }
+            region.isPlayer = !region.isPlayer;
+            region.OnChangeOwner.Raise(region);
         }
         else {
             if (region.isPlayer) {

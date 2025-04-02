@@ -20,7 +20,7 @@ public class RegionManager : MonoBehaviour {
     public bool isPlayer;
 
     [SerializeField] private List<RegionManager> neighbors;
-    [SerializeField] private RegionEvent OnChangeOwner;
+    public RegionEvent OnChangeOwner;
     private BattleGenerator battleGenerator;
     private GameObject battle;
 
@@ -52,9 +52,13 @@ public class RegionManager : MonoBehaviour {
     public List<CardSO> GenerateLoadOut() {
         var loadout = new List<CardSO>();
         int rp;
-        if (!isPlayer) rp = recruitPoints;
-        else rp = baseData.recruitPoints;
         var availableUnits = new List<CardSO>(baseData.cardsToGenerate);
+        if (!isPlayer) {
+            rp = recruitPoints;
+            int minimalRP = availableUnits.Any() ? availableUnits.Min(card => card.value) : 0;
+            if (rp < minimalRP) rp = minimalRP;
+        }
+        else rp = baseData.recruitPoints;
         for (int i = 0; i < baseData.battlefieldSize - 1; i++) {
             availableUnits = availableUnits.Where(card => card.value <= rp).ToList();
             if (availableUnits.Count() == 0) break;

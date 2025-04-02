@@ -10,13 +10,29 @@ public partial class CardVE : VisualElement {
     private UnityEvent<CardVE> response;
     public int index;
     public VisualElement ve;
+    public float scale;
 
-    public CardVE(CardManager c, VisualTreeAsset t, UnityEvent<CardVE> r, int id) {
+    public CardVE(CardManager c, VisualTreeAsset t, float f) {
+        this.card = c;
+        this.response = new UnityEvent<CardVE>();
+        this.index = 0;
+        this.ve = t.CloneTree();
+        this.scale = f;
+
+        InitializeVE();
+    }
+
+    public CardVE(CardManager c, VisualTreeAsset t, UnityEvent<CardVE> r, int id, float f) {
         card = c;
         response = r;
         index = id;
         ve = t.CloneTree();
+        scale = f;
 
+        InitializeVE();
+    }
+
+    private void InitializeVE() {
         Label cardNameLabel = ve.Q<Label>("CARD-name");
         cardNameLabel.text = card.baseData.cardName;
 
@@ -63,8 +79,14 @@ public partial class CardVE : VisualElement {
         Button cudl = ve.Q<Button>("Cudl");
         cudl.clicked += () => response.Invoke(this);
 
-        ve.transform.scale = new Vector3(0.6f, 0.6f, 0);
+        ve.style.transformOrigin = new StyleTransformOrigin(new TransformOrigin(0, 0));
+        ve.transform.scale = new Vector3(scale, scale, 0.0f);
+        ve.style.width = scale * ConstantValues.cardWidth;
+        ve.style.height = scale * ConstantValues.cardHeight;
+        ve.style.marginBottom = 10;
     }
+
+
 
     private string GetEffectDescription(CardManager card) {
         if (card == null) {

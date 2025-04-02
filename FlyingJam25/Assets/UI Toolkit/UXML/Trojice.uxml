@@ -1,0 +1,3 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="trojice" style="flex-grow: 1; position: relative; height: 954px; top: auto; width: 186px; left: auto; min-width: 186px; min-height: 0; flex-direction: column; flex-basis: auto; align-items: flex-start; align-content: flex-start; align-self: flex-start; justify-content: flex-start; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; max-width: 186px; max-height: 840px; transform-origin: left top; margin-right: 5px; margin-left: 5px;" />
+</engine:UXML>
