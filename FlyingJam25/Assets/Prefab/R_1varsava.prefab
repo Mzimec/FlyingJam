@@ -58,6 +58,7 @@ MonoBehaviour:
   neighbors:
   - {fileID: 0}
   - {fileID: 0}
+  OnChangeOwner: {fileID: 11400000, guid: 8879e88c0fa288f419741b41ca9f66bc, type: 2}
 --- !u!114 &266681069311735889
 MonoBehaviour:
   m_ObjectHideFlags: 0

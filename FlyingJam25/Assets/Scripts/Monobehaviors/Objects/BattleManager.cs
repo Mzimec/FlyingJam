@@ -79,21 +79,23 @@ public class BattleManager : MonoBehaviour {
         string res;
         if (aPoints > dPoints) {
             if (region.isPlayer) {
-                Debug.Log("Defeat");
+                Debug.Log("Region is players, should be defeat.");
                 region.recruitPoints -= (int)(((float)dPoints / aPoints) * region.recruitPoints);
                 res = "Defeat";
             }
-            else Debug.Log("Victory");
-            region.isPlayer = !region.isPlayer;
-            res = "Victory";
+            else {
+                Debug.Log("Region is players, should be victory.");
+                region.isPlayer = !region.isPlayer;
+                res = "Victory";
+            }
         }
         else {
             if (region.isPlayer) {
-                Debug.Log("Victory");
+                Debug.Log("Region is not players, should be victory.");
                 res = "Victory";
             }
             else {
-                Debug.Log("Defeat");
+                Debug.Log("Region is not players, should be defeat.");
                 region.recruitPoints -= (int)(((float)aPoints / dPoints) * region.recruitPoints);
                 res = "Defeat";
             }
@@ -152,7 +154,7 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void OpenBattle() {
-        Debug.Log("OpenBattle");
+        //Debug.Log("OpenBattle");
         if (battleMenu != null) {
             battleMenu.OnActivate();
             var bm = battleMenu.GetComponentInChildren<BattleMenuManager>();

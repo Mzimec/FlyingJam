@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
     public List<CardManager> discard = new List<CardManager>();
     public List<CardManager> cardsToDiscard = new List<CardManager>();
 
-    private List<RegionManager> controlledRegions;
+    private List<RegionManager> controlledRegions = new List<RegionManager>();
 
     public int turn = 1;
     public int score = 0;
@@ -25,17 +25,20 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private float factorPillageRate;
 
     [SerializeField] private float handToDeck;
-    private int HandSize => (int) (handToDeck * deck.Count);
+    private int HandSize => (int) (handToDeck * (deck.Count + hand.Count + unitsInBattle.Count + discard.Count + cardsToDiscard.Count));
+
+    private int ScoreMultiplier => (turn / 5) + 1;
 
     private void Awake() {
         foreach (var card in startingDeck) deck.Add(new CardManager(card));
-        Debug.Log(deck.Count);
-
     }
 
     private void Start() {
-        StartTurn();
-        Debug.Log(deck.Count);
+        DrawHand();
+        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.None));
+        foreach (var region in regions) {
+            if (region.isPlayer) controlledRegions.Add(region);
+        }
     }
 
     private void DrawHand() {
@@ -43,17 +46,20 @@ public class PlayerManager : MonoBehaviour {
         int curHandSize = HandSize;
         for(int i = 0; i < curHandSize - curHandCount; i++) {
             if (deck.Count == 0) ShuffleUpDiscard();
-            var card = deck.Last();
-            if (card == null) Debug.Log("WTF");
-            deck.RemoveAt(deck.Count - 1);
-            hand.Add(card);
+            if (deck.Count != 0) {
+                var card = deck.Last();
+                if (card == null) Debug.Log("WTF");
+                deck.RemoveAt(deck.Count - 1);
+                hand.Add(card);
+            }
         }
-        Debug.Log(hand.Count);
     }
 
     private void ShuffleUpDiscard() {
-        deck = Shuffle(discard);
+        List<CardManager> shuffledDiscard = Shuffle(new List<CardManager>(discard)); // Copy first!
+        deck.AddRange(shuffledDiscard); // Append shuffled cards to deck
         discard.Clear();
+        Debug.Log($"Deck size after shuffling up discard: {deck.Count}");
     }
 
     private List<CardManager> Shuffle(List<CardManager> d) {
@@ -71,6 +77,7 @@ public class PlayerManager : MonoBehaviour {
     private int Pillage() {
         int pillaged = 0;
         foreach (var region in controlledRegions) pillaged += PillageRegion(region);
+        Debug.Log($"Pillaged {pillaged} provisions");
         return pillaged;
     }
 
@@ -93,7 +100,8 @@ public class PlayerManager : MonoBehaviour {
         UseResources();
         CountScore();
         turn++;
-        StartTurn();
+        SortCardsAtEndTurn();
+        DrawHand();
     }
 
     public void Load(PlayerData data, List<RegionManager> allRegions) {
@@ -120,7 +128,15 @@ public class PlayerManager : MonoBehaviour {
         DrawHand();
     }
 
-    private void CountScore() {
+    private void SortCardsAtEndTurn() {
+        foreach(var card in cardsToDiscard) discard.Add(card);
+        cardsToDiscard.Clear();
+        foreach(var card in unitsInBattle) hand.Add(card);
+        unitsInBattle.Clear();
+        Debug.Log($"Number of Player cards: {hand.Count + deck.Count + discard.Count}");
+    }
 
+    private void CountScore() {
+        foreach (var region in controlledRegions) score += ScoreMultiplier;
     }
 }

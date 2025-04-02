@@ -20,6 +20,7 @@ public class RegionManager : MonoBehaviour {
     public bool isPlayer;
 
     [SerializeField] private List<RegionManager> neighbors;
+    [SerializeField] private RegionEvent OnChangeOwner;
     private BattleGenerator battleGenerator;
     private GameObject battle;
 
@@ -54,9 +55,9 @@ public class RegionManager : MonoBehaviour {
         if (!isPlayer) rp = recruitPoints;
         else rp = baseData.recruitPoints;
         var availableUnits = new List<CardSO>(baseData.cardsToGenerate);
-        for (int i = 0; i < baseData.battlefieldSize; i++) {
+        for (int i = 0; i < baseData.battlefieldSize - 1; i++) {
+            availableUnits = availableUnits.Where(card => card.value <= rp).ToList();
             if (availableUnits.Count() == 0) break;
-            availableUnits.Where(card => card.value < rp).ToList();
             var cardToAdd = availableUnits[Random.Range(0, availableUnits.Count())];
             loadout.Add(cardToAdd);
             rp -= cardToAdd.value;
@@ -99,15 +100,16 @@ public class RegionManager : MonoBehaviour {
     }
 
     private void ActualizeRecruitPoints() {
-        if (!isAttacked) {
+        if (!isAttacked && !isPlayer) {
             recruitPoints += baseData.recruitRefreshRate;
             if (recruitPoints > baseData.recruitPoints) recruitPoints = baseData.recruitPoints;
         }
     }
 
     public void OnEndTurn() {
-        ActualizeRecruitPoints();
+        SolveRemainingBattle();
         ClearBattleEvent();
+        ActualizeRecruitPoints();
         GenerateBattleEvent();
     }
 
@@ -127,9 +129,19 @@ public class RegionManager : MonoBehaviour {
     private void Awake() {
         battleGenerator = GetComponentInParent<BattleGenerator>();
         rc = GetComponent<RegionColoring>();
+        resources = baseData.resources;
+        recruitPoints = baseData .recruitPoints;
     }
 
     private void Start() {
         if (!isPlayer && rc != null) rc.SetEnemyColoring();
+    }
+
+    private void SolveRemainingBattle() {
+        if (battle != null && isPlayer) { 
+            isPlayer = false;
+            recruitPoints = baseData.recruitPoints;
+            OnChangeOwner.Raise(this);
+        }
     }
 }

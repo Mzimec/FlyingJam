@@ -99,15 +99,13 @@ public class BattleMenuManager : MonoBehaviour {
     }
 
     private void OnCardClick(CardVE cve) {
-        Debug.Log("OnCardClick");
         int index = cve.index;
         if (areInHand[index]) {
             if ((battleManager.region.isPlayer && battleManager.defenders.Count >= battleManager.region.baseData.battlefieldSize) ||
                 (!battleManager.region.isPlayer && battleManager.attackers.Count >= battleManager.region.baseData.battlefieldSize)) {
-                Debug.Log("Not Add");
                 return;
             }
-            Debug.Log($"{battleManager.defenders.Count}, {battleManager.attackers.Count}, {battleManager.region.baseData.battlefieldSize}");
+            //Debug.Log($"{battleManager.defenders.Count}, {battleManager.attackers.Count}, {battleManager.region.baseData.battlefieldSize}");
             battleManager.AddCard(cve.card);
             hand.Remove(playerCards[index].ve);
             player.hand.Remove(cve.card);
@@ -127,7 +125,7 @@ public class BattleMenuManager : MonoBehaviour {
     }
 
     private void EmptyCardClick(CardVE _) {
-        Debug.Log("OnEmptyCardClick");
+        //Debug.Log("OnEmptyCardClick");
     }
 
     private void OnFight() {

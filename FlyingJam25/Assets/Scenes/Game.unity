@@ -14401,6 +14401,7 @@ GameObject:
   - component: {fileID: 2084772068}
   - component: {fileID: 2084772070}
   - component: {fileID: 2084772071}
+  - component: {fileID: 2084772072}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -14478,6 +14479,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mim: {fileID: 11400000, guid: b6ec997ade620384bb606d31c8cdfe69, type: 2}
+--- !u!114 &2084772072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084772067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623365a54932d0f40bf20f3c226356ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 77e04ea628e2aa94c9dc273535db33c9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2084772070}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: OnEndTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2104910115
 PrefabInstance:
   m_ObjectHideFlags: 0
