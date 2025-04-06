@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerManager : MonoBehaviour {
     [SerializeField] private List<CardSO> startingDeck;
-    
+    [SerializeField] GameObject frostUI;
+    [SerializeField] GameObject hungerUI;
+    [SerializeField] EmptyEvent onStartTurn;
+
     public List<CardManager> deck = new List<CardManager>();
     public List<CardManager> hand = new List<CardManager>();
     public List<CardManager> unitsInBattle = new List<CardManager>();
@@ -16,6 +21,26 @@ public class PlayerManager : MonoBehaviour {
     public int turn = 1;
     public int score = 0;
     public int resources;
+    public int injuryValue = 0;
+    [SerializeField] float injuryMultiplier;
+    public int InjuryValue {
+        get {
+            int res = ((int)(injuryMultiplier * injuryValue) > 4) ? 4 : (int)(injuryMultiplier * injuryValue);
+            res = res < cardsToDiscard.Count ? res : cardsToDiscard.Count;
+            return res;
+        }
+    }
+
+    private int cardsToDestroy = 0;
+    public int ToDestroyCount{ 
+        get{ 
+            int res = cardsToDestroy > 9 ? 9 : cardsToDestroy;
+            res = res < CountOfAllCards ? res : CountOfAllCards;
+            return res;
+        } 
+    }
+    public int CountOfAllCards => hand.Count + deck.Count + discard.Count + unitsInBattle.Count + cardsToDiscard.Count;
+
     [SerializeField] private int constantResourceDecrement;
     [SerializeField] private float factorResourceDecrement;
 
@@ -39,6 +64,7 @@ public class PlayerManager : MonoBehaviour {
         foreach (var region in regions) {
             if (region.isPlayer) controlledRegions.Add(region);
         }
+        onStartTurn.Raise(new Empty());
     }
 
     private void DrawHand() {
@@ -85,23 +111,37 @@ public class PlayerManager : MonoBehaviour {
         if (deck.Contains(card)) deck.Remove(card);
     }
 
-    private void DestroyUnits(int n) { }
 
     private void UseResources() {
         resources += Pillage();
         resources -= ResourcesConsumedPerTurn;
         if(resources < 0) {
-            DestroyUnits(-resources);
+            cardsToDestroy = -resources;
             resources = 0;
         }
     }
 
-    public void OnEndTurn() {
+    public void OnEndTurn1() {
+        Debug.Log($"Injury value: {InjuryValue} | {injuryValue}");
+        if (InjuryValue > 0) frostUI.SetActive(true);
+        else OnEndTurn2();
+    }
+
+    public void OnEndTurn2() {
         UseResources();
+        SortCardsAtEndTurn();
+        Debug.Log($"Cards to destroy: {ToDestroyCount}");
+        if (cardsToDestroy > 0) hungerUI.SetActive(true);
+        else OnEndTurn3();
+    }
+
+    public void OnEndTurn3() {
         CountScore();
         turn++;
-        SortCardsAtEndTurn();
+        injuryValue = 0;
+        cardsToDestroy = 0;
         DrawHand();
+        onStartTurn.Raise(new Empty());
     }
 
     public void Load(PlayerData data, List<RegionManager> allRegions) {
@@ -122,10 +162,6 @@ public class PlayerManager : MonoBehaviour {
         foreach (var region in allRegions) {
             if (region != null && region.isPlayer) controlledRegions.Add(region);
         }
-    }
-
-    private void StartTurn() {
-        DrawHand();
     }
 
     private void SortCardsAtEndTurn() {

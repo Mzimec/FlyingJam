@@ -7,11 +7,12 @@ public class IsClickable : MonoBehaviour
 {
     public event Action<InputControl> OnClicked;
     [SerializeField] MouseInputManager hitManager;
+    public bool isEnabled = true;
 
     public void OnClick(InputControl button) {
+        if (!isEnabled) return;
         if (hitManager.hit.collider == this.GetComponent<Collider2D>()) {
             OnClicked?.Invoke(button);
-            Debug.Log("Hit Confirmed");
         }
         else Debug.Log("No Collider On Clicked Object");        
     }

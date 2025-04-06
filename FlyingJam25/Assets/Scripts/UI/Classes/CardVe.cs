@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.VFX;
 
@@ -8,6 +9,7 @@ public partial class CardVE : VisualElement {
 
     public CardManager card;
     private UnityEvent<CardVE> response;
+    private UnityEvent<CardVE> responseR;
     public int index;
     public VisualElement ve;
     public float scale;
@@ -15,6 +17,18 @@ public partial class CardVE : VisualElement {
     public CardVE(CardManager c, VisualTreeAsset t, float f) {
         this.card = c;
         this.response = new UnityEvent<CardVE>();
+        this.responseR = new UnityEvent<CardVE>();
+        this.index = 0;
+        this.ve = t.CloneTree();
+        this.scale = f;
+
+        InitializeVE();
+    }
+
+    public CardVE(CardManager c, VisualTreeAsset t, UnityEvent<CardVE> r, UnityEvent<CardVE> rr, float f) {
+        this.card = c;
+        this.response = r;
+        this.responseR = rr;
         this.index = 0;
         this.ve = t.CloneTree();
         this.scale = f;
@@ -25,6 +39,7 @@ public partial class CardVE : VisualElement {
     public CardVE(CardManager c, VisualTreeAsset t, UnityEvent<CardVE> r, int id, float f) {
         card = c;
         response = r;
+        responseR = new UnityEvent<CardVE>();
         index = id;
         ve = t.CloneTree();
         scale = f;
@@ -78,12 +93,19 @@ public partial class CardVE : VisualElement {
 
         Button cudl = ve.Q<Button>("Cudl");
         cudl.clicked += () => response.Invoke(this);
+        cudl.RegisterCallback<PointerUpEvent>(e =>
+        {
+            if (e.button == (int)MouseButton.RightMouse) {
+                responseR.Invoke(this);
+            }
+        });
 
-        ve.style.transformOrigin = new StyleTransformOrigin(new TransformOrigin(0, 0));
-        ve.transform.scale = new Vector3(scale, scale, 0.0f);
-        ve.style.width = scale * ConstantValues.cardWidth;
-        ve.style.height = scale * ConstantValues.cardHeight;
-        ve.style.marginBottom = 10;
+        //ve.style.transformOrigin = new StyleTransformOrigin(new TransformOrigin(0, 0));
+        //ve.transform.scale = new Vector3(scale, scale, 0.0f);
+        //ve.style.width = scale * ConstantValues.cardWidth;
+        //ve.style.height = scale * ConstantValues.cardHeight;
+        ve.style.marginBottom = ConstantValues.cardMargin;
+        ve.style.marginRight = ConstantValues.cardMargin;
     }
 
 

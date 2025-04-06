@@ -41,6 +41,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
     private void OnNewGame() {
+        saveManager.CleanData();
         SceneManager.LoadScene("Game");
     }
 

@@ -12,7 +12,7 @@ public class SaveManager : ScriptableObject
     private DataToSave loadedData;
 
     public void SaveGame() {
-        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.None));
+        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.InstanceID));
         PlayerManager player = FindFirstObjectByType<PlayerManager>();
         if (player == null || regions.Count != ConstantValues.regionCount) return;
         DataToSave dataToSave = new DataToSave(regions, player);
@@ -33,7 +33,7 @@ public class SaveManager : ScriptableObject
     public void ApplyLoadedData() {
         if (loadedData == null) return;
 
-        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.None));
+        List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.InstanceID));
         PlayerManager player = FindFirstObjectByType<PlayerManager>();
 
         for (int i = 0; i < regions.Count; i++) {
@@ -43,5 +43,9 @@ public class SaveManager : ScriptableObject
         player.Load(loadedData.player, regions);
         loadedData = null;
 
+    }
+
+    public void CleanData() {
+        loadedData = null;
     }
 }

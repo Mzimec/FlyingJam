@@ -9,6 +9,7 @@ public class RegionManager : MonoBehaviour {
 
     public RegionSO baseData;
     RegionColoring rc;
+    [SerializeField] EmptyEvent onBattleCleared;
 
     public string regionName;
 
@@ -59,7 +60,7 @@ public class RegionManager : MonoBehaviour {
             if (rp < minimalRP) rp = minimalRP;
         }
         else rp = baseData.recruitPoints;
-        for (int i = 0; i < baseData.battlefieldSize - 1; i++) {
+        for (int i = 0; i < baseData.battlefieldSize; i++) {
             availableUnits = availableUnits.Where(card => card.value <= rp).ToList();
             if (availableUnits.Count() == 0) break;
             var cardToAdd = availableUnits[Random.Range(0, availableUnits.Count())];
@@ -73,14 +74,7 @@ public class RegionManager : MonoBehaviour {
     }
 
     private void GenerateBattleEvent(float chance) {
-        float random = chanceMultiplier * Random.Range(0, GetChanceValue);
-        if (chance >= random) {
-            if (battleGenerator != null) {
-                isAttacked = true;
-                battleGenerator.GenerateBattle(this);
-            }
-            else Debug.Log("Null battleGenrator in RegionManager");
-        }
+        StartCoroutine(BattleEventCoroutine(chance));
     }
 
     private void GenerateBattleEvent() {
@@ -93,14 +87,7 @@ public class RegionManager : MonoBehaviour {
     }
 
     public void ClearBattleEvent() {
-        if (battle != null) {
-            Destroy(battle.gameObject);
-            battle = null;
-        }
-        if (rc != null) {
-            if (isPlayer) rc.SetNormalColoring();
-            else rc.SetEnemyColoring();
-        }
+        if (battle != null) StartCoroutine(ClearBattleCoroutine());
     }
 
     private void ActualizeRecruitPoints() {
@@ -111,9 +98,18 @@ public class RegionManager : MonoBehaviour {
     }
 
     public void OnEndTurn() {
+        StartCoroutine(OnEndTurnCoroutine());
+    }
+
+    public IEnumerator OnEndTurnCoroutine() {
         SolveRemainingBattle();
-        ClearBattleEvent();
+        yield return StartCoroutine(ClearBattleCoroutine());
         ActualizeRecruitPoints();
+        onBattleCleared.Raise(new Empty());
+        //GenerateBattleEvent();
+    }
+
+    public void OnStartTurn() {
         GenerateBattleEvent();
     }
 
@@ -131,7 +127,7 @@ public class RegionManager : MonoBehaviour {
 
 
     private void Awake() {
-        battleGenerator = GetComponentInParent<BattleGenerator>();
+        battleGenerator = GetComponent<BattleGenerator>();
         rc = GetComponent<RegionColoring>();
         resources = baseData.resources;
         recruitPoints = baseData .recruitPoints;
@@ -146,6 +142,83 @@ public class RegionManager : MonoBehaviour {
             isPlayer = false;
             recruitPoints = baseData.recruitPoints;
             OnChangeOwner.Raise(this);
+        }
+    }
+
+    private IEnumerator BattleEventCoroutine(float chance) {
+        float random = chanceMultiplier * Random.Range(0, GetChanceValue);
+        float duration = 0.6f;
+        float timer = 0f;
+        if (chance < random) {
+            yield return new WaitForSeconds(duration);
+            yield break;
+        }
+
+        if (battleGenerator == null) {
+            Debug.Log("Null battleGenerator in RegionManager");
+            yield return new WaitForSeconds(duration);
+            yield break;
+        }
+
+        isAttacked = true;
+
+        // Create the battle object (or whatever visuals you use)
+        battleGenerator.GenerateBattle(this);
+        var clickable = battle.GetComponent<IsClickable>();
+        if (clickable != null) clickable.isEnabled = false;
+
+        // Optional: assign initial scale and animate
+        Transform battleTransform = battle.transform;
+        battleTransform.localScale = Vector3.zero;
+
+        while (timer < duration) {
+            float t = timer / duration;
+            battleTransform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure final scale
+        battleTransform.localScale = Vector3.one;
+        if (clickable != null) clickable.isEnabled = true;
+    }
+
+    private IEnumerator ClearBattleCoroutine() {
+        float duration = 0.6f;
+        float timer = 0f;
+
+        if (battle == null) {
+            yield return new WaitForSeconds(duration);
+            yield break;
+        }
+        var battleTransform = battle.transform;
+        var clickable = battle.GetComponent<IsClickable>();
+        if (clickable != null) clickable.isEnabled = false;
+
+        Vector3 originalScale = battleTransform.localScale;
+
+        // Determine target color from material
+        float target = isPlayer ? 1.0f : 0.0f;
+
+        // Start fading color
+        if (rc != null) StartCoroutine(rc.LerpToMaterialColor(target, duration));
+
+        // Shrink battle
+        while (timer < duration) {
+            float t = timer / duration;
+            battleTransform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        battleTransform.localScale = Vector3.zero;
+        Destroy(battle.gameObject);
+        battle = null;
+
+        // Finish with final material assignment
+        if (rc != null) {
+            if (isPlayer) rc.SetNormalColoring();
+            else rc.SetEnemyColoring();
         }
     }
 }

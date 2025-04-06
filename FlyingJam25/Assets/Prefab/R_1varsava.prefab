@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1944423351904114182
+--- !u!1 &2014886591419025942
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6821840045580093690}
-  - component: {fileID: 8231782658262866641}
-  - component: {fileID: 266681069311735889}
-  - component: {fileID: 7939876236942004729}
-  - component: {fileID: 7572253944732350869}
-  - component: {fileID: -5054063619879257810}
+  - component: {fileID: 4971377625465588106}
+  - component: {fileID: 5470130107952629512}
+  - component: {fileID: 3993091691382184350}
+  - component: {fileID: 5417769987562159485}
+  - component: {fileID: 4186252549720820407}
+  - component: {fileID: 8619181428425894663}
+  - component: {fileID: 3915520027293796202}
   m_Layer: 0
-  m_Name: R_1varsava
+  m_Name: R_1Varsava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6821840045580093690
+--- !u!4 &4971377625465588106
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944423351904114182}
+  m_GameObject: {fileID: 2014886591419025942}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4181204, y: 2.1827526, z: 0}
+  m_LocalPosition: {x: -6.41812, y: 2.182753, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8231782658262866641
+--- !u!114 &5470130107952629512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944423351904114182}
+  m_GameObject: {fileID: 2014886591419025942}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb456492d8830604da559e4c29d97df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseData: {fileID: 11400000, guid: dc96dbf881506a447bfc66282bb83553, type: 2}
-  regionName: 
+  baseData: {fileID: 11400000, guid: 0f772af815c9ec042860e910779e6e62, type: 2}
+  onBattleCleared: {fileID: 11400000, guid: 4499766cce73b504ebe21059f15caf37, type: 2}
+  regionName: "Duch\xE9 de Varsovie"
   recruitPoints: 0
   resources: 0
   regionDistance: 1
@@ -59,41 +61,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   OnChangeOwner: {fileID: 11400000, guid: 8879e88c0fa288f419741b41ca9f66bc, type: 2}
---- !u!114 &266681069311735889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944423351904114182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623365a54932d0f40bf20f3c226356ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 77e04ea628e2aa94c9dc273535db33c9, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8231782658262866641}
-        m_TargetAssemblyTypeName: RegionManager, Assembly-CSharp
-        m_MethodName: OnEndTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!212 &7939876236942004729
+--- !u!212 &3993091691382184350
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944423351904114182}
+  m_GameObject: {fileID: 2014886591419025942}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -110,7 +84,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: ae32cd79078ff544ca017f58cfaeee27, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,13 +116,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7572253944732350869
+--- !u!114 &5417769987562159485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944423351904114182}
+  m_GameObject: {fileID: 2014886591419025942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c78b05e17156d4a897744f412b999f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4186252549720820407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014886591419025942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a5a52c9e42b6248a8de5c65f1ff62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battlePrefab: {fileID: 6675862159705460883, guid: b7036414f46ba28438db1dac1fbf5f26, type: 3}
+  difX: 0
+  difY: 0
+--- !u!114 &8619181428425894663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014886591419025942}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 623365a54932d0f40bf20f3c226356ca, type: 3}
@@ -158,7 +159,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8231782658262866641}
+      - m_Target: {fileID: 5470130107952629512}
         m_TargetAssemblyTypeName: RegionManager, Assembly-CSharp
         m_MethodName: OnEndTurn
         m_Mode: 1
@@ -170,17 +171,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-5054063619879257810
+--- !u!114 &3915520027293796202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944423351904114182}
+  m_GameObject: {fileID: 2014886591419025942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40c78b05e17156d4a897744f412b999f, type: 3}
+  m_Script: {fileID: 11500000, guid: 623365a54932d0f40bf20f3c226356ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  original: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  gray: {fileID: -876546973899608171, guid: ae32cd79078ff544ca017f58cfaeee27, type: 3}
+  gameEvent: {fileID: 11400000, guid: 79aa273f94906634b830a7b8266cd44b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5470130107952629512}
+        m_TargetAssemblyTypeName: RegionManager, Assembly-CSharp
+        m_MethodName: OnStartTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

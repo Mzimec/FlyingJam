@@ -6,6 +6,7 @@ public class ShowCardManager : MonoBehaviour
 {
     [SerializeField] VisualTreeAsset cardTemplate;
     [SerializeField] VisualTreeAsset threeOfTemplate;
+    [SerializeField] VisualTreeAsset overlayTemplate;
     [SerializeField] GameObject baseMenu;
 
     private UIDocument ui;
@@ -15,6 +16,7 @@ public class ShowCardManager : MonoBehaviour
     public string message = "";
     public int count;
 
+    VisualElement root;
     ScrollView deckVE;
     Label headerL, countL;
     Button cancelB;
@@ -24,7 +26,7 @@ public class ShowCardManager : MonoBehaviour
     }
 
     private void OnEnable() {
-        var root = ui.rootVisualElement;
+        root = ui.rootVisualElement;
 
         deckVE = root.Q<ScrollView>("DeckVE");
         headerL = root.Q<Label>("HeaderL");
@@ -46,7 +48,7 @@ public class ShowCardManager : MonoBehaviour
         for (int i = 0; i < deck.Count / 3; i++) { 
             VisualElement tve = threeOfTemplate.CloneTree().Q<VisualElement>("trojice");
             for (int j = 2; j >= 0; j--) {
-                CardVE cve = new CardVE(deck[3 * i + j], cardTemplate, 0.55f);
+                CardVE cve = new CardVE(deck[3 * i + j], cardTemplate, ConstantValues.cardScale);
                 tve.Add(cve.ve);
             }
             deckVE.Add(tve);
@@ -56,7 +58,7 @@ public class ShowCardManager : MonoBehaviour
         if (remaining != 0) {
             VisualElement tve = threeOfTemplate.CloneTree().Q<VisualElement>("trojice");
             for (int j = remaining - 1; j >= 0; j--) {
-                CardVE cve = new CardVE(deck[deck.Count - remaining + j], cardTemplate, 0.55f);
+                CardVE cve = new CardVE(deck[deck.Count - remaining + j], cardTemplate, ConstantValues.cardScale);
                 tve.Add(cve.ve);
             }
             deckVE.Add(tve);

@@ -75,36 +75,36 @@ public class BattleManager : MonoBehaviour {
         ChangeVulnerabilityPool(dDefensiveValues, defenders);
     }
 
-    private string BattleOutcomes() {
+    private string BattleOutcomes(PlayerManager p) {
         string res;
         if (aPoints > dPoints) {
             if (region.isPlayer) {
-                Debug.Log("Region is players, should be defeat.");
                 region.recruitPoints -= (int)(((float)dPoints / aPoints) * region.recruitPoints);
                 res = "Defeat";
+                p.injuryValue += 2;
             }
             else {
-                Debug.Log("Region is players, should be victory.");
                 res = "Victory";
+                p.injuryValue++;
             }
             region.isPlayer = !region.isPlayer;
             region.OnChangeOwner.Raise(region);
         }
         else {
             if (region.isPlayer) {
-                Debug.Log("Region is not players, should be victory.");
                 res = "Victory";
+                p.injuryValue++;
             }
             else {
-                Debug.Log("Region is not players, should be defeat.");
                 region.recruitPoints -= (int)(((float)aPoints / dPoints) * region.recruitPoints);
                 res = "Defeat";
+                p.injuryValue += 2;
             }
         }
         return res;
     }
 
-    private string RunBattle() {
+    private string RunBattle(PlayerManager p) {
         foreach(var card in attackers) {
             if (card.hasEffects) card.ApplyEffects(attackers, defenders);
         }
@@ -114,7 +114,7 @@ public class BattleManager : MonoBehaviour {
 
         CountPools();
         CountVictoryPoints();
-        return BattleOutcomes();
+        return BattleOutcomes(p);
               
     }
 
@@ -132,8 +132,8 @@ public class BattleManager : MonoBehaviour {
         }
     }
     
-    public string OnFight() {
-        return RunBattle();
+    public string OnFight(PlayerManager p) {
+        return RunBattle(p);
     }
 
     public void AddCard(CardManager card) {

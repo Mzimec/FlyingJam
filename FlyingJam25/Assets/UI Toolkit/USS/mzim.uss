@@ -107,3 +107,12 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
 }
+
+.cudl:hover {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    scale: 1.1 1.1;
+}
+
+.cudl {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.76);
+}

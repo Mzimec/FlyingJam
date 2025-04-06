@@ -12,13 +12,14 @@ public class BattleMenuManager : MonoBehaviour {
     [SerializeField] UIDocument victoryMenu;
     [SerializeField] PlayerManager player;
     [SerializeField] VisualTreeAsset visualTree;
+    [SerializeField] VisualTreeAsset blankCard;
 
     BattleManager battleManager;
 
     UnityEvent<CardVE> response = new UnityEvent<CardVE>();
 
 
-    VisualElement hand, attackVE, defenseVE;
+    VisualElement hand, attackVE, defenseVE, aBlankVE, dBlankVE;
 
     Button cancelB, battleB;
 
@@ -32,10 +33,13 @@ public class BattleMenuManager : MonoBehaviour {
 
     void OnEnable() {
         var root = battleMenu.rootVisualElement;
-        hand = root.Q<VisualElement>("Pool");
+        hand = root.Q<VisualElement>("Hand");
 
         attackVE = root.Q<VisualElement>("attackVE");
         defenseVE = root.Q<VisualElement>("defenseVE");
+
+        aBlankVE = root.Q<VisualElement>("ABlankVE");
+        dBlankVE = root.Q<VisualElement>("DBlankVE"); 
 
         cancelB = root.Q<Button>("CancelB");
         battleB = root.Q<Button>("BattleB");
@@ -55,32 +59,45 @@ public class BattleMenuManager : MonoBehaviour {
             if (battleManager.attackers[j] == null) continue;
             CardVE cve; 
             if (!battleManager.region.isPlayer) {
-                cve = new CardVE(battleManager.attackers[j], visualTree, response, i, 0.6f);
+                cve = new CardVE(battleManager.attackers[j], visualTree, response, i, ConstantValues.cardScale);
                 playerCards.Add(cve);
                 areInHand.Add(false);
                 i++;
             }
-            else cve = new CardVE(battleManager.attackers[j], visualTree, 0.6f);
+            else cve = new CardVE(battleManager.attackers[j], visualTree, ConstantValues.cardScale);
             attackVE.Add(cve.ve);
         }
+
+        int emptyAttackersCount = battleManager.region.baseData.battlefieldSize - battleManager.attackers.Count;
+        for (int j = 0; j < emptyAttackersCount; j++) {
+            VisualElement blank = ConstantValues.CreateEmpty(blankCard);
+            aBlankVE.Add(blank);
+        }
+
         for (int j = 0; j < battleManager.defenders.Count; j++) {
             if (battleManager.defenders[j] == null) continue;
             CardVE cve;
             if (battleManager.region.isPlayer) {
-                cve = new CardVE(battleManager.defenders[j], visualTree, response, i, 0.6f);
+                cve = new CardVE(battleManager.defenders[j], visualTree, response, i, ConstantValues.cardScale);
                 playerCards.Add(cve);
                 areInHand.Add(false);
                 i++;
             }
-            else cve = new CardVE(battleManager.defenders[j], visualTree, 0.6f);
+            else cve = new CardVE(battleManager.defenders[j], visualTree, ConstantValues.cardScale);
             defenseVE.Add(cve.ve);
+        }
+
+        int emptyDefendersCount = battleManager.region.baseData.battlefieldSize - battleManager.defenders.Count;
+        for (int j = 0; j < emptyDefendersCount; j++) {
+            VisualElement blank = ConstantValues.CreateEmpty(blankCard);
+            dBlankVE.Add(blank);
         }
     }
 
     private void InitializeHand() {
         int i = playerCards.Count;
         foreach (var card in player.hand) {
-            CardVE cve = new CardVE(card, visualTree, response, i, 0.6f);
+            CardVE cve = new CardVE(card, visualTree, response, i, ConstantValues.cardScale);
             playerCards.Add(cve);
             areInHand.Add(true);
             hand.Add(cve.ve);
@@ -108,27 +125,43 @@ public class BattleMenuManager : MonoBehaviour {
             hand.Remove(playerCards[index].ve);
             player.hand.Remove(cve.card);
             player.unitsInBattle.Add(cve.card);
-            if (battleManager.region.isPlayer) defenseVE.Add(playerCards[index].ve);
-            else attackVE.Add(playerCards[index].ve); 
+            if (battleManager.region.isPlayer) {
+                defenseVE.Add(playerCards[index].ve);
+                dBlankVE.RemoveAt(dBlankVE.childCount - 1);
+            }
+            else {
+                attackVE.Add(playerCards[index].ve);
+                aBlankVE.RemoveAt(aBlankVE.childCount - 1);
+            }
         }
         else {
             battleManager.RemoveCard(cve.card);
             player.unitsInBattle.Remove(cve.card);
             player.hand.Add(cve.card);
-            if (battleManager.region.isPlayer) defenseVE.Remove(playerCards[index].ve);
-            else attackVE.Remove(playerCards[index].ve);
+            if (battleManager.region.isPlayer) {
+                defenseVE.Remove(playerCards[index].ve);
+                var blank = ConstantValues.CreateEmpty(blankCard);
+                dBlankVE.Add(blank);
+
+            }
+            else {
+                attackVE.Remove(playerCards[index].ve);
+                var blank = ConstantValues.CreateEmpty(blankCard);
+                aBlankVE.Add(blank);
+            }
             hand.Add(playerCards[index].ve);
         }
         areInHand[index] = !areInHand[index];
     }
 
     private void OnFight() {
+        if (battleManager.attackers.Count == 0 || battleManager.defenders.Count == 0) return;
         if (victoryMenu != null) {
             victoryMenu.gameObject.SetActive(true);
             var vm = victoryMenu.GetComponent<VictoryMenuManager>();
-            vm.message = battleManager.OnFight();
-            vm.SetBattleManager(battleManager);
             ChangePlayerCards();
+            vm.message = battleManager.OnFight(player);
+            vm.SetBattleManager(battleManager);
         } 
         battleMenu.gameObject.SetActive(false);
     }

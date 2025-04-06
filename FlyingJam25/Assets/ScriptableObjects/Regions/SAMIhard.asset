@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2531f2c907fc0a4283a5423d1fd9813, type: 3}
   m_Name: SAMIhard
   m_EditorClassIdentifier: 
-  recruitPoints: 50
+  recruitPoints: 100
   recruitRefreshRate: 3
   resources: 60
   resourceRefreshRate: 1

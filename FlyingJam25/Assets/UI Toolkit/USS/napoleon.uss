@@ -53,3 +53,48 @@
     -unity-background-scale-mode: scale-and-crop;
 }
 
+.empty {
+    transform-origin: top left;
+}
+
+.empty:hover {
+    scale: 1.5 1.5;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    width: auto;
+    min-width: auto;
+    transform-origin: center center;
+}
+
+.cudl {
+    background-color: rgba(255, 255, 255, 0.49);
+}
+
+.cudl:hover {
+    scale: 1.1 1.1;
+    background-color: rgba(255, 255, 255, 0.81);
+}
+
+.pudl:hover {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    scale: 1.1 1.1;
+    background-color: rgba(14, 4, 4, 0.9);
+}
+
+.pudl {
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.86);
+    border-left-color: rgba(19, 1, 0, 0);
+    border-right-color: rgba(19, 1, 0, 0);
+    border-top-color: rgba(19, 1, 0, 0);
+    border-bottom-color: rgba(19, 1, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: rgba(15, 4, 4, 0.75);
+}

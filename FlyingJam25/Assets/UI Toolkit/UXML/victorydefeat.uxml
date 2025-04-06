@@ -1,9 +1,22 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/napoleon.uss?fileID=7433441132597879392&amp;guid=ad02aad470c562b499bc5ee36c117499&amp;type=3#napoleon" />
+    <Style src="project://database/Assets/UI%20Toolkit/USS/napoleon.uss?fileID=7433441132597879392&amp;guid=ad02aad470c562b499bc5ee36c117499&amp;type=3#napoleon" />
     <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Sprite/backgr.png?fileID=2800000&amp;guid=942381614163245409d1bee8ef0c098b&amp;type=3#backgr&quot;); -unity-background-image-tint-color: rgb(125, 125, 125);">
-        <engine:Label text="Victory/Defeat" name="V-D-text" class="brikule-bila" style="height: 51px; margin-top: 50px; font-size: 70px; color: rgb(152, 0, 0);" />
-        <engine:Label text="Attack: (X) Defense: (X)" name="Points" class="brikule-bila" style="margin-top: 30px;" />
-        <engine:Label text="New recruit score: (X)" name="Recruit" class="brikule-bila" style="margin-top: 30px;" />
+        <engine:Label text="Victory/Defeat" name="V-D-text" class="brikule-bila" style="height: 51px; margin-top: 50px; font-size: 70px; color: rgb(152, 0, 0); background-image: none;" />
+        <engine:Label text="Attack: (X) Defense: (X)" name="Points" class="brikule-bila" style="margin-top: 30px; background-image: none;" />
+        <engine:Label text="New recruit score: (X)" name="Recruit" class="brikule-bila" style="margin-top: 30px; background-image: none;" />
         <engine:Button text="←Back to map" name="CancleB" class="tlacitka brikule-bila" style="background-image: url(&quot;project://database/Assets/Art/Sprite/bloodred.png?fileID=2800000&amp;guid=ac9c3c00d3ff1414d903dc2f134a7d15&amp;type=3#bloodred&quot;); border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-bottom-left-radius: 16px;" />
+        <engine:VisualElement style="flex-grow: 1; position: absolute; right: 80px; top: 200px; height: 668px; width: 537px; border-left-color: rgb(224, 203, 176); border-right-color: rgb(224, 203, 176); border-top-color: rgb(224, 203, 176); border-bottom-color: rgb(224, 203, 176); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+            <engine:VisualElement style="flex-grow: 1; position: absolute; height: 420px; width: 420px;">
+                <engine:VisualElement style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/Art/Sprite/symboly/ARTILLERY.png?fileID=-4218664345954135277&amp;guid=266ef878301606f48b09c8da43b04c86&amp;type=3#ARTILLERY_0&quot;); height: 200px; width: 200px; border-left-color: rgb(224, 203, 176); border-right-color: rgb(224, 203, 176); border-top-color: rgb(224, 203, 176); border-bottom-color: rgb(224, 203, 176); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px;" />
+                <engine:VisualElement style="flex-grow: 1; left: 220px; width: 200px; height: 200px; max-height: 200px; background-image: url(&quot;project://database/Assets/Art/Sprite/symboly/CAVALRY.png?fileID=-6655231054727360981&amp;guid=2637ea669d3df9e4995aa817de2f4195&amp;type=3#CAVALRY_0&quot;);" />
+                <engine:VisualElement style="flex-grow: 1; position: absolute; top: 220px; width: 200px; height: 200px; background-image: url(&quot;project://database/Assets/Art/Sprite/symboly/RANGED.png?fileID=3060203100267792730&amp;guid=34dcffd645647374eb10951ee066092d&amp;type=3#RANGED_0&quot;);" />
+                <engine:VisualElement style="flex-grow: 1; top: 220px; left: 220px; position: absolute; width: 200px; height: 200px; background-image: url(&quot;project://database/Assets/Art/Sprite/symboly/SCOUT.png?fileID=8969151149204200261&amp;guid=d15cd3c3f7e2a964ea6a4c79a3b5c844&amp;type=3#SCOUT_0&quot;);" />
+            </engine:VisualElement>
+            <engine:VisualElement style="flex-grow: 1;" />
+        </engine:VisualElement>
+        <engine:VisualElement style="flex-grow: 1; position: absolute; height: 610px; width: 462px; left: 80px; top: 200px; border-left-color: rgb(224, 203, 176); border-right-color: rgb(224, 203, 176); border-top-color: rgb(224, 203, 176); border-bottom-color: rgb(224, 203, 176); border-top-width: 6px; border-right-width: 6px; border-bottom-width: 6px; border-left-width: 6px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+            <engine:VisualElement style="flex-grow: 1;" />
+            <engine:VisualElement style="flex-grow: 1;" />
+        </engine:VisualElement>
     </engine:VisualElement>
 </engine:UXML>

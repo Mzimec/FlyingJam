@@ -54,6 +54,11 @@ public class InfoPanelManager : MonoBehaviour
         if (mouse.hit.collider != null) {
             region = mouse.hit.collider.GetComponent<RegionManager>();
         }
+        BattleManager bm;
+        if (region == null && mouse.hit.collider != null) {
+            bm = mouse.hit.collider.GetComponent<BattleManager>();
+            if (bm != null) region = bm.region;
+        }
 
         if (region != null) {
             regionName.text = region.regionName;

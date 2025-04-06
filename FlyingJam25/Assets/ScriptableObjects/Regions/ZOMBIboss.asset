@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2531f2c907fc0a4283a5423d1fd9813, type: 3}
   m_Name: ZOMBIboss
   m_EditorClassIdentifier: 
-  recruitPoints: 59
+  recruitPoints: 118
   recruitRefreshRate: 3
   resources: 100
   resourceRefreshRate: 1
