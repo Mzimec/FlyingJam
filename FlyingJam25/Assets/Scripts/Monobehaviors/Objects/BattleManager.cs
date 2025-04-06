@@ -10,10 +10,10 @@ public class BattleManager : MonoBehaviour {
     public List<CardManager> attackers;
     public List<CardManager> defenders;
 
-    private int[] aOffensiveValues = new int[ConstantValues.cardTypesCount];
-    private int[] dOffensiveValues = new int[ConstantValues.cardTypesCount];
-    private int[] aDefensiveValues = new int[ConstantValues.cardTypesCount];
-    private int[] dDefensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] aOffensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] dOffensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] aDefensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] dDefensiveValues = new int[ConstantValues.cardTypesCount];
 
     public int aPoints, dPoints;
 
@@ -47,8 +47,9 @@ public class BattleManager : MonoBehaviour {
     private void GenerateOpponentCards() {
         var cardsToEnter = region.GenerateLoadOut();
         foreach (var card in cardsToEnter) {
-            if(region.isPlayer) attackers.Add(new CardManager(card));
-            else defenders.Add(new CardManager(card));
+            /*if(region.isPlayer) attackers.Add(new CardManager(card));
+            else defenders.Add(new CardManager(card));*/
+            defenders.Add(new CardManager(card));
         }
     }
 
@@ -78,7 +79,7 @@ public class BattleManager : MonoBehaviour {
     private string BattleOutcomes(PlayerManager p) {
         string res;
         if (aPoints > dPoints) {
-            if (region.isPlayer) {
+            /*if (region.isPlayer) {
                 region.recruitPoints -= (int)(((float)dPoints / aPoints) * region.recruitPoints);
                 res = "Defeat";
                 p.injuryValue += 2;
@@ -88,10 +89,16 @@ public class BattleManager : MonoBehaviour {
                 p.injuryValue++;
             }
             region.isPlayer = !region.isPlayer;
-            region.OnChangeOwner.Raise(region);
+            region.OnChangeOwner.Raise(region);*/
+            res = "Victory";
+            p.injuryValue++;
+            if (!region.isPlayer) {
+                region.isPlayer = true;
+                region.OnChangeOwner.Raise(region);
+            }
         }
         else {
-            if (region.isPlayer) {
+            /*if (region.isPlayer) {
                 res = "Victory";
                 p.injuryValue++;
             }
@@ -99,6 +106,13 @@ public class BattleManager : MonoBehaviour {
                 region.recruitPoints -= (int)(((float)aPoints / dPoints) * region.recruitPoints);
                 res = "Defeat";
                 p.injuryValue += 2;
+            }*/
+            res = "Defeat";
+            p.injuryValue += 2;
+            region.recruitPoints -= (int)(((float)aPoints / (aPoints+dPoints)) * region.recruitPoints);
+            if (region.isPlayer) {
+                region.isPlayer = false;
+                region.OnChangeOwner.Raise(region);
             }
         }
         return res;
@@ -137,21 +151,23 @@ public class BattleManager : MonoBehaviour {
     }
 
     public void AddCard(CardManager card) {
-        if (region.isPlayer) {
+        /*if (region.isPlayer) {
             if(defenders.Count < region.baseData.battlefieldSize) defenders.Add(card);
         }
         else {
             if(attackers.Count < region.baseData.battlefieldSize) attackers.Add(card);
-        }
+        }*/
+        if (attackers.Count < region.baseData.battlefieldSize) attackers.Add(card);
     }
 
     public void RemoveCard(CardManager card) {
-        if (region.isPlayer) {
+        /*if (region.isPlayer) {
             if(defenders.Contains(card)) defenders.Remove(card);
         }
         else {
             if (attackers.Contains(card)) attackers.Remove(card);
-        }
+        }*/
+        if (attackers.Contains(card)) attackers.Remove(card);
     }
 
     public void OpenBattle() {
