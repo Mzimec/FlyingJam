@@ -89,7 +89,7 @@ public class InfoPanelManager : MonoBehaviour
     }
 
     public void OnStartTurn() {
-        date.text = $"{ConstantValues.GetDate(player.turn + ConstantValues.startMonth)}\n Anno Domini";
+        date.text = $"{ConstantValues.GetDate(player.turn + ConstantValues.startMonth)}\nAnno Domini";
         score.text = player.score.ToString();
         resources.text = player.resources.ToString();
         incomeV.text = (player.Pillage() - player.ResourcesConsumedPerTurn).ToString();
