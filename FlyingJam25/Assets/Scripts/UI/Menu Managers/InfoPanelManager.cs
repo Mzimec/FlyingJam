@@ -22,21 +22,19 @@ public class InfoPanelManager : MonoBehaviour
     private void OnEnable() {
         var root = menu.rootVisualElement;
 
-        var regionVE = root.Q<VisualElement>("RegionContainer");
-        regionName = regionVE.Q<Label>("Name");
-        regionPT = regionVE.Q<Label>("Provisions");
-        regionProvisions = regionVE.Q<Label>("ProvisionsV");
-        recruitPT = regionVE.Q<Label>("Recruit");
-        recruitScore = regionVE.Q<Label>("RecruitV");
+        regionName = root.Q<Label>("Name");
+        regionPT = root.Q<Label>("Provisions");
+        regionProvisions = root.Q<Label>("ProvisionsV");
+        recruitPT = root.Q<Label>("Recruit");
+        recruitScore = root.Q<Label>("RecruitV");
 
-        var infoVE = root.Q<VisualElement>("InfoContainer");
-        score = infoVE.Q<Label>("ScoreV");
-        resources = infoVE.Q<Label>("ProvisionsV");
-        changes = infoVE.Q<Label>("Changes");
+        score = root.Q<Label>("ScoreV");
+        resources = root.Q<Label>("ProvisionsV");
+        changes = root.Q<Label>("Changes");
 
-        endTurnB = infoVE.Q<Button>("EndTurn");
-        deckB = infoVE.Q<Button>("Deck");
-        menuB = infoVE.Q<Button>("Menu");
+        endTurnB = root.Q<Button>("EndTurnB");
+        deckB = root.Q<Button>("DeckB");
+        menuB = root.Q<Button>("MenuB");
 
         if(endTurnB != null) endTurnB.clicked += OnEndTurnClicked;
         if (deckB != null) deckB.clicked += OnDeckClicked;
