@@ -10,10 +10,10 @@ public class BattleManager : MonoBehaviour {
     public List<CardManager> attackers;
     public List<CardManager> defenders;
 
-    private int[] aOffensiveValues = new int[ConstantValues.cardTypesCount];
-    private int[] dOffensiveValues = new int[ConstantValues.cardTypesCount];
-    private int[] aDefensiveValues = new int[ConstantValues.cardTypesCount];
-    private int[] dDefensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] aOffensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] dOffensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] aDefensiveValues = new int[ConstantValues.cardTypesCount];
+    public int[] dDefensiveValues = new int[ConstantValues.cardTypesCount];
 
     public int aPoints, dPoints;
 

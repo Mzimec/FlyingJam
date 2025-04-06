@@ -100,10 +100,9 @@ public class PlayerManager : MonoBehaviour {
         return region.PillageResources(factorPillageRate, constantPillageRate);
     }
 
-    private int Pillage() {
+    public int Pillage() {
         int pillaged = 0;
         foreach (var region in controlledRegions) pillaged += PillageRegion(region);
-        Debug.Log($"Pillaged {pillaged} provisions");
         return pillaged;
     }
 
@@ -122,7 +121,6 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void OnEndTurn1() {
-        Debug.Log($"Injury value: {InjuryValue} | {injuryValue}");
         if (InjuryValue > 0) frostUI.SetActive(true);
         else OnEndTurn2();
     }
@@ -130,7 +128,6 @@ public class PlayerManager : MonoBehaviour {
     public void OnEndTurn2() {
         UseResources();
         SortCardsAtEndTurn();
-        Debug.Log($"Cards to destroy: {ToDestroyCount}");
         if (cardsToDestroy > 0) hungerUI.SetActive(true);
         else OnEndTurn3();
     }

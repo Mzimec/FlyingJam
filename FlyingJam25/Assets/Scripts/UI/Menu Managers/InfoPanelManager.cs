@@ -11,7 +11,7 @@ public class InfoPanelManager : MonoBehaviour
     [SerializeField] PlayerManager player;
     [SerializeField] EmptyEvent onTurnEnd;
 
-    Label regionName, regionPT, regionProvisions, recruitPT, recruitScore, score, resources, changes;
+    Label regionName, regionPT, regionProvisions, recruitPT, recruitScore, score, resources, incomeV, date;
 
     Button endTurnB, deckB, menuB;
 
@@ -23,14 +23,15 @@ public class InfoPanelManager : MonoBehaviour
         var root = menu.rootVisualElement;
 
         regionName = root.Q<Label>("Name");
-        regionPT = root.Q<Label>("Provisions");
-        regionProvisions = root.Q<Label>("ProvisionsV");
-        recruitPT = root.Q<Label>("Recruit");
-        recruitScore = root.Q<Label>("RecruitV");
+        regionPT = root.Q<Label>("ProvisionsR");
+        regionProvisions = root.Q<Label>("ProvisionsRV");
+        recruitPT = root.Q<Label>("Militia");
+        recruitScore = root.Q<Label>("MilitiaV");
 
+        date = root.Q<Label>("Date");
         score = root.Q<Label>("ScoreV");
         resources = root.Q<Label>("ProvisionsV");
-        changes = root.Q<Label>("Changes");
+        incomeV = root.Q<Label>("IncomeV");
 
         endTurnB = root.Q<Button>("EndTurnB");
         deckB = root.Q<Button>("DeckB");
@@ -72,11 +73,7 @@ public class InfoPanelManager : MonoBehaviour
             regionProvisions.text = "";
             recruitPT.text = "";
             recruitScore.text = "";
-        }
-
-        score.text = player.score.ToString();
-        resources.text = player.resources.ToString();
-        changes.text = "";
+        }       
     }
 
     private void OnEndTurnClicked() {
@@ -89,5 +86,16 @@ public class InfoPanelManager : MonoBehaviour
 
     private void OnMenuClicked() {
         if (mainMenu != null) mainMenu.SetActive(true);
+    }
+
+    public void OnStartTurn() {
+        date.text = $"{ConstantValues.GetDate(player.turn + ConstantValues.startMonth)}\n Anno Domini";
+        score.text = player.score.ToString();
+        resources.text = player.resources.ToString();
+        incomeV.text = (player.Pillage() - player.ResourcesConsumedPerTurn).ToString();
+    }
+
+    public void OnRegionChangeOwner() {
+        incomeV.text = (player.Pillage() - player.ResourcesConsumedPerTurn).ToString();
     }
 }

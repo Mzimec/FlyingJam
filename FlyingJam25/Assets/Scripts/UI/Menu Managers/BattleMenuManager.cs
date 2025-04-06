@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 
 public class BattleMenuManager : MonoBehaviour {
     private UIDocument battleMenu;
-    [SerializeField] UIDocument victoryMenu;
+    [SerializeField] GameObject victoryMenu;
     [SerializeField] PlayerManager player;
     [SerializeField] VisualTreeAsset visualTree;
     [SerializeField] VisualTreeAsset blankCard;
@@ -157,13 +157,15 @@ public class BattleMenuManager : MonoBehaviour {
     private void OnFight() {
         if (battleManager.attackers.Count == 0 || battleManager.defenders.Count == 0) return;
         if (victoryMenu != null) {
-            victoryMenu.gameObject.SetActive(true);
+            victoryMenu.SetActive(true);
             var vm = victoryMenu.GetComponent<VictoryMenuManager>();
             ChangePlayerCards();
+            Debug.Log("Battle1");   
             vm.message = battleManager.OnFight(player);
             vm.SetBattleManager(battleManager);
-        } 
-        battleMenu.gameObject.SetActive(false);
+        }
+        Debug.Log("Battle2");
+        gameObject.SetActive(false);
     }
 
     private void OnCancel() { 
