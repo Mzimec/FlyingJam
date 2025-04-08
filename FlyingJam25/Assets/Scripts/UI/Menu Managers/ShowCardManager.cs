@@ -33,6 +33,8 @@ public class ShowCardManager : MonoBehaviour
         countL = root.Q<Label>("CountL");
         cancelB = root.Q<Button>("CancelB");
 
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cancelB }, ConstantValues.waitTimeOnMenu));
+
         cancelB.clicked += OnCancel;
     }
 

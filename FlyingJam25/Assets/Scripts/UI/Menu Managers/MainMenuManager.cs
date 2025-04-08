@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -23,6 +24,8 @@ public class MainMenuManager : MonoBehaviour
         controlsB = mainMenuRoot.Q<Button>("ControlsB");
         quitB = mainMenuRoot.Q<Button>("QuitB");
 
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { newGameB, loadB, quitB, controlsB }, ConstantValues.waitTimeOnMenu));
+
         if (newGameB != null) newGameB.clicked += OnNewGame;
         if (loadB != null) loadB.clicked += OnContinueGame;
         if (quitB != null) quitB.clicked += OnQuitGame;
@@ -41,11 +44,19 @@ public class MainMenuManager : MonoBehaviour
     }
 
     private void OnNewGame() {
+        newGameB.SetEnabled(false);
+        loadB.SetEnabled(false);
+        quitB.SetEnabled(false);
+        controlsB.SetEnabled(false);
         saveManager.CleanData();
         SceneManager.LoadScene("Game");
     }
 
     public void OnContinueGame() {
+        newGameB.SetEnabled(false);
+        loadB.SetEnabled(false);
+        quitB.SetEnabled(false);
+        controlsB.SetEnabled(false);
         saveManager.LoadGame();
         SceneManager.LoadScene("Game"); ;    
     }
@@ -56,6 +67,10 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void OnQuitGame() {
+        newGameB.SetEnabled(false);
+        loadB.SetEnabled(false);
+        quitB.SetEnabled(false);
+        controlsB.SetEnabled(false);
         // Quit the application
 #if UNITY_EDITOR
         // Stop play mode in the editor

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -37,7 +38,9 @@ public class InfoPanelManager : MonoBehaviour
         deckB = root.Q<Button>("DeckB");
         menuB = root.Q<Button>("MenuB");
 
-        if(endTurnB != null) endTurnB.clicked += OnEndTurnClicked;
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { endTurnB, deckB, menuB }, ConstantValues.waitTimeOnMenu));
+
+        if (endTurnB != null) endTurnB.clicked += OnEndTurnClicked;
         if (deckB != null) deckB.clicked += OnDeckClicked;
         if (menuB != null) menuB.clicked += OnMenuClicked;
     }
@@ -77,15 +80,22 @@ public class InfoPanelManager : MonoBehaviour
     }
 
     private void OnEndTurnClicked() {
+        endTurnB.SetEnabled(false);
         onTurnEnd.Raise(new Empty());
     }
 
     private void OnDeckClicked() {
-        if(deckMenu != null) deckMenu.SetActive(true);
+        if (deckMenu != null) {
+            Time.timeScale = 0;
+            deckMenu.SetActive(true);
+        }
     }
 
     private void OnMenuClicked() {
-        if (mainMenu != null) mainMenu.SetActive(true);
+        if (mainMenu != null) {
+            Time.timeScale = 0;
+            mainMenu.SetActive(true);
+        }
     }
 
     public void OnStartTurn() {
@@ -96,6 +106,11 @@ public class InfoPanelManager : MonoBehaviour
     }
 
     public void OnRegionChangeOwner() {
-        incomeV.text = (player.Pillage() - player.ResourcesConsumedPerTurn).ToString();
+        incomeV.text = player.GetResourceInocme.ToString();
+    }
+
+    public void OnAllBattlesGenerated() {
+        incomeV.text = player.GetResourceInocme.ToString();
+        endTurnB.SetEnabled(true);
     }
 }

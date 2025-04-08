@@ -49,6 +49,8 @@ public class BattleMenuManager : MonoBehaviour {
         al = root.Q<Label>("AL");
         dl = root.Q<Label>("DL");
 
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button>{cancelB, battleB}, ConstantValues.waitTimeOnMenu));
+
         if (cancelB != null) cancelB.clicked += OnCancel;
         if (battleB != null) battleB.clicked += OnFight;
     }
@@ -73,7 +75,9 @@ public class BattleMenuManager : MonoBehaviour {
                 i++;
             }
             else cve = new CardVE(battleManager.attackers[j], visualTree, ConstantValues.cardScale);*/
+            StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cve.ve.Q<Button>("Cudl") }, ConstantValues.waitTimeOnMenu));
             attackVE.Add(cve.ve);
+
         }
 
         int emptyAttackersCount = battleManager.region.baseData.battlefieldSize - battleManager.attackers.Count;
@@ -108,6 +112,7 @@ public class BattleMenuManager : MonoBehaviour {
             CardVE cve = new CardVE(card, visualTree, response, i, ConstantValues.cardScale);
             playerCards.Add(cve);
             areInHand.Add(true);
+            StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cve.ve.Q<Button>("Cudl") }, ConstantValues.waitTimeOnMenu));
             hand.Add(cve.ve);
             i++;
         } 
@@ -124,7 +129,7 @@ public class BattleMenuManager : MonoBehaviour {
     private void OnCardClick(CardVE cve) {
         int index = cve.index;
         if (areInHand[index]) {
-            if ((!battleManager.region.isPlayer && battleManager.attackers.Count >= battleManager.region.baseData.battlefieldSize)) {
+            if ((battleManager.attackers.Count >= battleManager.region.baseData.battlefieldSize)) {
                 return;
             }
             //Debug.Log($"{battleManager.defenders.Count}, {battleManager.attackers.Count}, {battleManager.region.baseData.battlefieldSize}");
@@ -200,7 +205,7 @@ public class BattleMenuManager : MonoBehaviour {
     }
 
     private void ChangePlayerCards() {
-        if (battleManager.region.isPlayer) {
+        /*if (battleManager.region.isPlayer) {
             foreach (var card in battleManager.defenders) {
                 if (player.unitsInBattle.Contains(card)) {
                     player.unitsInBattle.Remove(card);
@@ -214,6 +219,12 @@ public class BattleMenuManager : MonoBehaviour {
                     player.unitsInBattle.Remove(card);
                     player.cardsToDiscard.Add(card);
                 }
+            }
+        }*/
+        foreach (var card in battleManager.attackers) {
+            if (player.unitsInBattle.Contains(card)) {
+                player.unitsInBattle.Remove(card);
+                player.cardsToDiscard.Add(card);
             }
         }
     }

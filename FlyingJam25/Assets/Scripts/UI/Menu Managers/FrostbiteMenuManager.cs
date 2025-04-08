@@ -41,6 +41,9 @@ public class FrostbiteMenuManager : MonoBehaviour {
         aBlankVE = root.Q<VisualElement>("ABlankVE");
         eVE = root.Q<VisualElement>("E");
         aVE = root.Q<VisualElement>("A");
+
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { commitB }, ConstantValues.waitTimeOnMenu));
+
         if (commitB != null) commitB.clicked += OnCommit;
         cardsToFreeze = player.InjuryValue;
         InitializeCards();
@@ -58,6 +61,7 @@ public class FrostbiteMenuManager : MonoBehaviour {
     private void InitializeCards() {
         foreach (var card in player.cardsToDiscard) {
             CardVE cve = new CardVE(card, cardTemplate, responseL, responseR, ConstantValues.cardScale);
+            StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cve.ve.Q<Button>("Cudl") }, ConstantValues.waitTimeOnMenu));
             handVE.Add(cve.ve);
         }
     }

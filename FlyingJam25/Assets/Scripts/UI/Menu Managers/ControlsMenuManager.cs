@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,7 @@ public class ControlsMenuManager : MonoBehaviour
     private void OnEnable() {
         var root = ui.rootVisualElement;
         backB = root.Q<Button>("BackB");
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { backB }, ConstantValues.waitTimeOnMenu));
         backB.clicked += OnBack;
     }
 

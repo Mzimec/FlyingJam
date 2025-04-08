@@ -10,6 +10,7 @@ public class RegionManager : MonoBehaviour {
     public RegionSO baseData;
     RegionColoring rc;
     [SerializeField] EmptyEvent onBattleCleared;
+    [SerializeField] EmptyEvent onBattleGenerated;
 
     public string regionName;
 
@@ -41,11 +42,18 @@ public class RegionManager : MonoBehaviour {
                     break;
                 }
             return res;
-        } }
+        } 
+    }
+
+    public int GetPilageRes(float factor, int constant) { 
+        int res = baseData.resourceRefreshRate;
+        if (isPlayer) res = (int)(factor * GetResourcesToBase + constant) * baseData.resourceRefreshRate;
+        if (res > resources) res = resources;
+        return res;
+    }
 
     public int PillageResources(float factor, int constant) {
-        var res = (int)(factor  * GetResourcesToBase) + constant;
-        if (resources < res) res = resources;
+        var res = GetPilageRes(factor, constant);
         resources -= res;
         return res;
     }
@@ -105,12 +113,14 @@ public class RegionManager : MonoBehaviour {
         SolveRemainingBattle();
         yield return StartCoroutine(ClearBattleCoroutine());
         ActualizeRecruitPoints();
+        isAttacked = false;
         onBattleCleared.Raise(new Empty());
         //GenerateBattleEvent();
     }
 
     public void OnStartTurn() {
         GenerateBattleEvent();
+        onBattleGenerated.Raise(new Empty());
     }
 
     public void SetBattle(GameObject battleInstance) {
@@ -123,6 +133,7 @@ public class RegionManager : MonoBehaviour {
         regionDistance = data.regionDistance;
         isAttacked = data.isAttacked;
         isPlayer = data.isPlayer;
+        Start();
     }
 
 
@@ -221,4 +232,8 @@ public class RegionManager : MonoBehaviour {
             else rc.SetEnemyColoring();
         }
     }
+
+    public void RecolorRegion(float target, float duration) {
+        if (rc != null) StartCoroutine(rc.LerpToMaterialColor(target, duration));
+    }   
 }

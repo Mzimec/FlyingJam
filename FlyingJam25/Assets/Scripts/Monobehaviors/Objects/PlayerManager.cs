@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private List<CardSO> startingDeck;
     [SerializeField] GameObject frostUI;
     [SerializeField] GameObject hungerUI;
+    [SerializeField] GameObject endUI;
+    [SerializeField] GameObject popUpUI;
     [SerializeField] EmptyEvent onStartTurn;
 
     public List<CardManager> deck = new List<CardManager>();
@@ -50,9 +52,28 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] private float factorPillageRate;
 
     [SerializeField] private float handToDeck;
-    private int HandSize => (int) (handToDeck * (deck.Count + hand.Count + unitsInBattle.Count + discard.Count + cardsToDiscard.Count));
+    private int HandSize {
+        get {
+            int res = (int)(handToDeck * (deck.Count + hand.Count + unitsInBattle.Count + discard.Count + cardsToDiscard.Count));
+            if (res < 4) res = 4;
+            if (res > CountOfAllCards) res = CountOfAllCards;
+            return res;
+        }
+    }
 
     private int ScoreMultiplier => (turn / 5) + 1;
+
+    private bool EndGameCheck => CountOfAllCards == 0 || controlledRegions.Count == 0;
+
+    public int GetResourceInocme {
+        get {
+            int res = 0;
+            foreach (var region in controlledRegions) {
+                if (!region.isAttacked) res += region.GetPilageRes(factorPillageRate,constantPillageRate);
+            }
+            return res - ResourcesConsumedPerTurn;
+        }
+    }
 
     private void Awake() {
         foreach (var card in startingDeck) deck.Add(new CardManager(card));
@@ -102,7 +123,9 @@ public class PlayerManager : MonoBehaviour {
 
     public int Pillage() {
         int pillaged = 0;
-        foreach (var region in controlledRegions) pillaged += PillageRegion(region);
+        foreach (var region in controlledRegions) {
+            pillaged += PillageRegion(region);
+        }
         return pillaged;
     }
 
@@ -121,6 +144,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void OnEndTurn1() {
+        Debug.Log($"Injury value is: {InjuryValue}");
         if (InjuryValue > 0) frostUI.SetActive(true);
         else OnEndTurn2();
     }
@@ -133,12 +157,21 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void OnEndTurn3() {
+        if (EndGameCheck) {
+            endUI.SetActive(true);
+            return;
+        }
         CountScore();
         turn++;
         injuryValue = 0;
         cardsToDestroy = 0;
         DrawHand();
-        onStartTurn.Raise(new Empty());
+        if (turn == 4) {
+            popUpUI.SetActive(true);
+            PopUpUIManager puuim = popUpUI.GetComponent<PopUpUIManager>();
+            puuim.StartRevolution();
+        }
+        else onStartTurn.Raise(new Empty());
     }
 
     public void Load(PlayerData data, List<RegionManager> allRegions) {
@@ -176,5 +209,12 @@ public class PlayerManager : MonoBehaviour {
     public void OnRegionOwnerChanged(RegionManager region) {
         if(controlledRegions.Contains(region)) controlledRegions.Remove(region);
         else controlledRegions.Add(region);
+    }
+
+    public void OnRevolution() {
+        RegionManager r = controlledRegions.FirstOrDefault(region => region.regionName == "Duché de Varsovie");
+        r.isPlayer = false;
+        controlledRegions.Remove(r);
+        r.RecolorRegion(0f, 0.6f);
     }
 }

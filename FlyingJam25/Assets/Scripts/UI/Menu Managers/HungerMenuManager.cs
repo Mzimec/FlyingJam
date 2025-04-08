@@ -35,6 +35,9 @@ public class HungerMenuManager : MonoBehaviour {
         handVE = root.Q<ScrollView>("Hand");
         commitB = root.Q<Button>("CommitB");
         dBlankVE = root.Q<VisualElement>("SBlankVE");
+
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { commitB }, ConstantValues.waitTimeOnMenu));
+
         if (commitB != null) commitB.clicked += OnCommit;
         cardsToDestroy = player.ToDestroyCount;
         InitializeCards();
@@ -55,6 +58,7 @@ public class HungerMenuManager : MonoBehaviour {
         cards.OrderBy(x => x.baseData.value);
         foreach (var card in cards) {
             CardVE cve = new CardVE(card, cardTemplate, response, 0, ConstantValues.cardScale);
+            StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cve.ve.Q<Button>("Cudl") }, ConstantValues.waitTimeOnMenu));
             handVE.Add(cve.ve);
         }
     }

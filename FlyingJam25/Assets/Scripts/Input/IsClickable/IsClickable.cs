@@ -11,7 +11,7 @@ public class IsClickable : MonoBehaviour
 
     public void OnClick(InputControl button) {
         if (!isEnabled) return;
-        if (hitManager.hit.collider == this.GetComponent<Collider2D>()) {
+        if (hitManager.clickableHit.collider == this.GetComponent<Collider2D>()) {
             OnClicked?.Invoke(button);
         }
         else Debug.Log("No Collider On Clicked Object");        

@@ -115,6 +115,7 @@ public class BattleManager : MonoBehaviour {
                 region.OnChangeOwner.Raise(region);
             }
         }
+        Debug.Log($"Injjury value is: {p.injuryValue}");
         return res;
     }
 

@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_11Zminsk
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -200,6 +204,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -236,6 +244,38 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1785439359}
   m_SourcePrefab: {fileID: 100100000, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+--- !u!1 &190646160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190646161}
+  m_Layer: 0
+  m_Name: PopUp Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &190646161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190646160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1939907793}
+  m_Father: {fileID: 1909038444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208466234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
@@ -486,6 +526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_21fatty
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -554,6 +598,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 6
@@ -671,6 +719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_26moskva
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -739,6 +791,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 3
@@ -851,6 +907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_27Jmoskva
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -920,6 +980,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -959,6 +1023,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_16Jminsk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -1029,6 +1097,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -1072,6 +1144,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_12mid1stsnow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -1141,6 +1217,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 6
@@ -1223,6 +1303,7 @@ GameObject:
   - component: {fileID: 479909470}
   - component: {fileID: 479909472}
   - component: {fileID: 479909471}
+  - component: {fileID: 479909473}
   m_Layer: 0
   m_Name: Info Panel UI
   m_TagString: Untagged
@@ -1337,6 +1418,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &479909473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479909467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623365a54932d0f40bf20f3c226356ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e6477d393c07b384c8c4dcac8d7c8fca, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 479909470}
+        m_TargetAssemblyTypeName: InfoPanelManager, Assembly-CSharp
+        m_MethodName: OnAllBattlesGenerated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &482908536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1348,6 +1457,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_15minsk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -1417,6 +1530,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -1559,6 +1676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_30jezeromega
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1627,6 +1748,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 3
@@ -2087,6 +2212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_2JZ-roh
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2143,6 +2272,10 @@ PrefabInstance:
       propertyPath: regionName
       value: Kovno
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 3
@@ -2212,6 +2345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_14smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2280,6 +2417,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -2785,6 +2926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_13pinefor
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2853,6 +2998,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -2959,6 +3108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_24trubka
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3027,6 +3180,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 5
@@ -3320,6 +3477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_6triteck
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3381,6 +3542,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -3421,6 +3586,71 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1068779485}
   m_SourcePrefab: {fileID: 100100000, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+--- !u!1 &757059323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757059324}
+  - component: {fileID: 757059326}
+  - component: {fileID: 757059325}
+  m_Layer: 0
+  m_Name: End UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &757059324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757059323}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1234894267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757059325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757059323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aeff74e265583447a40a8e43805e57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2084772070}
+--- !u!114 &757059326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757059323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 2f6b8e3c83edc6d4faccc81cbe1ce916, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 0fb642e32b1fa79428f9f6c2acbedba2, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
 --- !u!1001 &763743405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3432,6 +3662,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_4pole
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -3493,6 +3727,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -3751,6 +3989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_8strom
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3815,6 +4057,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -4607,6 +4853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_18Jhrad
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4675,6 +4925,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -6039,6 +6293,7 @@ GameObject:
   - component: {fileID: 1214939706}
   - component: {fileID: 1214939708}
   - component: {fileID: 1214939707}
+  - component: {fileID: 1214939709}
   m_Layer: 0
   m_Name: Event Manager
   m_TagString: Untagged
@@ -6102,6 +6357,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAllBattlesCleared: {fileID: 11400000, guid: 93cd45cac7010a048a053bfb07511bad, type: 2}
+  onAllBattlesGenerated: {fileID: 11400000, guid: e6477d393c07b384c8c4dcac8d7c8fca, type: 2}
+--- !u!114 &1214939709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214939705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623365a54932d0f40bf20f3c226356ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1214939708}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: OnBattleGenerated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1234894266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234894267}
+  m_Layer: 0
+  m_Name: End Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1234894267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234894266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 757059324}
+  m_Father: {fileID: 1909038444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1252464227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,6 +6461,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_23viadukt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -6214,6 +6534,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 6
@@ -7324,6 +7648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_7kopce-komin
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7385,6 +7713,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -7421,10 +7753,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_3hranicni
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 545875093725613961, guid: 388e8d8ac557ad44dbe1fa9894371a1d, type: 3}
+    - target: {fileID: 4186252549720820407, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: difX
+      value: 0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 4971377625465588106, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.657
@@ -7477,6 +7817,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 5
@@ -9103,6 +9447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_25thorn
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -9171,6 +9519,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 6
@@ -10345,6 +10697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_28Epropast
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10414,6 +10770,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -10457,6 +10817,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_9pristrech
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -10527,6 +10891,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -10570,6 +10938,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_20kapka
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -10640,6 +11012,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -10691,6 +11067,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_5jezero
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -10752,6 +11132,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 3
@@ -10981,6 +11365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_22factory
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11050,6 +11438,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -11112,6 +11504,8 @@ Transform:
   - {fileID: 1252464228}
   - {fileID: 1140544108}
   - {fileID: 636567002}
+  - {fileID: 190646161}
+  - {fileID: 1234894267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1909038445
@@ -11757,6 +12151,72 @@ PolygonCollider2D:
       - {x: -1.0594366, y: -3.202135}
       - {x: -0.9959021, y: -3.167191}
   m_UseDelaunayMesh: 0
+--- !u!1 &1939907792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1939907793}
+  - component: {fileID: 1939907794}
+  - component: {fileID: 1939907795}
+  m_Layer: 0
+  m_Name: PopUp UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1939907793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939907792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 190646161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1939907794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939907792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 2f6b8e3c83edc6d4faccc81cbe1ce916, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: f784c94885b10de459e28a3f6324f18b, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &1939907795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939907792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3a490c6786e864ba676c0aa93c8d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onStartTurn: {fileID: 11400000, guid: 79aa273f94906634b830a7b8266cd44b, type: 2}
+  revolution: {fileID: 11400000, guid: a3f878151de5c844c84160ec0f391dc0, type: 2}
 --- !u!60 &1946416185
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12079,6 +12539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_19onesmoke
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12147,6 +12611,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 4
@@ -13093,6 +13561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_17hrad
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -13161,6 +13633,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 6
@@ -13541,6 +14017,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac76dabc3edf31b43a35bad467d0ae13, type: 2}
   frostUI: {fileID: 249041181}
   hungerUI: {fileID: 1364279666}
+  endUI: {fileID: 757059323}
+  popUpUI: {fileID: 1939907792}
   onStartTurn: {fileID: 11400000, guid: 79aa273f94906634b830a7b8266cd44b, type: 2}
   turn: 1
   score: 0
@@ -13758,6 +14236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_29JVroh
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -13827,6 +14309,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
       objectReference: {fileID: 8231782658633758210}
@@ -13886,6 +14372,10 @@ PrefabInstance:
     - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Name
       value: R_10porici
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993091691382184350, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_Sprite
@@ -13955,6 +14445,10 @@ PrefabInstance:
       propertyPath: recruitPoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: neighbors.Array.size
       value: 5
@@ -14239,6 +14733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: R_1Varsava
       objectReference: {fileID: 0}
+    - target: {fileID: 2014886591419025942, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4186252549720820407, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: difX
       value: -0.83
@@ -14287,6 +14785,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: onBattleGenerated
+      value: 
+      objectReference: {fileID: 11400000, guid: b3ee4ffb9b62127429b440e5cd33de07, type: 2}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: 'neighbors.Array.data[0]'
       value: 
