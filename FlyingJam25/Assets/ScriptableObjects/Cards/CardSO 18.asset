@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 7714416478726866884, guid: d4a75e81e3a25104fab2a27ffeaf6f29, type: 3}
   cardName: Bear hussar
+  effectDescription: Effect Placeholder
   value: 18
   prefPos: {fileID: 0}
   attackValues: 00000000030000000100000000000000

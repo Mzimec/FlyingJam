@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 5520473669615945868, guid: 6ba8409a59256ae408e414dc496eafaf, type: 3}
   cardName: Tsar's infantry
+  effectDescription: Effect Placeholder
   value: 12
   prefPos: {fileID: 0}
   attackValues: 00000000000000000200000000000000

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -4910088520043721169, guid: bddb45326c558a041b472ac267dc46d2, type: 3}
   cardName: Le Tormenteur
+  effectDescription: Effect Placeholder
   value: 24
   prefPos: {fileID: 0}
   attackValues: 04000000000000000000000000000000

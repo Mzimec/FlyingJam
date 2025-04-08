@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 8579111415464493206, guid: 0a89280c3dc5b7d4fab0d251edf4e0a8, type: 3}
   cardName: Cannon burlaks
+  effectDescription: Effect Placeholder
   value: 10
   prefPos: {fileID: 0}
   attackValues: 02000000000000000000000000000000

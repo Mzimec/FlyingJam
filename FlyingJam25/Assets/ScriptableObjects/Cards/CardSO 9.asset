@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 7809157847302988670, guid: 7cf5118cf92aa2e458bfe8136af39bfc, type: 3}
   cardName: Sami shaman
+  effectDescription: Effect Placeholder
   value: 11
   prefPos: {fileID: 0}
   attackValues: 01000000000000000100000001000000

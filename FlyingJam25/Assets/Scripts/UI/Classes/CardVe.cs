@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -53,35 +54,55 @@ public partial class CardVE : VisualElement {
 
         Label effectLabel = ve.Q<Label>("EFFECT");
         string effectDescription = GetEffectDescription(card);
+        if (card.hasEffects) effectLabel.text = card.baseData.effectDescription;
+        else effectLabel.text = string.Empty;
 
-        Dictionary<int, string> attackMapping = new Dictionary<int, string> {
-        { 0, "aaT" }, { 1, "acT" }, { 2, "arT" }, { 3, "asT" }
+        Dictionary<int, Tuple<string,string>> attackMapping = new Dictionary<int, Tuple<string,string>> {
+            { 0, new Tuple<string,string>("AA","aaT")}, { 1, new Tuple<string,string>("AC", "acT") },
+            { 2,  new Tuple<string,string>("AR","arT") }, { 3,  new Tuple<string,string>("AS","asT") }
         };
 
         // Define vulnerability order mapping to UI elements
-        Dictionary<int, string> vulnerabilityMapping = new Dictionary<int, string> {
-        { 0, "daT" }, { 1, "dcT" }, { 2, "drT" }, { 3, "dsT" }
+        Dictionary<int, Tuple<string,string>> vulnerabilityMapping = new Dictionary<int, Tuple<string,string>> {
+            { 0,  new Tuple<string,string>("DA","daT") }, { 1,  new Tuple<string,string>("DC","dcT") },
+            { 2,  new Tuple<string,string>("DR", "drT") }, { 3,  new Tuple<string,string>("DS","dsT") }
         };
 
         // Assign Attack Values
         for (int i = 0; i < card.attackValues.Length; i++) {
             if (i < attackMapping.Count) {
-                string labelName = attackMapping[i];
+                string labelName = attackMapping[i].Item2;
 
                 Label attackLabel = ve.Q<Label>(labelName);
                 if (attackLabel != null) {
-                    attackLabel.text = card.attackValues[i].ToString();
+                    if (card.attackValues[i] > 0) {
+                        attackLabel.text = card.attackValues[i].ToString();
+                        //attackLabel.style.color = new StyleColor(Color.red);
+                    }
+                    else {
+                        attackLabel.text = string.Empty;
+                        var a = ve.Q<VisualElement>(attackMapping[i].Item1);
+                        a.style.unityBackgroundImageTintColor = new StyleColor(Color.clear);
+                    }
                 }
             }
         }
 
         for (int i = 0; i < card.vulnerabilityValues.Length; i++) {
             if (i < vulnerabilityMapping.Count) {
-                string labelName = vulnerabilityMapping[i];
+                string labelName = vulnerabilityMapping[i].Item2;
 
                 Label vulnerabilityLabel = ve.Q<Label>(labelName);
                 if (vulnerabilityLabel != null) {
-                    vulnerabilityLabel.text = card.vulnerabilityValues[i].ToString();
+                    if (card.vulnerabilityValues[i] > 0) {
+                        vulnerabilityLabel.text = card.vulnerabilityValues[i].ToString();
+                        //vulnerabilityLabel.style.color = new StyleColor(Color.red);
+                    }
+                    else {
+                        vulnerabilityLabel.text = string.Empty;
+                        var a = ve.Q<VisualElement>(vulnerabilityMapping[i].Item1);
+                        a.style.unityBackgroundImageTintColor = new StyleColor(Color.clear);
+                    }
                 }
             }
         }

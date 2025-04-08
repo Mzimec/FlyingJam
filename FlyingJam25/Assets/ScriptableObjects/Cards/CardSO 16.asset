@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -2799025756769327729, guid: d8f8a7b293a41734d9c977adae1e9fe1, type: 3}
   cardName: Veteran
+  effectDescription: Effect Placeholder
   value: 13
   prefPos: {fileID: 0}
   attackValues: 00000000020000000100000000000000

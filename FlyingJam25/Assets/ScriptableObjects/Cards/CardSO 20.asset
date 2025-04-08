@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -5860470177254374992, guid: 925b5a1cda436fc419a37c12d90b527d, type: 3}
   cardName: Field kitchen
+  effectDescription: Effect Placeholder
   value: 5
   prefPos: {fileID: 0}
   attackValues: 00000000010000000000000000000000

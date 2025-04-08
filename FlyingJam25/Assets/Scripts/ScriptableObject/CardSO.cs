@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class CardSO : ScriptableObject {
     public Sprite sprite;
     public string cardName;
+    public string effectDescription;
     public int value;
     public PrefferedPosSO prefPos;
     public int[] attackValues;

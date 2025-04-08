@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -2270382132492453729, guid: e6ad3a2cee8da9e4d9b8494426018c79, type: 3}
   cardName: Chemical marshal
+  effectDescription: Effect Placeholder
   value: 13
   prefPos: {fileID: 0}
   attackValues: 02000000000000000100000000000000
