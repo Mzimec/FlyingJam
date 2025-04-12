@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -7097860344766265739, guid: f5f1a302e7d3f4e42b12e912df46a9c4, type: 3}
   cardName: Infantry
+  effectDescription: Effect Placeholder
   value: 7
   prefPos: {fileID: 0}
   attackValues: 00000000000000000100000000000000

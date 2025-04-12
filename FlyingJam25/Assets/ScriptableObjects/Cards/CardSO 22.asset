@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -4534634967793127557, guid: d4555ac629324df4f8c062a6025d2b00, type: 3}
   cardName: Saboteur
+  effectDescription: Effect Placeholder
   value: 12
   prefPos: {fileID: 0}
   attackValues: 01000000000000000000000001000000

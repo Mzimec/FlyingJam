@@ -34,6 +34,8 @@ public class DeckMenuManager : MonoBehaviour
             $"\nCards in hand: {player.hand.Count}" +
             $"\nCards in battlefield: {player.unitsInBattle.Count}";
 
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cancelB, battleB, allCardsB, deckB, discardB, handB }, ConstantValues.waitTimeOnMenu));
+
         cancelB.clicked += OnCancel;
         allCardsB.clicked += OnCards;
         deckB.clicked += OnDeck;
@@ -52,6 +54,7 @@ public class DeckMenuManager : MonoBehaviour
     }
 
     private void OnCancel() { 
+        Time.timeScale = 1;
         gameObject.SetActive(false);
     }
 

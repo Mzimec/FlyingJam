@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 6916580865650861735, guid: 6ef5cab7a0c20e142a94c0d7b571962f, type: 3}
   cardName: Yaga's hut v.8
+  effectDescription: Effect Placeholder
   value: 25
   prefPos: {fileID: 0}
   attackValues: 05000000000000000000000000000000

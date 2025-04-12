@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -8417581772052589615, guid: 35e476224ab2d1547b9581925f1ae3da, type: 3}
   cardName: Conscripted serf
+  effectDescription: Effect Placeholder
   value: 5
   prefPos: {fileID: 0}
   attackValues: 00000000000000000100000000000000

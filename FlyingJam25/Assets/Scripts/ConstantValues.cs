@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,6 +16,8 @@ static class ConstantValues {
 
     public static float cardScale = 1.0f;
     public static int cardMargin = 10;
+
+    public static float waitTimeOnMenu = 0.3f;
 
     public static VisualElement CreateEmpty(VisualTreeAsset vt) {
         VisualElement blank = vt.CloneTree();
@@ -70,5 +74,13 @@ static class ConstantValues {
         string year = (ConstantValues.startYear + d / 12).ToString();
         sb.Append($" {year}");
         return sb.ToString();
+    }
+
+    public static IEnumerator DisableButtonsTemporarily(List<Button> buttons, float delay) {
+        foreach (var b in buttons) b.SetEnabled(false);
+
+        yield return new WaitForSecondsRealtime(delay);
+
+        foreach (var b in buttons) b.SetEnabled(true);
     }
 }

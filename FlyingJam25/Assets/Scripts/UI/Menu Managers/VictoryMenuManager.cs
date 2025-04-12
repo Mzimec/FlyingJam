@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -45,6 +46,7 @@ public class VictoryMenuManager : MonoBehaviour
         eds = root.Q<Label>("EDS");
 
         cancelB = root.Q<Button>("CancleB");
+        StartCoroutine(ConstantValues.DisableButtonsTemporarily(new List<Button> { cancelB}, ConstantValues.waitTimeOnMenu));
         if (cancelB != null) cancelB.clicked += OnCancel;
     }
 

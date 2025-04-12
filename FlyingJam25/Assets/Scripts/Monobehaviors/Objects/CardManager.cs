@@ -24,8 +24,13 @@ public class CardManager {
     }
     public CardManager(CardSO baseCard) {
         baseData = baseCard;
-        if (baseData.attackValues != null) hasAttack = true;
-        if (baseData.effects != null) hasEffects = true;
+        if (baseData.attackValues != null) {
+            foreach (var attackValue in baseData.attackValues) {
+                if (attackValue > 0) hasAttack = true;
+                break;
+            }
+        }
+        if (baseData.effects != null && baseData.effects.Count > 0) hasEffects = true;
         ResetCard();
     }
 
@@ -46,20 +51,15 @@ public class CardManager {
             attackValues = new int[baseData.attackValues.Length];
             Array.Copy(baseData.attackValues, attackValues, attackValues.Length);
         }
-        else attackValues = null;
+        else attackValues = new int[ConstantValues.cardTypesCount];
 
         if(hasEffects) effects = new List<Effect>(baseData.effects);
-        else effects = null;
+        else effects = new List<Effect>();
     }
 
     public void ApplyEffects(List<CardManager> allies, List<CardManager> enemies) {
         foreach (var effect in effects) {
-            if (effect.side == ESide.ALLY || effect.side == ESide.BOTH) {
-                foreach (var card in allies) effect.Execute(card);
-            }
-            if (effect.side == ESide.ENEMY || effect.side == ESide.BOTH) {
-                foreach(var card in enemies) effect.Execute(card);
-            }
+            effect.Execute(allies, enemies, this);
         }
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -5098722796299924958, guid: 68a02462bd2daca4c8443aa6e0b1396b, type: 3}
   cardName: Cavalry captain
+  effectDescription: Effect Placeholder
   value: 13
   prefPos: {fileID: 0}
   attackValues: 00000000030000000000000000000000

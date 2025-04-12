@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -4983721108374671077, guid: d9feb1fcb17c9ed4290f5a69054c4a6f, type: 3}
   cardName: Rasputin
+  effectDescription: Effect Placeholder
   value: 30
   prefPos: {fileID: 0}
   attackValues: 02000000020000000300000003000000
