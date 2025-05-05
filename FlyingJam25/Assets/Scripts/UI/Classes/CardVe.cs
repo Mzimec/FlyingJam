@@ -53,7 +53,7 @@ public partial class CardVE : VisualElement {
         cardNameLabel.text = card.baseData.cardName;
 
         Label effectLabel = ve.Q<Label>("EFFECT");
-        string effectDescription = GetEffectDescription(card);
+        //string effectDescription = GetEffectDescription(card);
         if (card.hasEffects) effectLabel.text = card.baseData.effectDescription;
         else effectLabel.text = string.Empty;
 
@@ -82,7 +82,7 @@ public partial class CardVE : VisualElement {
                     else {
                         attackLabel.text = string.Empty;
                         var a = ve.Q<VisualElement>(attackMapping[i].Item1);
-                        a.style.unityBackgroundImageTintColor = new StyleColor(Color.clear);
+                        a.style.unityBackgroundImageTintColor = new StyleColor(new Color(1,1,1,0.5f));
                     }
                 }
             }
@@ -101,7 +101,7 @@ public partial class CardVE : VisualElement {
                     else {
                         vulnerabilityLabel.text = string.Empty;
                         var a = ve.Q<VisualElement>(vulnerabilityMapping[i].Item1);
-                        a.style.unityBackgroundImageTintColor = new StyleColor(Color.clear);
+                        a.style.unityBackgroundImageTintColor = new StyleColor(new Color(1, 1, 1, 0.5f));
                     }
                 }
             }
@@ -131,7 +131,7 @@ public partial class CardVE : VisualElement {
 
 
 
-    private string GetEffectDescription(CardManager card) {
+    /*private string GetEffectDescription(CardManager card) {
         if (card == null) {
             Debug.LogError("Card is null.");
             return string.Empty;
@@ -149,5 +149,5 @@ public partial class CardVE : VisualElement {
 
         return sb.ToString();
 
-    }
+    }*/
 }

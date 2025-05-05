@@ -9,7 +9,7 @@ public class SaveManager : ScriptableObject
 {
 
     private string path => Path.Combine(Application.persistentDataPath, "savegame.json");
-    private DataToSave loadedData;
+    private DataToSave loadedData = null;
 
     public void SaveGame() {
         List<RegionManager> regions = new List<RegionManager>(FindObjectsByType<RegionManager>(FindObjectsSortMode.InstanceID));

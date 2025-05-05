@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf7b5eb2c80b0e449cf58709db892b5, type: 3}
+  m_Name: General
+  m_EditorClassIdentifier: 
+  targetingType: 0
+  isOnEnemy: 0
+  value: 20
+  typeTo: 1
+  p: 2
+  predicateSelector: {fileID: 11400000, guid: ae01ad99b8de51949aabfcc2e63b412b, type: 2}

@@ -1338,7 +1338,6 @@ GameObject:
   - component: {fileID: 479909469}
   - component: {fileID: 479909470}
   - component: {fileID: 479909472}
-  - component: {fileID: 479909471}
   - component: {fileID: 479909473}
   m_Layer: 0
   m_Name: Info Panel UI
@@ -1398,34 +1397,6 @@ MonoBehaviour:
   mouse: {fileID: 11400000, guid: b6ec997ade620384bb606d31c8cdfe69, type: 2}
   player: {fileID: 2084772070}
   onTurnEnd: {fileID: 11400000, guid: 77e04ea628e2aa94c9dc273535db33c9, type: 2}
---- !u!114 &479909471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479909467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 036bf5cdc9ad8e344af0e92b598ac015, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 8879e88c0fa288f419741b41ca9f66bc, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 479909470}
-        m_TargetAssemblyTypeName: InfoPanelManager, Assembly-CSharp
-        m_MethodName: OnRegionChangeOwner
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &479909472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2389,6 +2360,10 @@ PrefabInstance:
       propertyPath: baseData
       value: 
       objectReference: {fileID: 11400000, guid: dc96dbf881506a447bfc66282bb83553, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: regionName
       value: Kovno
@@ -3679,6 +3654,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
       objectReference: {fileID: 0}
@@ -3864,6 +3843,10 @@ PrefabInstance:
       propertyPath: baseData
       value: 
       objectReference: {fileID: 11400000, guid: dc96dbf881506a447bfc66282bb83553, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
@@ -4194,6 +4177,10 @@ PrefabInstance:
       propertyPath: baseData
       value: 
       objectReference: {fileID: 11400000, guid: dc96dbf881506a447bfc66282bb83553, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
@@ -7906,6 +7893,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
       objectReference: {fileID: 0}
@@ -8008,6 +7999,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971377625465588106, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
@@ -11342,6 +11337,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: resources
       value: 20
       objectReference: {fileID: 0}
@@ -14257,10 +14256,12 @@ MonoBehaviour:
   hungerUI: {fileID: 1364279666}
   endUI: {fileID: 757059323}
   popUpUI: {fileID: 1939907792}
+  info: {fileID: 479909470}
   onStartTurn: {fileID: 11400000, guid: 79aa273f94906634b830a7b8266cd44b, type: 2}
+  controlledRegions: []
   turn: 1
   score: 0
-  resources: 0
+  resources: 50
   injuryValue: 0
   injuryMultiplier: 0.5
   constantResourceDecrement: 10
@@ -15038,6 +15039,14 @@ PrefabInstance:
     - target: {fileID: 4971377625465588106, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e3c1cbb265a0974bb5793d644e7bbb2, type: 2}
+    - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
+      propertyPath: isPlayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5470130107952629512, guid: 6166e15771524414b82ab2a00528b37b, type: 3}
       propertyPath: onBattleGenerated

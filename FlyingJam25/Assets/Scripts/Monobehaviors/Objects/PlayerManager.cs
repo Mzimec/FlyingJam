@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField] GameObject hungerUI;
     [SerializeField] GameObject endUI;
     [SerializeField] GameObject popUpUI;
+    [SerializeField] InfoPanelManager info;
     [SerializeField] EmptyEvent onStartTurn;
 
     public List<CardManager> deck = new List<CardManager>();
@@ -18,7 +19,7 @@ public class PlayerManager : MonoBehaviour {
     public List<CardManager> discard = new List<CardManager>();
     public List<CardManager> cardsToDiscard = new List<CardManager>();
 
-    private List<RegionManager> controlledRegions = new List<RegionManager>();
+    public List<RegionManager> controlledRegions = new List<RegionManager>();
 
     public int turn = 1;
     public int score = 0;
@@ -207,14 +208,19 @@ public class PlayerManager : MonoBehaviour {
     }
 
     public void OnRegionOwnerChanged(RegionManager region) {
-        if(controlledRegions.Contains(region)) controlledRegions.Remove(region);
+        if (controlledRegions.Contains(region)) controlledRegions.Remove(region);
         else controlledRegions.Add(region);
+        info.OnRegionChangeOwner();
     }
 
     public void OnRevolution() {
         RegionManager r = controlledRegions.FirstOrDefault(region => region.regionName == "Duché de Varsovie");
         r.isPlayer = false;
         controlledRegions.Remove(r);
+        if (controlledRegions.Count == 0) {
+            endUI.SetActive(true);
+            return;
+        }
         r.RecolorRegion(0f, 0.6f);
     }
 }

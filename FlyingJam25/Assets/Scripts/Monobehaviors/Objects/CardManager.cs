@@ -26,8 +26,10 @@ public class CardManager {
         baseData = baseCard;
         if (baseData.attackValues != null) {
             foreach (var attackValue in baseData.attackValues) {
-                if (attackValue > 0) hasAttack = true;
-                break;
+                if (attackValue > 0) {
+                    hasAttack = true;
+                    break;
+                }
             }
         }
         if (baseData.effects != null && baseData.effects.Count > 0) hasEffects = true;
@@ -57,9 +59,9 @@ public class CardManager {
         else effects = new List<Effect>();
     }
 
-    public void ApplyEffects(List<CardManager> allies, List<CardManager> enemies) {
+    public void ApplyEffects(List<CardManager> allies, List<CardManager> enemies, int idx) {
         foreach (var effect in effects) {
-            effect.Execute(allies, enemies, this);
+            effect.Execute(allies, enemies, idx);
         }
     }
 }

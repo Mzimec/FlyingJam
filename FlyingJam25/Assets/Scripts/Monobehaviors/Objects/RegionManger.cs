@@ -49,6 +49,7 @@ public class RegionManager : MonoBehaviour {
         int res = baseData.resourceRefreshRate;
         if (isPlayer) res = (int)(factor * GetResourcesToBase + constant) * baseData.resourceRefreshRate;
         if (res > resources) res = resources;
+        Debug.Log($"In {regionName} is {res} resources to pillage");
         return res;
     }
 
@@ -82,15 +83,22 @@ public class RegionManager : MonoBehaviour {
     }
 
     private void GenerateBattleEvent(float chance) {
-        StartCoroutine(BattleEventCoroutine(chance));
+        StartCoroutine(GenerateBattleEventCoroutine(chance));
+    }
+
+    private IEnumerator GenerateBattleEventCoroutine(float chance) {
+        yield return BattleEventCoroutine(chance);
+        onBattleGenerated.Raise(new Empty());
     }
 
     private void GenerateBattleEvent() {
         if (isPlayer) { 
             if (IsBorder || baseData.riotBoundary > GetResourcesToBase) GenerateBattleEvent(baseData.riotChance);
+            else GenerateBattleEvent(0);
         } 
         else {
             if(IsBorder) GenerateBattleEvent(1.0f);
+            else GenerateBattleEvent(0);
         }
     }
 
@@ -120,7 +128,6 @@ public class RegionManager : MonoBehaviour {
 
     public void OnStartTurn() {
         GenerateBattleEvent();
-        onBattleGenerated.Raise(new Empty());
     }
 
     public void SetBattle(GameObject battleInstance) {
@@ -160,7 +167,7 @@ public class RegionManager : MonoBehaviour {
         float random = chanceMultiplier * Random.Range(0, GetChanceValue);
         float duration = 0.6f;
         float timer = 0f;
-        if (chance < random) {
+        if (chance <= random) {
             yield return new WaitForSeconds(duration);
             yield break;
         }

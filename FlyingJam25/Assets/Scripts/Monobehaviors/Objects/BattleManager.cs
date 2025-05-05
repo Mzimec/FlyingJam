@@ -94,6 +94,7 @@ public class BattleManager : MonoBehaviour {
             p.injuryValue++;
             if (!region.isPlayer) {
                 region.isPlayer = true;
+                region.isAttacked = false;
                 region.OnChangeOwner.Raise(region);
             }
         }
@@ -120,11 +121,11 @@ public class BattleManager : MonoBehaviour {
     }
 
     private string RunBattle(PlayerManager p) {
-        foreach(var card in attackers) {
-            if (card.hasEffects) card.ApplyEffects(attackers, defenders);
+        for (int i = 0; i < attackers.Count; i++) {
+            if (attackers[i].hasEffects) attackers[i].ApplyEffects(attackers, defenders, i);
         }
-        foreach (var card in defenders) {
-            if (card.hasEffects) card.ApplyEffects(defenders, attackers);
+        for (int i = 0; i < defenders.Count; i++) {
+            if (defenders[i].hasEffects) defenders[i].ApplyEffects(defenders, attackers, i);
         }
 
         CountPools();
