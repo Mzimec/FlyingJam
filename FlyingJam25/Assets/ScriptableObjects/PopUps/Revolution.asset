@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: During your conquest of the eastern lands, an opposition began to
     form in the shadows. Now, their time has come. Overnight, your rivals have taken
-    control of the French Empire. Your supporters are being executed en masse. The
-    only thing you have left are your men in the inhospitable land you have conquered.
-  title: The Great French Revolution
+    control of the French Empire. Back home, your supporters are being executed en
+    masse. All you have left are your men here in Russia and the inhospitable land
+    you have conquered.
+  title: "Acte de d\xE9ch\xE9ance"
   image: {fileID: -3100671071794031864, guid: 3c9ed27b437a79c44a1ebb53e52a7fa7, type: 3}
   response:
     m_PersistentCalls:
